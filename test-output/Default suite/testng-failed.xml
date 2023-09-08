@@ -5,9 +5,9 @@
     <classes>
       <class name="propertyaddedit.TestPropertyAdd">
         <methods>
-          <include name="addJointProperty_1"/>
           <include name="close"/>
           <include name="configuration"/>
+          <include name="addSingleProperty_1"/>
           <include name="openMyPropertyPage"/>
         </methods>
       </class> <!-- propertyaddedit.TestPropertyAdd -->

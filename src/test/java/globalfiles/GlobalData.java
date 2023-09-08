@@ -26,26 +26,33 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 
-public class GlobalData{
+public class GlobalData {
 
 	public AndroidDriver driver;
 	public AppiumDriverLocalService service;
 
 	@BeforeClass
 	public void configuration() throws MalformedURLException {
-		
-		 service = new AppiumServiceBuilder()
-	                .withAppiumJS(new File("C://Users//vishnudas//AppData//Roaming//npm//node_modules//appium//build//lib//main.js"))
-	                .withIPAddress("127.0.0.1").usingPort(4723).build();
-	        //service.start();
 
-	        UiAutomator2Options options = new UiAutomator2Options();
-	        options.setDeviceName("PixbitDevice");
-	        options.setApp("D://Eclipse_Automation//UserApp//src//test//java//resources//user_app_staging.apk");
-	        driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
-	        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
+		service = new AppiumServiceBuilder()
+				.withAppiumJS(new File(
+						"C://Users//vishnudas//AppData//Roaming//npm//node_modules//appium//build//lib//main.js"))
+				.withIPAddress("127.0.0.1").usingPort(4723).build();
+		// service.start();
+
+		UiAutomator2Options options = new UiAutomator2Options();
+		options.setDeviceName("PixbitDevice");
+		options.setApp("D://Eclipse_Automation//UserApp//src//test//java//resources//user_app_staging.apk");
+		driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
+
 	}
-	
+
+	@AfterClass
+	public void close() {
+		driver.quit();
+		service.close();
+	}
 
 	public void clickLongPress(WebElement ele) {
 		((JavascriptExecutor) driver).executeScript("mobile:LongClickGesture",
@@ -73,16 +80,17 @@ public class GlobalData{
 		driver.findElement(By.id("com.android.permissioncontroller:id/permission_allow_foreground_only_button"))
 				.click();
 	}
-	
+
 	public void scrollToNext() {
-        String uiAutomatorExpression = "new UiScrollable(new UiSelector()).scrollIntoView(text(\"Next\"));";
-        driver.findElement(AppiumBy.androidUIAutomator(uiAutomatorExpression));
-    }
-	
+		String uiAutomatorExpression = "new UiScrollable(new UiSelector()).scrollIntoView(text(\"Next\"));";
+		driver.findElement(AppiumBy.androidUIAutomator(uiAutomatorExpression));
+	}
+
 	public void scrollToElementByText(String titledeedDocument) {
-        String uiAutomatorExpression = "new UiScrollable(new UiSelector()).scrollIntoView(new UiSelector().text(\"" + titledeedDocument + "\"));";
-        driver.findElement(AppiumBy.androidUIAutomator(uiAutomatorExpression));
-    }
+		String uiAutomatorExpression = "new UiScrollable(new UiSelector()).scrollIntoView(new UiSelector().text(\""
+				+ titledeedDocument + "\"));";
+		driver.findElement(AppiumBy.androidUIAutomator(uiAutomatorExpression));
+	}
 
 	public void nextButtonClick() {
 		By nextButtonLocator = By.xpath("//android.widget.TextView[@text='Next']");
@@ -91,12 +99,6 @@ public class GlobalData{
 		nextButton.click();
 	}
 
-	@AfterClass
-	public void close() {
-		driver.quit();
-		service.close();
-	}
-	
 	public List<HashMap<String, String>> getjsondata(String filepath) throws IOException {
 		String jsoncontent = FileUtils.readFileToString(new File(filepath), StandardCharsets.UTF_8);
 		ObjectMapper map = new ObjectMapper();
@@ -105,5 +107,5 @@ public class GlobalData{
 				});
 		return data;
 	}
-	
+
 }

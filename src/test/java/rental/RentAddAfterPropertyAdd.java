@@ -21,7 +21,7 @@ public class RentAddAfterPropertyAdd  extends GlobalData{
 		HomePage HomePage = LoginPage.loginToApp("arshad@pixbitsolutions.com", "Qapixbit@14");
 		approvePermission();
 		ProfilePage ProfilePage = HomePage.openProfile();
-		ProfilePage.openMyRentalList();
+		//ProfilePage.openMyRentalList();
 	}
 
 	@Test

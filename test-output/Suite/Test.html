@@ -55,51 +55,51 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/1</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Aug 03 09:30:53 IST 2023</td>
+<td>Started on:</td><td>Thu Sep 07 16:39:08 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (348 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (220 ms)</td>
 </tr><tr>
-<td>Included groups:</td><td>Test Now </td>
+<td>Included groups:</td><td></td>
 </tr><tr>
 <td>Excluded groups:</td><td></td>
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
 <table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='propertyaddedit.TestPropertyAdd.addTwoNotVerifiedUserAddProperties()'><b>addTwoNotVerifiedUserAddProperties</b><br>Test class: propertyaddedit.TestPropertyAdd<br>Parameters: {present_use=Rented, area_region=Al Marmoom, age_of_property=2, owner_2_percentage=50, year=1980, emailId=yatin@pixbitsolutions.com, property_value=654000, furnishing_status=Semi Furnished, property_name=Garden Homes, owner_1_percentage=35, password=Qapixbit@14, unit_number=56, title_deed_number=343587150, titledeedDocument=oquod marbella 47.pdf, property_category=Commercial, owner_2_phone_number=9545505463, plot_area_sq_mt=534.53, buildup_area=645.4, property_type=Villa, plot_area_sq_ft=4356.6, property_status=Ready}</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;Object.getClass()&quot; because &quot;page&quot; is null
-	at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:99)
-	at utilites.AndroidActions.&lt;init&gt;(AndroidActions.java:32)
-	at pageobject.SplashScreen.&lt;init&gt;(SplashScreen.java:15)
-	at propertyaddedit.TestPropertyAdd.addTwoNotVerifiedUserAddProperties(TestPropertyAdd.java:43)
+<td title='propertyaddedit.TestPropertyAdd.configuration()'><b>configuration</b><br>Test class: propertyaddedit.TestPropertyAdd</td>
+<td><div><pre>java.lang.NullPointerException
+	at java.base/java.io.FileOutputStream.&lt;init&gt;(FileOutputStream.java:226)
+	at java.base/java.io.FileOutputStream.&lt;init&gt;(FileOutputStream.java:184)
+	at org.openqa.selenium.remote.service.DriverService$Builder.getLogOutput(DriverService.java:448)
+	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:495)
+	at globalfiles.GlobalData.configuration(GlobalData.java:40)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1384454980", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1384454980'><pre>java.lang.NullPointerException: Cannot invoke &quot;Object.getClass()&quot; because &quot;page&quot; is null
-	at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:99)
-	at utilites.AndroidActions.&lt;init&gt;(AndroidActions.java:32)
-	at pageobject.SplashScreen.&lt;init&gt;(SplashScreen.java:15)
-	at propertyaddedit.TestPropertyAdd.addTwoNotVerifiedUserAddProperties(TestPropertyAdd.java:43)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1873091796", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1873091796'><pre>java.lang.NullPointerException
+	at java.base/java.io.FileOutputStream.&lt;init&gt;(FileOutputStream.java:226)
+	at java.base/java.io.FileOutputStream.&lt;init&gt;(FileOutputStream.java:184)
+	at org.openqa.selenium.remote.service.DriverService$Builder.getLogOutput(DriverService.java:448)
+	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:495)
+	at globalfiles.GlobalData.configuration(GlobalData.java:40)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at org.testng.TestRunner.privateRun(TestRunner.java:794)
 	at org.testng.TestRunner.run(TestRunner.java:596)
@@ -118,7 +118,78 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>propertyaddedit.TestPropertyAdd@37d4349f</td></tr>
+<td>propertyaddedit.TestPropertyAdd@2d710f1a</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='propertyaddedit.TestPropertyAdd.openMyPropertyPage()'><b>openMyPropertyPage</b><br>Test class: propertyaddedit.TestPropertyAdd</td>
+<td></td>
+<td>-1694084948</td>
+<td>propertyaddedit.TestPropertyAdd@2d710f1a</td></tr>
+<tr>
+<td title='propertyaddedit.TestPropertyAdd.close()'><b>close</b><br>Test class: propertyaddedit.TestPropertyAdd</td>
+<td></td>
+<td>-1694084948</td>
+<td>propertyaddedit.TestPropertyAdd@2d710f1a</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='propertyaddedit.TestPropertyAdd.addSingleProperty_1()'><b>addSingleProperty_1</b><br>Test class: propertyaddedit.TestPropertyAdd<br>Parameters: {present_use=Rented, area_region=Abu Hail, owner_2_email=mujeeb123@gmail.com, year=1990, owner_4_percentage=20, property_value=654000, property_name=Casabella Property Broker, owner_4_phone_number=7546564675, owner_3_phone_number=9545505463, unit_number=56, title_deed_number=11114558, property_category=Commercial, owner_2_phone_number=6665554400, plot_area_sq_mt=534.53, property_type=Villa, owner_3_percentage=10, owner_2_name=Mujeeb, age_of_property=2, owner_2_percentage=10, furnishing_status=Semi Furnished, owner_1_percentage=50, titledeedDocument=oquod marbella 47.pdf, buildup_area=645.4, plot_area_sq_ft=4356.6, property_status=Ready}</td>
+<td><div><pre>java.lang.NullPointerException
+	at java.base/java.io.FileOutputStream.&lt;init&gt;(FileOutputStream.java:226)
+	at java.base/java.io.FileOutputStream.&lt;init&gt;(FileOutputStream.java:184)
+	at org.openqa.selenium.remote.service.DriverService$Builder.getLogOutput(DriverService.java:448)
+	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:495)
+	at globalfiles.GlobalData.configuration(GlobalData.java:40)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1640612861", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1640612861'><pre>java.lang.NullPointerException
+	at java.base/java.io.FileOutputStream.&lt;init&gt;(FileOutputStream.java:226)
+	at java.base/java.io.FileOutputStream.&lt;init&gt;(FileOutputStream.java:184)
+	at org.openqa.selenium.remote.service.DriverService$Builder.getLogOutput(DriverService.java:448)
+	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:495)
+	at globalfiles.GlobalData.configuration(GlobalData.java:40)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>propertyaddedit.TestPropertyAdd@2d710f1a</td></tr>
 </table><p>
 </body>
 </html>

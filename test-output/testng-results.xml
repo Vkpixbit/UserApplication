@@ -1,164 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="0" failed="0" skipped="1">
+<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-08-16T15:25:41 IST" name="Default suite" finished-at="2023-08-16T15:27:10 IST" duration-ms="88867">
+  <suite started-at="2023-09-08T16:56:19 IST" name="Default suite" finished-at="2023-09-08T16:56:20 IST" duration-ms="339">
     <groups>
     </groups>
-    <test started-at="2023-08-16T15:25:41 IST" name="Default test" finished-at="2023-08-16T15:27:10 IST" duration-ms="88867">
+    <test started-at="2023-09-08T16:56:19 IST" name="Default test" finished-at="2023-09-08T16:56:20 IST" duration-ms="339">
       <class name="propertyaddedit.TestPropertyAdd">
-        <test-method is-config="true" signature="configuration()[pri:0, instance:propertyaddedit.TestPropertyAdd@4b0d79fc]" started-at="2023-08-16T15:25:41 IST" name="configuration" finished-at="2023-08-16T15:26:23 IST" duration-ms="42072" status="PASS">
+        <test-method is-config="true" signature="configuration()[pri:0, instance:propertyaddedit.TestPropertyAdd@1a75e76a]" started-at="2023-09-08T16:56:19 IST" name="configuration" finished-at="2023-09-08T16:56:19 IST" duration-ms="77" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:226)
+at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:184)
+at org.openqa.selenium.remote.service.DriverService$Builder.getLogOutput(DriverService.java:448)
+at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:495)
+at globalfiles.GlobalData.configuration(GlobalData.java:40)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:180)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:122)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configuration -->
-        <test-method is-config="true" signature="openMyPropertyPage()[pri:0, instance:propertyaddedit.TestPropertyAdd@4b0d79fc]" started-at="2023-08-16T15:26:23 IST" name="openMyPropertyPage" finished-at="2023-08-16T15:27:10 IST" duration-ms="46422" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [0cc51c7a-bb70-48cc-94ab-b9c12d6a99b9, findElement {using=id, value=com.android.permissioncontroller:id/permission_allow_button}]
-Capabilities {appium:app: D://Eclipse_Automation//Use..., appium:appPackage: in.pixbit.proptech, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {app: D://Eclipse_Automation//Use..., automationName: UIAutomator2, deviceName: PixbitDevice, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 560, appium:deviceScreenSize: 1440x3120, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3.5, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2764, left: 0, top: 136, width: 1440}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 0cc51c7a-bb70-48cc-94ab-b9c12d6a99b9]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [0cc51c7a-bb70-48cc-94ab-b9c12d6a99b9, findElement {using=id, value=com.android.permissioncontroller:id/permission_allow_button}]
-Capabilities {appium:app: D://Eclipse_Automation//Use..., appium:appPackage: in.pixbit.proptech, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {app: D://Eclipse_Automation//Use..., automationName: UIAutomator2, deviceName: PixbitDevice, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 560, appium:deviceScreenSize: 1440x3120, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3.5, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2764, left: 0, top: 136, width: 1440}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 0cc51c7a-bb70-48cc-94ab-b9c12d6a99b9
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at globalfiles.GlobalData.approvePermission(GlobalData.java:69)
-at propertyaddedit.TestPropertyAdd.openMyPropertyPage(TestPropertyAdd.java:24)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method is-config="true" signature="openMyPropertyPage()[pri:0, instance:propertyaddedit.TestPropertyAdd@1a75e76a]" started-at="2023-09-08T16:56:19 IST" name="openMyPropertyPage" finished-at="2023-09-08T16:56:19 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openMyPropertyPage -->
-        <test-method signature="addJointProperty_1(java.util.HashMap)[pri:0, instance:propertyaddedit.TestPropertyAdd@4b0d79fc]" started-at="2023-08-16T15:27:10 IST" name="addJointProperty_1" data-provider="TownhousepropertyData_1" finished-at="2023-08-16T15:27:10 IST" duration-ms="0" status="SKIP">
+        <test-method signature="addSingleProperty_1(java.util.HashMap)[pri:0, instance:propertyaddedit.TestPropertyAdd@1a75e76a]" started-at="2023-09-08T16:56:20 IST" name="addSingleProperty_1" data-provider="VillapropertyData_3" finished-at="2023-09-08T16:56:20 IST" duration-ms="0" status="SKIP">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{present_use=Rented, area_region=Al Marmoom, age_of_property=2, owner_2_percentage=20, year=1990, property_value=874000, furnishing_status=Semi Furnished, property_name=Betterhomes, owner_1_percentage=80, unit_number=56, title_deed_number=75430004088, titledeedDocument=oquod marbella 47.pdf, property_category=Commercial, owner_2_phone_number=7556654009, plot_area_sq_mt=534.53, buildup_area=645.4, property_type=Townhouse, plot_area_sq_ft=4356.6, property_status=Ready}]]>
+                <![CDATA[{present_use=Rented, area_region=Abu Hail, owner_2_email=mujeeb123@gmail.com, year=1990, owner_4_percentage=20, property_value=654000, property_name=Casabella Property Broker, owner_4_phone_number=7546564675, owner_3_phone_number=9545505463, unit_number=56, title_deed_number=11114558, property_category=Commercial, owner_2_phone_number=6665554400, plot_area_sq_mt=534.53, property_type=Villa, owner_3_percentage=10, owner_2_name=Mujeeb, age_of_property=2, owner_2_percentage=10, furnishing_status=Semi Furnished, owner_1_percentage=50, titledeedDocument=oquod marbella 47.pdf, buildup_area=645.4, plot_area_sq_ft=4356.6, property_status=Ready}]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [0cc51c7a-bb70-48cc-94ab-b9c12d6a99b9, findElement {using=id, value=com.android.permissioncontroller:id/permission_allow_button}]
-Capabilities {appium:app: D://Eclipse_Automation//Use..., appium:appPackage: in.pixbit.proptech, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {app: D://Eclipse_Automation//Use..., automationName: UIAutomator2, deviceName: PixbitDevice, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 560, appium:deviceScreenSize: 1440x3120, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3.5, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2764, left: 0, top: 136, width: 1440}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 0cc51c7a-bb70-48cc-94ab-b9c12d6a99b9]]>
-            </message>
+          <exception class="java.lang.NullPointerException">
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [0cc51c7a-bb70-48cc-94ab-b9c12d6a99b9, findElement {using=id, value=com.android.permissioncontroller:id/permission_allow_button}]
-Capabilities {appium:app: D://Eclipse_Automation//Use..., appium:appPackage: in.pixbit.proptech, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {app: D://Eclipse_Automation//Use..., automationName: UIAutomator2, deviceName: PixbitDevice, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 560, appium:deviceScreenSize: 1440x3120, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3.5, appium:platformVersion: 13, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2764, left: 0, top: 136, width: 1440}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 0cc51c7a-bb70-48cc-94ab-b9c12d6a99b9
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at globalfiles.GlobalData.approvePermission(GlobalData.java:69)
-at propertyaddedit.TestPropertyAdd.openMyPropertyPage(TestPropertyAdd.java:24)
+              <![CDATA[java.lang.NullPointerException
+at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:226)
+at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:184)
+at org.openqa.selenium.remote.service.DriverService$Builder.getLogOutput(DriverService.java:448)
+at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:495)
+at globalfiles.GlobalData.configuration(GlobalData.java:40)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:180)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:122)
 at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addJointProperty_1 -->
-        <test-method is-config="true" signature="close()[pri:0, instance:propertyaddedit.TestPropertyAdd@4b0d79fc]" started-at="2023-08-16T15:27:10 IST" name="close" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1692179830383" status="SKIP">
+        </test-method> <!-- addSingleProperty_1 -->
+        <test-method is-config="true" signature="close()[pri:0, instance:propertyaddedit.TestPropertyAdd@1a75e76a]" started-at="2023-09-08T16:56:20 IST" name="close" finished-at="2023-09-08T16:56:20 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->

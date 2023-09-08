@@ -30,7 +30,7 @@ public class AddProperty extends AndroidActions {
 	private WebElement verifyButton;
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Continue']")
-	private WebElement continueButton;
+	public WebElement continueButton;
 
 	@AndroidFindBy(accessibility = "Add")
 	private WebElement addOwner;
@@ -146,15 +146,16 @@ public class AddProperty extends AndroidActions {
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='+971']")
 	private WebElement countryPickerClick;
 
-	private boolean isPermissionApproved;
+	//private boolean isPermissionApproved;
 
 	public void titleDeedVerification(String titledeedDocument, String title_deed_number, String year)
 			throws InterruptedException {
 		titleDeedUpload.click();
-		if (!isPermissionApproved) {
+		approvePermission();
+		/*if (!isPermissionApproved) {
 			approvePermission();
 			isPermissionApproved = true;
-		}
+		}*/
 		scrollToElementByText(titledeedDocument);
 		for (WebElement DocumentList : DocumentsList) {
 			String DocumentName = DocumentList.getText();
@@ -162,8 +163,9 @@ public class AddProperty extends AndroidActions {
 				DocumentList.click();
 			}
 		}
-		Thread.sleep(4000);
+		Thread.sleep(2000);
 		continueButton.click();
+		Thread.sleep(4000);
 		titleDeedNumberField.sendKeys(title_deed_number);
 		calender.click();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -178,8 +180,12 @@ public class AddProperty extends AndroidActions {
 		driver.findElement(By.xpath("//android.widget.TextView[@text='Joint ownership']")).click();
 	}
 	
-	//all owners in india
-	//Add one owner and skip one owner
+	public void selectSingleOwnership() {
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Single ownership']")).click();
+	}
+
+	// all owners in india
+	// Add one owner and skip one owner
 	public void addOneOwnerAndSkipOne(String owner_1_percentage) throws InterruptedException {
 		driver.findElement(By.xpath("//android.widget.TextView[@text='2']")).click();
 		addOwner.click();
@@ -190,9 +196,8 @@ public class AddProperty extends AndroidActions {
 				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Skip & Continue\"));"));
 		skipAndContinue.click();
 	}
-	
-	
-	//Owner all India
+
+	// Owner all India
 	// both owners are in the prosper
 	public void twoOwnerCountSelectionAndAdd(String owner_1_percentage, String owner_2_phone_number,
 			String owner_2_percentage) throws InterruptedException {
@@ -216,8 +221,8 @@ public class AddProperty extends AndroidActions {
 		clickSaveAndContinue.click();
 	}
 
-	//Owner all India
-	//Added Two owners are in the prosper
+	// Owner all India
+	// Added Two owners are in the prosper
 	public void threeOwnerCountSelectionAndSkipOne(String owner_1_percentage, String owner_2_phone_number,
 			String owner_2_percentage) throws InterruptedException {
 		driver.findElement(By.xpath("//android.widget.TextView[@text='3']")).click();
@@ -239,11 +244,12 @@ public class AddProperty extends AndroidActions {
 				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Skip & Continue\"));"));
 		skipAndContinue.click();
 	}
-	
-	//all owners in India
-	//Add three owners, 1 owner not in prosper and skip one
+
+	// all owners in India
+	// Add three owners, 1 owner not in prosper and skip one
 	public void fourOwnerAddThreeSkipOne(String owner_1_percentage, String owner_2_phone_number,
-			String owner_2_percentage,String owner_3_phone_number,String owner_3_email,String owner_3_name,String owner_3_percentage ) throws InterruptedException {
+			String owner_2_percentage, String owner_3_phone_number, String owner_3_email, String owner_3_name,
+			String owner_3_percentage) throws InterruptedException {
 		driver.findElement(By.xpath("//android.widget.TextView[@text='4']")).click();
 		addOwner.click();
 		Thread.sleep(2000);
@@ -275,6 +281,62 @@ public class AddProperty extends AndroidActions {
 		skipAndContinue.click();
 	}
 
+	// added owner not verified
+	// second owner is guest
+	// third is verifed
+	// fourth is  verified
+	// skip one
+	public void fiveOwnerAddFourSkipOne(String owner_1_percentage, String owner_2_phone_number, String owner_2_email,
+			String owner_2_name, String owner_2_percentage, String owner_3_phone_number, String owner_3_percentage,
+			String owner_4_phone_number, String owner_4_percentage) throws InterruptedException {
+		driver.findElement(By.xpath("//android.widget.TextView[@text='5']")).click();
+		addOwner.click();
+		Thread.sleep(2000);
+		ownerPercentageField.sendKeys(owner_1_percentage);
+		clickSave.click();
+		Thread.sleep(3000);
+		addOwner.click();
+		countryPickerClick.click();
+		countryEnterField.sendKeys("India");
+		clickIndia.click();
+		ownerPhoneField.sendKeys(owner_2_phone_number);
+		ownerEmailField.sendKeys(owner_2_email);
+		ownerNameField.sendKeys(owner_2_name);
+		ownerPercentageField.sendKeys(owner_2_percentage);
+		clickSave.click();
+		Thread.sleep(3000);
+		driver.findElement(AppiumBy
+				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Add Owner 3/5\"));"));
+		addOwner.click();
+		countryPickerClick.click();
+		countryEnterField.sendKeys("India");
+		clickIndia.click();
+		ownerPhoneField.sendKeys(owner_3_phone_number);
+		ownerPercentageField.sendKeys(owner_3_percentage);
+		clickSave.click();
+		Thread.sleep(3000);
+		driver.findElement(AppiumBy
+				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Add Owner 4/5\"));"));
+		addOwner.click();
+		countryPickerClick.click();
+		countryEnterField.sendKeys("India");
+		clickIndia.click();
+		ownerPhoneField.sendKeys(owner_4_phone_number);
+		ownerPercentageField.sendKeys(owner_4_percentage);
+		clickSave.click();
+		driver.findElement(AppiumBy
+				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Skip & Continue\"));"));
+		skipAndContinue.click();
+	}
+	
+	//skip all owners adding
+	public void twoOwnersSkipAll() {
+		driver.findElement(By.xpath("//android.widget.TextView[@text='5']")).click();
+		driver.findElement(AppiumBy
+				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Skip & Continue\"));"));
+		skipAndContinue.click();
+	}
+
 	// Joint property,Property type not add service apartment,Office,Apartment
 	public void propertyAdd(String property_name, String property_category, String property_type,
 			String property_status, String age_of_property, String present_use, String area_region,
@@ -289,16 +351,18 @@ public class AddProperty extends AndroidActions {
 																									// Apartment,Office,Apartment
 		WebElement propertyStatus = driver
 				.findElement(By.xpath("//android.widget.TextView[@text='" + property_status + "']"));
-		  propertyStatus.click();
+		propertyStatus.click();
 		if (propertyStatus.isSelected() && property_status.equals("Under construction")) {
 			nextButtonClick();
 		} else {
 			driver.findElement(By.xpath("//android.widget.TextView[@text='" + age_of_property + "']")).click();
 			driver.findElement(By.xpath("//android.widget.TextView[@text='" + present_use + "']")).click();
+			driver.findElement(
+					AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Next\"));"));
 			nextButtonClick();
 		}
 		areaRegionClick.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		driver.findElement(AppiumBy.androidUIAutomator(
 				"new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + area_region + "\"));"));
 		driver.findElement(By.xpath("//android.widget.TextView[@text='" + area_region + "']")).click();
