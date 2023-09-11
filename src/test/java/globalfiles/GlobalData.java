@@ -17,6 +17,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableMap;
@@ -37,8 +39,8 @@ public class GlobalData {
 		service = new AppiumServiceBuilder()
 				.withAppiumJS(new File(
 						"C://Users//vishnudas//AppData//Roaming//npm//node_modules//appium//build//lib//main.js"))
-				.withIPAddress("127.0.0.1").usingPort(4723).build();
-		// service.start();
+				.withIPAddress("127.0.0.1").usingPort(4723).usingDriverExecutable(new File("C://Program Files//nodejs//node.exe")).build();
+		//service.start();
 
 		UiAutomator2Options options = new UiAutomator2Options();
 		options.setDeviceName("PixbitDevice");

@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-08T16:56:19 IST" name="Default suite" finished-at="2023-09-08T16:56:20 IST" duration-ms="339">
+  <suite started-at="2023-09-11T16:52:44 IST" name="Default suite" finished-at="2023-09-11T16:52:44 IST" duration-ms="275">
     <groups>
     </groups>
-    <test started-at="2023-09-08T16:56:19 IST" name="Default test" finished-at="2023-09-08T16:56:20 IST" duration-ms="339">
+    <test started-at="2023-09-11T16:52:44 IST" name="Default test" finished-at="2023-09-11T16:52:44 IST" duration-ms="275">
       <class name="propertyaddedit.TestPropertyAdd">
-        <test-method is-config="true" signature="configuration()[pri:0, instance:propertyaddedit.TestPropertyAdd@1a75e76a]" started-at="2023-09-08T16:56:19 IST" name="configuration" finished-at="2023-09-08T16:56:19 IST" duration-ms="77" status="FAIL">
+        <test-method is-config="true" signature="configuration()[pri:0, instance:propertyaddedit.TestPropertyAdd@1a75e76a]" started-at="2023-09-11T16:52:44 IST" name="configuration" finished-at="2023-09-11T16:52:44 IST" duration-ms="58" status="FAIL">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
@@ -15,7 +15,7 @@ at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:226)
 at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:184)
 at org.openqa.selenium.remote.service.DriverService$Builder.getLogOutput(DriverService.java:448)
 at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:495)
-at globalfiles.GlobalData.configuration(GlobalData.java:40)
+at globalfiles.GlobalData.configuration(GlobalData.java:42)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -48,11 +48,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configuration -->
-        <test-method is-config="true" signature="openMyPropertyPage()[pri:0, instance:propertyaddedit.TestPropertyAdd@1a75e76a]" started-at="2023-09-08T16:56:19 IST" name="openMyPropertyPage" finished-at="2023-09-08T16:56:19 IST" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="openMyPropertyPage()[pri:0, instance:propertyaddedit.TestPropertyAdd@1a75e76a]" started-at="2023-09-11T16:52:44 IST" name="openMyPropertyPage" finished-at="2023-09-11T16:52:44 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openMyPropertyPage -->
-        <test-method signature="addSingleProperty_1(java.util.HashMap)[pri:0, instance:propertyaddedit.TestPropertyAdd@1a75e76a]" started-at="2023-09-08T16:56:20 IST" name="addSingleProperty_1" data-provider="VillapropertyData_3" finished-at="2023-09-08T16:56:20 IST" duration-ms="0" status="SKIP">
+        <test-method signature="addSingleProperty_1(java.util.HashMap)[pri:0, instance:propertyaddedit.TestPropertyAdd@1a75e76a]" started-at="2023-09-11T16:52:44 IST" name="addSingleProperty_1" data-provider="VillapropertyData_3" finished-at="2023-09-11T16:52:44 IST" duration-ms="0" status="SKIP">
           <params>
             <param index="0">
               <value>
@@ -67,7 +67,7 @@ at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:226)
 at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:184)
 at org.openqa.selenium.remote.service.DriverService$Builder.getLogOutput(DriverService.java:448)
 at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:495)
-at globalfiles.GlobalData.configuration(GlobalData.java:40)
+at globalfiles.GlobalData.configuration(GlobalData.java:42)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -100,7 +100,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addSingleProperty_1 -->
-        <test-method is-config="true" signature="close()[pri:0, instance:propertyaddedit.TestPropertyAdd@1a75e76a]" started-at="2023-09-08T16:56:20 IST" name="close" finished-at="2023-09-08T16:56:20 IST" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="close()[pri:0, instance:propertyaddedit.TestPropertyAdd@1a75e76a]" started-at="2023-09-11T16:52:44 IST" name="close" finished-at="2023-09-11T16:52:44 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
