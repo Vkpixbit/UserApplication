@@ -48,7 +48,7 @@ public class TestPropertyAdd extends GlobalData {
 	@DataProvider
 	public Object[][] TownhousepropertyData_1() throws IOException {
 		List<HashMap<String, String>> value = getjsondata(
-				"D://Eclipse_Automation//UserApp//src//test//java//data//PropertyAddDetails.json");
+				"/Users/vk14/git/UserApplication/src/test/java/data/PropertyAddDetails.json");
 		return new Object[][] { { value.get(1) } };
 	}
 
@@ -111,7 +111,7 @@ public class TestPropertyAdd extends GlobalData {
 	@DataProvider
 	public Object[][] VillapropertyData_1() throws IOException {
 		List<HashMap<String, String>> value = getjsondata(
-				"D://Eclipse_Automation//UserApp//src//test//java//data//PropertyAddDetails.json");
+				"/Users/vk14/git/UserApplication/src/test/java/data/PropertyAddDetails.json");
 		return new Object[][] { { value.get(6) } };
 	}
 
@@ -139,7 +139,7 @@ public class TestPropertyAdd extends GlobalData {
 	@DataProvider
 	public Object[][] VillapropertyData_2() throws IOException {
 		List<HashMap<String, String>> value = getjsondata(
-				"D://Eclipse_Automation//UserApp//src//test//java//data//PropertyAddDetails.json");
+				"/Users/vk14/git/UserApplication/src/test/java/data/PropertyAddDetails.json");
 		return new Object[][] { { value.get(7) } };
 	}
 	
@@ -164,7 +164,7 @@ public class TestPropertyAdd extends GlobalData {
 	@DataProvider
 	public Object[][] VillapropertyData_3() throws IOException {
 		List<HashMap<String, String>> value = getjsondata(
-				"D://Eclipse_Automation//UserApp//src//test//java//data//PropertyAddDetails.json");
+				"/Users/vk14/git/UserApplication/src/test/java/data/PropertyAddDetails.json");
 		return new Object[][] { { value.get(8) } };
 	}
 	

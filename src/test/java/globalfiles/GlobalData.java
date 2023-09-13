@@ -17,8 +17,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableMap;
@@ -38,13 +36,13 @@ public class GlobalData {
 
 		service = new AppiumServiceBuilder()
 				.withAppiumJS(new File(
-						"C://Users//vishnudas//AppData//Roaming//npm//node_modules//appium//build//lib//main.js"))
-				.withIPAddress("127.0.0.1").usingPort(4723).usingDriverExecutable(new File("C://Program Files//nodejs//node.exe")).build();
+						"//usr//local//lib//node_modules//appium//build//lib//main.js"))
+				.withIPAddress("127.0.0.1").usingPort(4723).build();
 		//service.start();
 
 		UiAutomator2Options options = new UiAutomator2Options();
-		options.setDeviceName("PixbitDevice");
-		options.setApp("D://Eclipse_Automation//UserApp//src//test//java//resources//user_app_staging.apk");
+		options.setDeviceName("QAAndroid");
+		options.setApp("//Users//vk14//git//UserApplication//src/test//java//resources//user_app_staging.apk");
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
 
