@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import globalfiles.GlobalData;
+import globalfiles.AndroidGlobalData;
 import pageobject.HomePage;
 import pageobject.LoginPage;
 import pageobject.MyProperties;
@@ -17,7 +17,7 @@ import pageobject.PropertyDetails;
 import pageobject.PublishProperty;
 import pageobject.SplashScreen;
 
-public class PropertyPublishing extends GlobalData {
+public class PropertyPublishing extends AndroidGlobalData {
 
 	@BeforeClass
 	public void openMyPropertyPage() {

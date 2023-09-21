@@ -23,20 +23,21 @@ public class ProfilePage {
 	private WebElement rmname;
 	
 	@AndroidFindBy(accessibility = "rented_property")
-	private WebElement addRentalClick;
+	private WebElement rentedPropertiesClick;
 
 	public MyProperties openMyProperties() {
 		myPropertyClick.click();
 		return new MyProperties(driver);
 	}
 	
-	public AddRental openMyRentalList() {
-		addRentalClick.click();
-		return new AddRental(driver);
+	public RentedPropertiesList openRentedProperties() {
+		rentedPropertiesClick.click();
+		return new RentedPropertiesList(driver);
 	}
 	
 	public String getRmName() {
 		String userRmName=rmname.getAttribute("text");
 		return userRmName;
 	}
+
 }

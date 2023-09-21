@@ -11,10 +11,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import globalfiles.GlobalData;
+import globalfiles.AndroidGlobalData;
 import io.appium.java_client.AppiumBy;
 
-public class AddProperty extends GlobalData {
+public class AddProperty extends AndroidGlobalData {
 
 	@Test(dataProvider = "propertyAddData")
 	public void Add_Property(HashMap<String, String> input) throws MalformedURLException, InterruptedException {

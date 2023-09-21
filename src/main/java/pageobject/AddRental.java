@@ -42,7 +42,16 @@ public class AddRental extends AndroidActions {
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Verify']")
 	private WebElement clickVerify;
+	
+	@AndroidFindBy(xpath = "//android.widget.EditText[@index='7']")
+	private WebElement endDateField;
 
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Save without cheque']")
+	private WebElement savewithoutCheque;
+	
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Done']")
+	private WebElement clickDone;
+	
 	public void roleAsOwner() {
 		propertyOwnerJourny.click();
 	}
@@ -53,9 +62,20 @@ public class AddRental extends AndroidActions {
 		Thread.sleep(2000);
 	}
 
-	public void uploadEjari(String ejariDocument) throws InterruptedException {
+	public void uploadEjariRentalFlow(String ejariDocument) throws InterruptedException {
 		ejariUploadClick.click();
 		approvePermission();
+		Thread.sleep(3000);
+		for (WebElement DocumentList : DocumentsList) {
+			String DocumentName = DocumentList.getText();
+			if (DocumentName.equals(ejariDocument)) {
+				DocumentList.click();
+			}
+		}
+	}
+	
+	public void uploadEjari(String ejariDocument) throws InterruptedException {
+		ejariUploadClick.click();
 		Thread.sleep(3000);
 		for (WebElement DocumentList : DocumentsList) {
 			String DocumentName = DocumentList.getText();
@@ -87,10 +107,15 @@ public class AddRental extends AndroidActions {
 		Thread.sleep(3000);
 	}
 	
-	public void enterRentalDetails() {
+	public void enterRentalDetailsOwner(String end_date) throws InterruptedException {
 		driver.findElement(AppiumBy
-				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Start Date (Required)\"));"));
-		
+				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"End Date (Required)\"));"));
+		endDateField.sendKeys(end_date);
+		driver.findElement(AppiumBy
+				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Next\"));"));
+		clickNext.click();
+		savewithoutCheque.click();
+		clickDone.click();
 	}
 
 }

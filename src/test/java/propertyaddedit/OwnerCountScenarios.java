@@ -7,7 +7,7 @@ import java.util.List;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import globalfiles.GlobalData;
+import globalfiles.AndroidGlobalData;
 import pageobject.AddProperty;
 import pageobject.HomePage;
 import pageobject.LoginPage;
@@ -15,7 +15,7 @@ import pageobject.MyProperties;
 import pageobject.ProfilePage;
 import pageobject.SplashScreen;
 
-public class OwnerCountScenarios extends GlobalData {
+public class OwnerCountScenarios extends AndroidGlobalData {
 
 	@Test(dataProvider = "villapropertyData_2")
 	public void ownerCountChangeAfterEnterDetails(HashMap<String, String> input) throws InterruptedException {

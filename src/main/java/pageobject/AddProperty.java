@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.pagefactory.AndroidBy;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import utilites.AndroidActions;
@@ -95,25 +96,25 @@ public class AddProperty extends AndroidActions {
 	@AndroidFindBy(xpath = "//android.widget.ImageView[@index='6']")
 	private WebElement propertyTypeScroll;
 
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='6']")
+	@AndroidFindBy(xpath = "//android.widget.EditText[@index='1']")
 	private WebElement buildingNumberField;
 
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='8']")
+	@AndroidFindBy(xpath = "//android.widget.EditText[@index='3']")
 	private WebElement buildingNameField;
 
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='10']")
+	@AndroidFindBy(xpath = "//android.widget.EditText[@index='5']")
 	private WebElement propertyNumberField;
 
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='6']")
+	@AndroidFindBy(xpath = "//android.widget.EditText[@index='7']")
 	private WebElement floorNumberField;
 
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='8']")
+	@AndroidFindBy(xpath = "//android.widget.EditText[@index='9']")
 	private WebElement parkingField;
 
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='10']")
+	@AndroidFindBy(xpath = "//android.widget.EditText[@index='2']")
 	private WebElement suiteAreaField;
 
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='12']")
+	@AndroidFindBy(xpath = "//android.widget.EditText[@index='4']")
 	private WebElement balconyAreaField;
 
 	@AndroidFindBy(xpath = "//android.widget.EditText[@index='6']")
@@ -146,26 +147,21 @@ public class AddProperty extends AndroidActions {
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='+971']")
 	private WebElement countryPickerClick;
 
-	//private boolean isPermissionApproved;
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Add Rental Details']")
+	private WebElement clickAddRent;
+
+	// private boolean isPermissionApproved;
 
 	public void titleDeedVerification(String titledeedDocument, String title_deed_number, String year)
 			throws InterruptedException {
 		titleDeedUpload.click();
 		approvePermission();
-		/*if (!isPermissionApproved) {
-			approvePermission();
-			isPermissionApproved = true;
-		}*/
 		scrollToElementByText(titledeedDocument);
-		for (WebElement DocumentList : DocumentsList) {
-			String DocumentName = DocumentList.getText();
-			if (DocumentName.equals(titledeedDocument)) {
-				DocumentList.click();
-			}
-		}
 		Thread.sleep(2000);
+		driver.findElement(By.xpath("//android.widget.TextView[@text='" + titledeedDocument + "']")).click();
+		Thread.sleep(3000);
 		continueButton.click();
-		Thread.sleep(4000);
+		// Thread.sleep(4000);
 		titleDeedNumberField.sendKeys(title_deed_number);
 		calender.click();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -179,7 +175,7 @@ public class AddProperty extends AndroidActions {
 	public void selectJointOwnership() {
 		driver.findElement(By.xpath("//android.widget.TextView[@text='Joint ownership']")).click();
 	}
-	
+
 	public void selectSingleOwnership() {
 		driver.findElement(By.xpath("//android.widget.TextView[@text='Single ownership']")).click();
 	}
@@ -284,7 +280,7 @@ public class AddProperty extends AndroidActions {
 	// added owner not verified
 	// second owner is guest
 	// third is verifed
-	// fourth is  verified
+	// fourth is verified
 	// skip one
 	public void fiveOwnerAddFourSkipOne(String owner_1_percentage, String owner_2_phone_number, String owner_2_email,
 			String owner_2_name, String owner_2_percentage, String owner_3_phone_number, String owner_3_percentage,
@@ -328,8 +324,8 @@ public class AddProperty extends AndroidActions {
 				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Skip & Continue\"));"));
 		skipAndContinue.click();
 	}
-	
-	//skip all owners adding
+
+	// skip all owners adding
 	public void twoOwnersSkipAll() {
 		driver.findElement(By.xpath("//android.widget.TextView[@text='5']")).click();
 		driver.findElement(AppiumBy
@@ -338,13 +334,13 @@ public class AddProperty extends AndroidActions {
 	}
 
 	// Joint property,Property type not add service apartment,Office,Apartment
-	public void propertyAdd(String property_name, String property_category, String property_type,
+	public void propertyAdd_villa_townhouse(String property_name, String property_category, String property_type,
 			String property_status, String age_of_property, String present_use, String area_region,
 			String property_value, String unit_number, String plot_area_sq_mt, String plot_area_sq_ft,
 			String buildup_area, String furnishing_status) throws InterruptedException {
 		propertyNameField.sendKeys(property_name);
 		driver.findElement(By.xpath("//android.widget.TextView[@text=\'" + property_category + "\']")).click();
-		driver.findElement(By.xpath("//android.widget.TextView[@text='" + property_type + "']")); // Not add
+		driver.findElement(By.xpath("//android.widget.TextView[@text='" + property_type + "']")); // add
 																									// property
 																									// type as
 																									// Service
@@ -390,8 +386,79 @@ public class AddProperty extends AndroidActions {
 		driver.findElement(AppiumBy
 				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Save Property\"));"));
 		savePropertyButton.click();
+	}
+
+	public void propertyAdd_apartment_serviceApartment(String property_name, String property_category,
+			String property_type, String property_status, String age_of_property, String present_use,
+			String area_region, String property_value, String building_number, String building_name,
+			String property_number, String floor_number, String parking, String suite_area, String balcony_area,
+			String total_area_sqm,String total_area_sqft,String common_area,String furnishing_status) throws InterruptedException {
+		propertyNameField.sendKeys(property_name);
+		driver.findElement(By.xpath("//android.widget.TextView[@text=\'" + property_category + "\']")).click();
+		driver.findElement(By.xpath("//android.widget.TextView[@text='" + property_type + "']")).click(); // add property type
+																									      // as apartment or
+																									      // service apartment
+
+		WebElement propertyStatus = driver
+				.findElement(By.xpath("//android.widget.TextView[@text='" + property_status + "']"));
+		propertyStatus.click();
+		if (propertyStatus.isSelected() && property_status.equals("Under construction")) {
+			nextButtonClick();
+		} else {
+			driver.findElement(By.xpath("//android.widget.TextView[@text='" + age_of_property + "']")).click();
+			driver.findElement(By.xpath("//android.widget.TextView[@text='" + present_use + "']")).click();
+			driver.findElement(
+					AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Next\"));"));
+			nextButtonClick();
+		}
+		areaRegionClick.click();
+		Thread.sleep(2000);
+		driver.findElement(AppiumBy.androidUIAutomator(
+				"new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + area_region + "\"));"));
+		driver.findElement(By.xpath("//android.widget.TextView[@text='" + area_region + "']")).click();
+		AppiumBy.androidUIAutomator(
+				"new UiScrollable(new UiSelector()).scrollIntoView(text(\"Purchase Amount (Required)\"));");
+		propertyValueField.sendKeys(property_value);
+		driver.findElement(AppiumBy.androidUIAutomator(
+				"new UiScrollable(new UiSelector()).scrollIntoView(text(\"Balcony Area (Required)\"));"));
+		buildingNumberField.sendKeys(building_number);
+		buildingNameField.sendKeys(building_name);
+		propertyNumberField.sendKeys(property_number);
+		floorNumberField.sendKeys(floor_number);
+		parkingField.sendKeys(parking);
+		driver.findElement(
+				AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Next\"));"));
+		suiteAreaField.sendKeys(suite_area);
+		balconyAreaField.sendKeys(balcony_area);
+		totalAreaSqMt.sendKeys(total_area_sqm);
+		totalAreaSqFt.sendKeys(total_area_sqft);
+		commonArea.sendKeys(common_area);
+		nextButtonClick();
+		Thread.sleep(2000);
+		myLocationClick.click();
+		Thread.sleep(2000);
+		alwaysGivePermission();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.attributeContains(
+				driver.findElement(By.xpath("//android.widget.TextView[@text='Select Location']")), "text",
+				"Select Location"));
+		selectLocation.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//android.widget.TextView[@text='" + furnishing_status + "']")).click();
+		driver.findElement(AppiumBy
+				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Save Property\"));"));
+		savePropertyButton.click();
+	}
+
+	public void skip_rent() throws InterruptedException {
 		skipRentButton.click();
 		Thread.sleep(2000);
+	}
+
+	public AddRental addRental_propertyAdd() throws InterruptedException {
+		clickAddRent.click();
+		Thread.sleep(20000);
+		return new AddRental(driver);
 	}
 
 }

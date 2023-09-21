@@ -9,12 +9,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import globalfiles.GlobalData;
+import globalfiles.AndroidGlobalData;
 import pageobject.AddProperty;
 
 import pageobject.MyProperties;
 
-public class VerifyBuildUpAreaPropertyPrice extends GlobalData {
+public class VerifyBuildUpAreaPropertyPrice extends AndroidGlobalData {
 
 	@BeforeMethod()
 	public void openAddPropertyPage() {

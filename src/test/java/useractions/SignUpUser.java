@@ -5,13 +5,13 @@ import java.util.HashMap;
 import java.util.List;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import globalfiles.GlobalData;
+import globalfiles.AndroidGlobalData;
 import pageobject.HomePage;
 import pageobject.LoginPage;
 import pageobject.ProfilePage;
 import pageobject.SplashScreen;
 
-public class SignUpUser extends GlobalData{
+public class SignUpUser extends AndroidGlobalData{
 
 	@Test(dataProvider = "userCreationData")
 	public void createUser(HashMap<String, String>input) throws InterruptedException {

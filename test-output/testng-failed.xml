@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="propertyaddedit.TestPropertyAdd">
+      <class name="rental.RentAddAfterPropertyAdd">
         <methods>
           <include name="close"/>
-          <include name="configuration"/>
-          <include name="addSingleProperty_1"/>
           <include name="openMyPropertyPage"/>
+          <include name="rentAddForSinglePropertyAddingFlow" invocation-numbers="0"/>
+          <include name="configuration"/>
         </methods>
-      </class> <!-- propertyaddedit.TestPropertyAdd -->
+      </class> <!-- rental.RentAddAfterPropertyAdd -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

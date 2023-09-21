@@ -11,10 +11,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import globalfiles.GlobalData;
+import globalfiles.AndroidGlobalData;
 import io.appium.java_client.AppiumBy;
 
-public class Addrental extends GlobalData {
+public class Addrental extends AndroidGlobalData {
 
 	@Test(dataProvider = "PropertyOwnerRentalData")
 	public void addRentalForSpecificProperty(HashMap<String, String> input)

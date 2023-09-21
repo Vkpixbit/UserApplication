@@ -60,7 +60,7 @@ public class AndroidActions {
 	}
 
 	public void approvePermission() {
-		driver.findElement(By.id("com.android.permissioncontroller:id/permission_allow_button")).click();
+		driver.findElement(By.id("com.android.permissioncontroller:id/permission_allow_all_button")).click();
 	}
 
 	public void alwaysGivePermission() {

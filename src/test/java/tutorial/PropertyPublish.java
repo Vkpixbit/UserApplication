@@ -12,10 +12,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import globalfiles.GlobalData;
+import globalfiles.AndroidGlobalData;
 import io.appium.java_client.AppiumBy;
 
-public class PropertyPublish extends GlobalData {
+public class PropertyPublish extends AndroidGlobalData {
 
 	@Test(dataProvider = "propertyPublishData")
 	public void propertyPublishForSale(HashMap<String, String> input)

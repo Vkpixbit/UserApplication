@@ -4,9 +4,9 @@ import java.net.MalformedURLException;
 
 import org.testng.annotations.Test;
 
-import globalfiles.GlobalData;
+import globalfiles.AndroidGlobalData;
 
-public class PropertyMarkAsSold extends GlobalData{
+public class PropertyMarkAsSold extends AndroidGlobalData{
 
 	@Test
 	public void verifyMarkAsSold() throws MalformedURLException {
