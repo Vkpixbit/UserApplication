@@ -9,18 +9,18 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">94,423</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">107,058</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">rental.RentAddAfterPropertyAdd</td><td><a href="#m0">rentAddForSinglePropertyAddingFlow</a></td><td rowspan="1">1695284477265</td><td rowspan="1">76760</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">propertyaddedit.TestpropertyAdd</td><td><a href="#m0">addJointProperty_1</a></td><td rowspan="1">1695288585811</td><td rowspan="1">93293</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">rental.RentAddAfterPropertyAdd#rentAddForSinglePropertyAddingFlow</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{present_use=Rented, area_region=10 Tower, tenancy_document=Tenancy contract sample.pdf, end_date=15/09/2023, age_of_property=2, year=1991, property_value=654000, furnishing_status=Semi Furnished, ejari_document=Ejari Sample.pdf, property_name=Single Android prop 23.1, unit_number=56, title_deed_number=49700105, titledeedDocument=oquod marbella 47.pdf, property_category=Commercial, plot_area_sq_mt=534.53, buildup_area=645.4, ejari_numner=64545445v23, property_type=Villa, plot_area_sq_ft=4356.6, property_status=Ready}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+<h2>Default test</h2><h3 id="m0">propertyaddedit.TestpropertyAdd#addJointProperty_1</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{present_use=Rented, area_region=10 Tower, age_of_property=2, owner_2_percentage=20, year=2000, property_value=984000, furnishing_status=Furnished, property_name=joint android prop 23.1, owner_1_percentage=80, unit_number=56, title_deed_number=200154434375, titledeedDocument=oquod marbella 47.pdf, property_category=Commercial, owner_2_phone_number=8136868284, plot_area_sq_mt=534.53, buildup_area=645.4, property_type=Villa, plot_area_sq_ft=4356.6, property_status=Ready}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.12.1&apos;, revision: &apos;8e34639b11&apos;
 System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;13.5.2&apos;, java.version: &apos;17.0.8.1&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [a8be6241-453b-4036-9683-5e5895018226, findElement {using=xpath, value=//android.widget.TextView[@text=&apos;Single ownership&apos;]}]
+Command: [8833cab9-3d37-4506-86dc-910e2808b537, findElement {using=-android uiautomator, value=new UiScrollable(new UiSelector()).scrollIntoView(text(&quot;Save &amp; Continue&quot;));}]
 Capabilities {appium:app: //Users//vk14//git//UserApp..., appium:appPackage: in.pixbit.proptech, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {app: //Users//vk14//git//UserApp..., automationName: UIAutomator2, deviceName: QAAndroid, platformName: ANDROID}, appium:deviceApiLevel: 34, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_arm64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 560, appium:deviceScreenSize: 1440x3120, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3.5, appium:platformVersion: 14, appium:statBarHeight: 84, appium:takesScreenshot: true, appium:viewportRect: {height: 2807, left: 0, top: 84, width: 1440}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: a8be6241-453b-4036-9683-5e5895018226
+Session ID: 8833cab9-3d37-4506-86dc-910e2808b537
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -36,8 +36,8 @@ Session ID: a8be6241-453b-4036-9683-5e5895018226
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
-	at pageobject.AddProperty.selectSingleOwnership(AddProperty.java:180)
-	at rental.RentAddAfterPropertyAdd.rentAddForSinglePropertyAddingFlow(RentAddAfterPropertyAdd.java:39)
+	at pageobject.AddProperty.twoOwnerCountSelectionAndAdd(AddProperty.java:215)
+	at propertyaddedit.TestpropertyAdd.addJointProperty_1(TestpropertyAdd.java:38)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

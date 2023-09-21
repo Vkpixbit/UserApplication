@@ -28,7 +28,7 @@ public class TestpropertyAdd extends AndroidGlobalData {
 
 	// 2 owners are in the prosper
 	// joint Property,property type is villa/townhouse
-	@Test(dataProvider = "TownhousepropertyData_1",enabled = false)
+	@Test(dataProvider = "TownhousepropertyData_1")
 	public void addJointProperty_1(HashMap<String, String> input) throws InterruptedException {
 		MyProperties Myproperties = new MyProperties(driver);
 		AddProperty AddProperty = Myproperties.openAddPropertyPage();
@@ -199,7 +199,7 @@ public class TestpropertyAdd extends AndroidGlobalData {
 
 	// Single owned property
 	//property type is villa/townhouse
-	@Test(dataProvider = "VillapropertyData_3")
+	@Test(dataProvider = "VillapropertyData_3",enabled = false)
 	public void addSingleProperty_1(HashMap<String, String> input) throws InterruptedException {
 		MyProperties MyProperties = new MyProperties(driver);
 		AddProperty AddProperty = MyProperties.openAddPropertyPage();
@@ -217,7 +217,7 @@ public class TestpropertyAdd extends AndroidGlobalData {
 	
 	//single owned property
 	//property type is apartment/service apartment
-	@Test(dataProvider = "apartmentServiceApartment_3")
+	@Test(dataProvider = "apartmentServiceApartment_3",enabled = false)
 	public void addSingleProperty_2(HashMap<String, String>input) throws InterruptedException {
 		MyProperties MyProperties = new MyProperties(driver);
 		AddProperty AddProperty = MyProperties.openAddPropertyPage();
