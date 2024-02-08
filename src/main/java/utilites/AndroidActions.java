@@ -1,5 +1,6 @@
 package utilites;
 
+import java.awt.event.KeyEvent;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -26,6 +27,7 @@ import io.appium.java_client.touch.offset.PointOption;
 public class AndroidActions {
 
 	AndroidDriver driver;
+	public AndroidActions actions;
 
 	public AndroidActions(AndroidDriver driver) {
 		this.driver = driver;
@@ -91,10 +93,16 @@ public class AndroidActions {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
 		return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(String.format(locator.toString(), value))));
 	}
+		
+	public void click_done() throws InterruptedException {
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Done']")).click();
+	}
 
 	public void cancelActivity() {
 		cancelButton.click();
 		cancelYes.click();
 	}
+	
 
 }

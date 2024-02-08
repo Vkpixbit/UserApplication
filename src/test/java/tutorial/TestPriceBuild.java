@@ -1,5 +1,6 @@
 package tutorial;
 
+import org.testng.annotations.Test;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.time.Duration;

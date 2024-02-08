@@ -8,6 +8,7 @@ import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -15,11 +16,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableMap;
+
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
@@ -32,7 +35,7 @@ public class AndroidGlobalData {
 	public AndroidDriver driver;
 	public AppiumDriverLocalService service;
 
-	@BeforeClass
+	@BeforeSuite
 	public void configuration() throws MalformedURLException {
 		HashMap<String, String> environment = new HashMap<String, String>();
 		environment.put("PATH", "/usr/local/bin:" + System.getenv("PATH"));
@@ -44,21 +47,18 @@ public class AndroidGlobalData {
 
 		service = AppiumDriverLocalService.buildService(builder);
 
-		//System.out.println("Server started at :" + service.getUrl());
-
-		//service.start();
-
-		//System.out.println("Server is Started.");
 
 		UiAutomator2Options options = new UiAutomator2Options();
 		options.setDeviceName("QAAndroid");
-		options.setApp("//Users//vk14//git//UserApplication//src//test//java//resources//user_app_uat.apk");
+		// if i use this options.setDeviceName("Android Device") , then it should be run
+		// any android device
+		options.setApp("//Users//vk14//git//UserApplication//src/test//java//resources//user_app_staging.apk");
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
 
 	}
 
-	@AfterClass
+	@AfterSuite
 	public void close() {
 		driver.quit();
 		service.close();

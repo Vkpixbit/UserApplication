@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="propertyaddedit.TestpropertyAdd">
+      <class name="useractions.SignUpUser">
         <methods>
+          <include name="createUser" invocation-numbers="1"/>
           <include name="configuration"/>
-          <include name="openMyPropertyPage"/>
           <include name="close"/>
-          <include name="addJointProperty_1" invocation-numbers="0"/>
         </methods>
-      </class> <!-- propertyaddedit.TestpropertyAdd -->
+      </class> <!-- useractions.SignUpUser -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

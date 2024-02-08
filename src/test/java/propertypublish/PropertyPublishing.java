@@ -1,13 +1,12 @@
 package propertypublish;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
-
 import globalfiles.AndroidGlobalData;
 import pageobject.HomePage;
 import pageobject.LoginPage;

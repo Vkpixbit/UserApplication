@@ -42,5 +42,19 @@
 "tenancy_document":"Tenancy contract sample.pdf",
 "ejari_numner":"665455445v23",
 "end_date":"15/09/2023"
+},
+{
+"rent_property":"joint android prop 23.1",
+"ejari_document":"Ejari Sample.pdf",
+"tenancy_document":"Tenancy contract sample.pdf",
+"ejari_number":"64940900v3434",
+"end_date":"12/10/2023"
+},
+{
+"rent_property":"joint android prop 23.1",
+"ejari_document":"Ejari Sample.pdf",
+"tenancy_document":"Tenancy contract sample.pdf",
+"ejari_number":"649233900v3434",
+"end_date":"12/10/2023"
 }
 ]

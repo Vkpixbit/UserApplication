@@ -28,7 +28,7 @@ public class LoginPage extends AndroidActions {
 	@AndroidFindBy(xpath = "(//android.widget.TextView[@text='Login'])[2]")
 	private WebElement loginButton;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Sign Up']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Sign up']")
 	private WebElement signUpTab;
 
 	@AndroidFindBy(xpath = "//android.widget.EditText[@index='4']")
@@ -99,6 +99,7 @@ public class LoginPage extends AndroidActions {
 		Thread.sleep(2000);
 		privacyPolicyClick.click();
 		createAccount.click();
+		
 	}
 
 	public HomePage skipVerification() throws InterruptedException {

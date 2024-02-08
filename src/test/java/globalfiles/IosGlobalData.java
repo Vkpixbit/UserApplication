@@ -1,5 +1,6 @@
 package globalfiles;
 
+
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -8,6 +9,8 @@ import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -17,22 +20,28 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
+import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.ios.options.XCUITestOptions;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
 
 public class IosGlobalData {
 
-	public AndroidDriver driver;
+	public IOSDriver driver;
 	public AppiumDriverLocalService service;
 
-	@BeforeClass
+	
+	//This we fully pass the files of that application
+	@Test  
 	public void configuration() throws MalformedURLException {
 		HashMap<String, String> environment = new HashMap<String, String>();
 		environment.put("PATH", "/usr/local/bin:" + System.getenv("PATH"));
@@ -44,25 +53,29 @@ public class IosGlobalData {
 
 		service = AppiumDriverLocalService.buildService(builder);
 
-		//System.out.println("Server started at :" + service.getUrl());
-
-		//service.start();
-
-		//System.out.println("Server is Started.");
-
-		UiAutomator2Options options = new UiAutomator2Options();
-		options.setDeviceName("QAAndroid");
-		options.setApp("//Users//vk14//git//UserApplication//src//test//java//resources//user_app_uat.apk");
-		driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
+		XCUITestOptions options=new XCUITestOptions();
+		options.setDeviceName("iPhone 15");
+		//options.setApp("/Users/vk14/Downloads/Apps/User_App/user_app_staging.app");
+		options.setPlatformName("17.0");
+		options.setWdaLaunchTimeout(Duration.ofSeconds(30));
+		
+		
+		driver = new IOSDriver(new URL("http://127.0.0.1:4723"), options);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
-
+		
+		Map<String, String> parms=new HashMap<String, String>();
+		parms.put("bundleId","in.pixbit.propech.rm");
+		driver.executeScript("mobile:launchApp",parms);
+		
 	}
+	
 
-	@AfterClass
+
+	/*@AfterClass
 	public void close() {
 		driver.quit();
 		service.close();
-	}
+	}*/
 
 	
 

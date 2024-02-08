@@ -1,5 +1,7 @@
 package rental;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;

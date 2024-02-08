@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [YourTestSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="YourTest(failed)">
+    <classes>
+      <class name="propertyaddedit.SinglePropertyAdd">
+        <methods>
+          <include name="openMyPropertyPage"/>
+          <include name="single_property_with_apartment_ready_status" invocation-numbers="0"/>
+          <include name="configuration"/>
+          <include name="close"/>
+        </methods>
+      </class> <!-- propertyaddedit.SinglePropertyAdd -->
+    </classes>
+  </test> <!-- YourTest(failed) -->
+</suite> <!-- Failed suite [YourTestSuite] -->

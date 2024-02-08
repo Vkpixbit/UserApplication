@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="YourTestSuite">
+	<test name="YourTest">
+		<classes>
+			<class name="propertyaddedit.SinglePropertyAdd">
+				<methods>
+					<include name="single_property_with_apartment_ready_status"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
+

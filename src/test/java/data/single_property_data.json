@@ -1,0 +1,33 @@
+[
+{ 
+"titledeedDocument": "oquod marbella 47.pdf",
+"property_name": "Souq Extra",
+"property_category": "Commercial",
+"property_type": "Villa",
+"property_status": "Ready",
+"age_of_property": "2",
+"present_use": "Rented",
+"title_deed_number": "133444532558",
+"year":"1983",
+"plot_number":"12",
+"municipality_number":"7006",
+"community":"Al jazeera",
+"area_region":"Abu Hail",
+"property_value":"654000",
+"building_number":"645",
+"building_name":"Souq Extra Build",
+"property_number":"535",
+"floor_number":"634",
+"parking":"A-12,A-13",
+"suite_area":"4959.3",
+"balcony_area":"5849.4",
+"total_area_sqm":"493.4",
+"total_area_sqft":"493.4",
+"common_area":"493.4",
+"bedroom_cabin_count":"3",
+"bathroom_count":"3",
+"kitchen_pantry_count":"2",
+"balcony_count":"2",
+"furnishing_status":"Furnished"
+}
+]
