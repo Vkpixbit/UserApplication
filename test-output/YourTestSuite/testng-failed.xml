@@ -3,14 +3,14 @@
 <suite name="Failed suite [YourTestSuite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="YourTest(failed)">
     <classes>
-      <class name="propertyaddedit.SinglePropertyAdd">
+      <class name="propertyaddedit.JointPropertyAdd">
         <methods>
           <include name="openMyPropertyPage"/>
-          <include name="single_property_with_apartment_ready_status" invocation-numbers="0"/>
+          <include name="two_owners_apartment_property" invocation-numbers="0"/>
           <include name="configuration"/>
           <include name="close"/>
         </methods>
-      </class> <!-- propertyaddedit.SinglePropertyAdd -->
+      </class> <!-- propertyaddedit.JointPropertyAdd -->
     </classes>
   </test> <!-- YourTest(failed) -->
 </suite> <!-- Failed suite [YourTestSuite] -->

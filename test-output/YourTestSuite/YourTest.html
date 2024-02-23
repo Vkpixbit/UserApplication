@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jan 29 10:24:26 IST 2024</td>
+<td>Started on:</td><td>Mon Feb 19 15:05:19 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>56 seconds (56239 ms)</td>
+<tr><td>Total time:</td><td>133 seconds (133643 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,49 +76,17 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='propertyaddedit.SinglePropertyAdd.single_property_with_apartment_ready_status()'><b>single_property_with_apartment_ready_status</b><br>Test class: propertyaddedit.SinglePropertyAdd<br>Parameters: {present_use=Rented, area_region=Abu Hail, suite_area=4959.3, property_number=535, year=1983, bedroom_cabin_count=3, balcony_count=2, floor_number=634, property_value=654000, property_name=Souq Extra, title_deed_number=133444532558, kitchen_pantry_count=2, property_category=Commercial, property_type=Villa, common_area=493.4, bathroom_count=3, plot_number=12, age_of_property=2, building_name=Souq Extra Build, total_area_sqft=493.4, balcony_area=5849.4, community=Al jazeera, furnishing_status=Furnished, total_area_sqm=493.4, titledeedDocument=oquod marbella 47.pdf, property_status=Ready, municipality_number=7006, building_number=645}</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.xpath: //android.widget.EditText[@index=&apos;3&apos;]})
-	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:166)
-	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:64)
-	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:77)
-	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$ZQBk1wNW.sendKeys(Unknown Source)
-	at pageobject.AddOwnerShipDetails.titleDeedVerification(AddOwnerShipDetails.java:91)
-	at propertyaddedit.SinglePropertyAdd.single_property_with_apartment_ready_status(SinglePropertyAdd.java:40)
+<td title='propertyaddedit.JointPropertyAdd.two_owners_apartment_property()'><b>two_owners_apartment_property</b><br>Test class: propertyaddedit.JointPropertyAdd<br>Parameters: {present_use=Rented, area_region=15 Northside, parking=A-234, suite_area=4959.3, property_number=594, year=2009, floor_number=3949, property_value=675000, property_name=Smith and Ken Properties, title_deed_number=56455455, property_category=Commercial, owner_2_phone_number=8976456973, common_area=493.4, plot_number=423, age_of_property=1, building_name=Smith and Ken, total_area_sqft=213.4, owner_2_percentage=50, balcony_area=5849.4, community=Al jazeera, furnishing_status=Furnished, owner_1_percentage=50, total_area_sqm=493.4, titledeedDocument=oquod marbella 47.pdf, municipality_number=53-23, building_number=485}</td>
+<td><div><pre>java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:96)
+	at pageobject.AddProperty.select_bedroom_cabin_count(AddProperty.java:521)
+	at propertyaddedit.JointPropertyAdd.two_owners_apartment_property(JointPropertyAdd.java:69)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@76a1146d (tried for 1 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:265)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:135)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:160)
-	... 33 more
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.xpath: //android.widget.EditText[@index=&apos;3&apos;]})
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.17.0&apos;, revision: &apos;e52b1be057*&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;13.5.2&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:77)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:53)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$findElement$1(AppiumElementLocator.java:160)
-	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:217)
-	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:210)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-	... 35 more
-... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace719699252", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace719699252'><pre>org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.xpath: //android.widget.EditText[@index=&apos;3&apos;]})
-	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:166)
-	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:64)
-	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:77)
-	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$ZQBk1wNW.sendKeys(Unknown Source)
-	at pageobject.AddOwnerShipDetails.titleDeedVerification(AddOwnerShipDetails.java:91)
-	at propertyaddedit.SinglePropertyAdd.single_property_with_apartment_ready_status(SinglePropertyAdd.java:40)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace991026870", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace991026870'><pre>java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:96)
+	at pageobject.AddProperty.select_bedroom_cabin_count(AddProperty.java:521)
+	at propertyaddedit.JointPropertyAdd.two_owners_apartment_property(JointPropertyAdd.java:69)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -147,35 +115,9 @@ Driver info: driver.version: RemoteWebDriver
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@76a1146d (tried for 1 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:265)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:135)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:160)
-	... 33 more
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.xpath: //android.widget.EditText[@index=&apos;3&apos;]})
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.17.0&apos;, revision: &apos;e52b1be057*&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;13.5.2&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:77)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:53)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$findElement$1(AppiumElementLocator.java:160)
-	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:217)
-	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:210)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-	... 35 more
 </pre></div></td>
-<td>55</td>
-<td>propertyaddedit.SinglePropertyAdd@1ca3b418</td></tr>
+<td>133</td>
+<td>propertyaddedit.JointPropertyAdd@7bba5817</td></tr>
 </table><p>
 </body>
 </html>

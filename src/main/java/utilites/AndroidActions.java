@@ -1,6 +1,5 @@
 package utilites;
 
-import java.awt.event.KeyEvent;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -15,14 +14,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.google.common.collect.ImmutableMap;
 
 import io.appium.java_client.AppiumBy;
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidTouchAction;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import io.appium.java_client.touch.WaitOptions;
-import io.appium.java_client.touch.offset.ElementOption;
-import io.appium.java_client.touch.offset.PointOption;
 
 public class AndroidActions {
 
@@ -82,9 +76,9 @@ public class AndroidActions {
 		nextButton.click();
 	}
 
-	public void scrollToElementByText(String titledeedDocument) {
+	public void scrollToElementByText(String text) {
 		String uiAutomatorExpression = "new UiScrollable(new UiSelector()).scrollIntoView(new UiSelector().text(\""
-				+ titledeedDocument + "\"));";
+				+ text + "\"));";
 		driver.findElement(AppiumBy.androidUIAutomator(uiAutomatorExpression));
 	}
 

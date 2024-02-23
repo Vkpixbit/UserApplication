@@ -110,6 +110,9 @@ public class AddProperty extends AndroidActions {
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Add Rental Details']")
 	private WebElement clickAddRent;
 
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Go to my propertiess']")
+	private WebElement goToPropertiesButton;
+
 	@AndroidFindBy(accessibility = "Mortgage Dropdown")
 	private WebElement mortgageSelection;
 
@@ -205,7 +208,7 @@ public class AddProperty extends AndroidActions {
 	 * Select Property Status As Under Construction
 	 */
 	public void select_under_construction_status() {
-		driver.findElement(By.xpath("//android.widget.TextView[@text='Under Construction']")).click();
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Under construction']")).click();
 	}
 
 	/*
@@ -258,9 +261,9 @@ public class AddProperty extends AndroidActions {
 	 */
 	public void select_area_region(String area_region) throws InterruptedException {
 		areaRegionClick.click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//android.widget.EditText[@index='2']")).sendKeys(area_region);
 		Thread.sleep(2000);
-		driver.findElement(AppiumBy.androidUIAutomator(
-				"new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + area_region + "\"));"));
 		driver.findElement(By.xpath("//android.widget.TextView[@text='" + area_region + "']")).click();
 	}
 
@@ -420,7 +423,7 @@ public class AddProperty extends AndroidActions {
 	 */
 	public void enter_parking(String parking) throws InterruptedException {
 		driver.findElement(AppiumBy.androidUIAutomator(
-				"new UiScrollable(new UiSelector()).scrollIntoView(text(\"Suite Area (Required)\"));"));
+				"new UiScrollable(new UiSelector()).scrollIntoView(text(\"Common Area (Required)\"));"));
 		Thread.sleep(2000);
 		parkingField.clear();
 		Thread.sleep(2000);
@@ -450,7 +453,7 @@ public class AddProperty extends AndroidActions {
 	 * Enter Total Area Sq Mt
 	 */
 	public void enter_total_area_sqm(String total_area_sqm) throws InterruptedException {
-		totalAreaSqMt.click();
+		totalAreaSqMt.clear();
 		Thread.sleep(2000);
 		totalAreaSqMt.sendKeys(total_area_sqm);
 	}
@@ -459,7 +462,7 @@ public class AddProperty extends AndroidActions {
 	 * Enter Total Area Sq Ft
 	 */
 	public void enter_total_area_sqft(String total_area_sqft) throws InterruptedException {
-		driver.navigate().back();
+		// driver.navigate().back();
 		totalAreaSqFt.clear();
 		Thread.sleep(2000);
 		totalAreaSqFt.sendKeys(total_area_sqft);
@@ -475,6 +478,42 @@ public class AddProperty extends AndroidActions {
 	}
 
 	/*
+	 * Enter Unit number
+	 */
+	public void enter_unit_number(String unit_number) throws InterruptedException {
+		unitNumberField.clear();
+		Thread.sleep(2000);
+		unitNumberField.sendKeys(unit_number);
+	}
+
+	/*
+	 * Enter plot area square meter
+	 */
+	public void enter_plot_area_sqm(String plot_area_sqm) throws InterruptedException {
+		plotAreaSqMtField.clear();
+		Thread.sleep(2000);
+		plotAreaSqMtField.sendKeys(plot_area_sqm);
+	}
+
+	/*
+	 * Enter plot area square feet
+	 */
+	public void enter_plot_area_sqft(String plot_area_sqft) throws InterruptedException {
+		plotAreaSqFtField.clear();
+		Thread.sleep(2000);
+		plotAreaSqFtField.sendKeys(plot_area_sqft);
+	}
+
+	/*
+	 * Enter buildup area
+	 */
+	public void enter_build_up_area(String build_up_area) throws InterruptedException {
+		buildUpAreaField.clear();
+		Thread.sleep(2000);
+		buildUpAreaField.sendKeys(build_up_area);
+	}
+
+	/*
 	 * Select Bedroom/Cabin Count
 	 */
 	public void select_bedroom_cabin_count(String bedroom_cabin_count) throws InterruptedException {
@@ -486,9 +525,10 @@ public class AddProperty extends AndroidActions {
 	/*
 	 * Enter Bathroom Count
 	 */
-	public void select_bathroom_count(String bathroom_count) {
+	public void select_bathroom_count(String bathroom_count) throws InterruptedException {
 		driver.findElement(By.xpath("(//android.widget.TextView[@text='4+'])[2]")).click();
 		driver.findElement(By.className("android.widget.EditText")).sendKeys(bathroom_count);
+		click_done();
 	}
 
 	/*
@@ -519,7 +559,12 @@ public class AddProperty extends AndroidActions {
 	}
 
 	public void select_furnishing_status(String furnishing_status) {
-		driver.findElement(By.xpath("//android.widget.TextView[@text='" + furnishing_status + "']")).click();
+		if (driver.findElement(By.xpath("//android.widget.TextView[@text='" + furnishing_status + "']"))
+				.isDisplayed()) {
+			driver.findElement(By.xpath("//android.widget.TextView[@text='" + furnishing_status + "']")).click();
+		} else {
+
+		}
 	}
 
 	public void click_save() {
@@ -542,6 +587,11 @@ public class AddProperty extends AndroidActions {
 		clickAddRent.click();
 		Thread.sleep(20000);
 		return new AddRental(driver);
+	}
+
+	public void goToProperties() throws InterruptedException {
+		Thread.sleep(2000);
+		goToPropertiesButton.click();
 	}
 
 }

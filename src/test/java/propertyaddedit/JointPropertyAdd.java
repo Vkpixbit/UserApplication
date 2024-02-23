@@ -21,46 +21,77 @@ import pageobject.SplashScreen;
 public class JointPropertyAdd extends AndroidGlobalData {
 
 	@BeforeSuite
-	public void openMyPropertyPage() {
+	public void openMyPropertyPage() throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();
-		HomePage HomePage = LoginPage.loginToApp("greeshma@pixbitsolutions.com", "Qapixbit@14");
+		HomePage HomePage = LoginPage.loginToApp("sudarshan@gmail.com", "Qapixbit@14");
 		approvePermission();
 		ProfilePage ProfilePage = HomePage.openProfile();
-		ProfilePage.openMyProperties();
+		ProfilePage.openPropertyAddPage();
 	}
 
 	/* 
-	 Two owner joint property and we add two owner
-	 Villa property type
-	 
-	 
+	 Two owner joint property and we add two owner from prosper
+	 Aprtment/Service Apartment/Office
 	 */
-	// 2 owners are in the prosper
-	// joint Property,property type is villa
 	@Test(dataProvider = "jointVillaPropertyData_1", groups = "TwoJointOwnersProperty")
-	public void addVillaJointProperty_1(HashMap<String, String> input) throws InterruptedException {
-		MyProperties Myproperties = new MyProperties(driver);
-		AddOwnerShipDetails AddOwnerShipDetails = Myproperties.openAddSinglePropertyPage();
+	public void two_owners_apartment_property(HashMap<String, String> input) throws InterruptedException {
+		/*MyProperties Myproperties = new MyProperties(driver);
+		AddOwnerShipDetails AddOwnerShipDetails = Myproperties.openAddSinglePropertyPage();*/
+		AddOwnerShipDetails AddOwnerShipDetails = new AddOwnerShipDetails(driver);
 		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"), input.get("title_deed_number"),
 				input.get("year"));
 		AddOwnerShipDetails.selectJointOwnership();
 		AddProperty AddProperty = AddOwnerShipDetails.twoOwnerCountSelectionAndAdd(input.get("owner_1_percentage"),
 				input.get("owner_2_phone_number"), input.get("owner_2_percentage"));
-		AddProperty.propertyAdd_villa_townhouse(input.get("property_name"), input.get("property_category"),
-				input.get("property_type"), input.get("property_status"), input.get("age_of_property"),
-				input.get("present_use"), input.get("area_region"), input.get("property_value"),
-				input.get("unit_number"), input.get("plot_area_sq_mt"), input.get("plot_area_sq_ft"),
-				input.get("buildup_area"), input.get("furnishing_status"));
+		AddProperty.enter_property_name(input.get("property_name"));
+		AddProperty.select_property_category(input.get("property_category"));
+		AddProperty.select_apartment();
+		AddProperty.select_ready_status(input.get("age_of_property"), input.get("present_use"));
+		AddProperty.nextButtonClick();
+		AddProperty.enter_plot_number(input.get("plot_number"));
+		AddProperty.enter_municipality_number(input.get("municipality_number"));
+		AddProperty.enter_community(input.get("community"));
+		AddProperty.select_area_region(input.get("area_region"));
+		AddProperty.enter_purchase_price(input.get("property_value"));
+		AddProperty.select_not_mortgaged();
+		AddProperty.enter_building_number(input.get("building_number"));
+		AddProperty.enter_building_name(input.get("building_name"));
+		AddProperty.enter_property_number(input.get("property_number"));
+		AddProperty.enter_floor_number(input.get("floor_number"));
+		AddProperty.enter_parking(input.get("parking"));
+		AddProperty.enter_suite_area(input.get("suite_area"));
+		AddProperty.enter_balcony_area(input.get("balcony_area"));
+		AddProperty.enter_total_area_sqm(input.get("total_area_sqm"));
+		AddProperty.enter_total_area_sqft(input.get("total_area_sqft"));
+		AddProperty.enter_common_area(input.get("common_area"));
+		AddProperty.nextButtonClick();
+		AddProperty.select_bedroom_cabin_count(input.get("bedroom_cabin_count"));
+		AddProperty.select_bathroom_count(input.get("bathroom_count"));
+		AddProperty.select_kitchen_pantry_count(input.get("kitchen_pantry_count"));
+		AddProperty.select_balcony_count(input.get("balcony_count"));
+		AddProperty.select_map_location();
+		AddProperty.select_furnishing_status(input.get("furnishing_status"));
+		AddProperty.click_save();
 		AddProperty.skip_rent();
 	}
 
 	@DataProvider
 	public Object[][] jointVillaPropertyData_1() throws IOException {
 		List<HashMap<String, String>> value = getjsondata(
-				"/Users/vk14/git/UserApplication/src/test/java/data/jointpropertydata/JointPropertyVillaData.json");
+				"/Users/vk14/git/UserApplication/src/test/java/data/jointpropertydata/JointPropertyApartmentData.json");
 		return new Object[][] { { value.get(0) } };
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

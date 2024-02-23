@@ -3,9 +3,9 @@
 <suite name="YourTestSuite">
 	<test name="YourTest">
 		<classes>
-			<class name="propertyaddedit.SinglePropertyAdd">
+			<class name="propertyaddedit.JointPropertyAdd">
 				<methods>
-					<include name="single_property_with_apartment_ready_status"></include>
+					<include name="two_owners_apartment_property"></include>
 				</methods>
 			</class>
 		</classes>

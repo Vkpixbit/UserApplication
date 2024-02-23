@@ -22,19 +22,9 @@ public class MyProperties extends AndroidActions{
 	@AndroidFindBy(accessibility = "img_property_add")
 	private WebElement propertyAdd;
 	
-	public AddOwnerShipDetails openAddJointPropertyPage() {
-		propertyAdd.click();
-		return new AddOwnerShipDetails(driver);
-	}
-	
-	public AddOwnerShipDetails openAddSinglePropertyPage() throws InterruptedException {
-		if (driver.findElement(By.xpath("//android.widget.TextView[@text='Add a property']")).isDisplayed()) {
-			Thread.sleep(3000);
-			return new AddOwnerShipDetails(driver);
-		}
+	public void openPropertyAdd() throws InterruptedException {
 		Thread.sleep(2000);
 		propertyAdd.click();
-		return new AddOwnerShipDetails(driver);
 	}
 	
 	public PropertyDetails selectProperty(String propertyName) {
