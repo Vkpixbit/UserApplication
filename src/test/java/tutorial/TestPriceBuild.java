@@ -1,6 +1,9 @@
 package tutorial;
 
 import org.testng.annotations.Test;
+
+import com.pixbit.appium.globalfiles.AndroidGlobalData;
+
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.time.Duration;
@@ -13,7 +16,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import globalfiles.AndroidGlobalData;
+
 import io.appium.java_client.AppiumBy;
 
 public class TestPriceBuild extends AndroidGlobalData {

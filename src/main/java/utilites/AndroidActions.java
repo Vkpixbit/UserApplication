@@ -14,9 +14,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.google.common.collect.ImmutableMap;
 
 import io.appium.java_client.AppiumBy;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.touch.offset.PointOption;
 
 public class AndroidActions {
 
@@ -98,5 +100,18 @@ public class AndroidActions {
 		cancelYes.click();
 	}
 	
+	public void horizontalScroll() {
+		driver.findElement(By.className("android.widget.ImageView")).click();
+	}
+	
+	@SuppressWarnings("deprecation")
+	public void scrollByCordinates(int startX,int startY, int endX, int endY) {
+		TouchAction touchAction = new TouchAction(driver);
+		touchAction.press(PointOption.point(startX, startY))
+		              .moveTo(PointOption.point(endX, endY))
+		              .release()
+		              .perform();
+	}
+		
 
 }

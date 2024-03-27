@@ -1,6 +1,15 @@
 package rental;
 
 import org.testng.annotations.Test;
+
+import com.pixbit.appium.globalfiles.AndroidGlobalData;
+import com.pixbit.appium.pageobject.AddRental;
+import com.pixbit.appium.pageobject.HomePage;
+import com.pixbit.appium.pageobject.LoginPage;
+import com.pixbit.appium.pageobject.ProfilePage;
+import com.pixbit.appium.pageobject.RentedPropertiesList;
+import com.pixbit.appium.pageobject.SplashScreen;
+
 import org.testng.annotations.BeforeClass;
 import java.io.IOException;
 import java.util.HashMap;
@@ -9,14 +18,6 @@ import java.util.List;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import globalfiles.AndroidGlobalData;
-import pageobject.AddRental;
-import pageobject.HomePage;
-import pageobject.LoginPage;
-import pageobject.ProfilePage;
-import pageobject.RentedPropertiesList;
-import pageobject.SplashScreen;
 
 public class TenantRentalAddInList extends AndroidGlobalData{
 
