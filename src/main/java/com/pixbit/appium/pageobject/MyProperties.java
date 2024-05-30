@@ -33,4 +33,5 @@ public class MyProperties extends AndroidActions{
 		driver.findElement(By.xpath("//android.widget.TextView[@text='"+propertyName+"']")).click();
 		return new PropertyDetails(driver);
 	}
+
 }

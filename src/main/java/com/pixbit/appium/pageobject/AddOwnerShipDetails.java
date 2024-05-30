@@ -51,10 +51,10 @@ public class AddOwnerShipDetails extends AndroidActions {
 	private WebElement clickSave;
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Save & Continue']")
-	private WebElement clickSaveAndContinue;
+	public WebElement clickSaveAndContinue;
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Skip & Continue']")
-	private WebElement skipAndContinue;
+	public WebElement skipAndContinue;
 
 	@AndroidFindBy(xpath = "//android.widget.EditText[@index='3']")
 	private WebElement titleDeedNumberField;
@@ -75,6 +75,17 @@ public class AddOwnerShipDetails extends AndroidActions {
 	private WebElement countryPickerClick;
 
 	private boolean permissionApproved = false;
+	
+	public void open_title_deed_section() {
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Docs_for_testing']")).click();
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Title_Deed']")).click();
+	}
+	
+	public void open_initial_contract_section() {
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Docs_for_testing']")).click();
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Title_Deed']")).click();
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Initial Contract']")).click();
+	}
 
 	public void titleDeedVerification(String titledeedDocument, String title_deed_number, String year)
 			throws InterruptedException {
@@ -83,6 +94,7 @@ public class AddOwnerShipDetails extends AndroidActions {
 			approvePermission();
 			permissionApproved = true; // Set the flag to true after approval
 		}
+		open_title_deed_section();
 		scrollToElementByText(titledeedDocument);
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//android.widget.TextView[@text='" + titledeedDocument + "']")).click();
@@ -96,6 +108,30 @@ public class AddOwnerShipDetails extends AndroidActions {
 				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + year + "\"));"));
 		driver.findElement(By.xpath("//android.widget.TextView[@text='" + year + "']")).click();
 		verifyButton.click();
+	}
+	
+	public void initialContractVerification(String titledeedDocument, String title_deed_number, String year) throws InterruptedException {
+		// System.out.println("test");
+		titleDeedUpload.click();
+		if (!permissionApproved) {
+			approvePermission();
+			permissionApproved = true; /* Set the flag to true after approval */
+		}
+		//driver.findElement(By.xpath("//android.widget.TextView[@text='Initial Contract']")).click();
+		open_initial_contract_section();
+		scrollToElementByText(titledeedDocument);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//android.widget.TextView[@text='"+titledeedDocument+"']")).click();
+		Thread.sleep(2000);
+		continueButton.click();
+		titleDeedNumberField.sendKeys(title_deed_number);
+		calender.click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOf(yearPicker));
+		driver.findElement(AppiumBy
+				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + year + "\"));"));
+		driver.findElement(By.xpath("//android.widget.TextView[@text='" + year + "']")).click();
+		verifyButton.click();		
 	}
 
 	public void selectJointOwnership() {
@@ -169,6 +205,8 @@ public class AddOwnerShipDetails extends AndroidActions {
 		ownerPercentageField.sendKeys(owner_1_percentage);
 		clickSave.click();
 		Thread.sleep(3000);
+		driver.findElement(AppiumBy
+				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Skip & Continue\"));"));
 		owner_adding(country_code,owner_2_phone_number,owner_2_email,owner_2_name,owner_2_percentage);
 		Thread.sleep(2000);
 		driver.findElement(AppiumBy
@@ -190,8 +228,11 @@ public class AddOwnerShipDetails extends AndroidActions {
 		ownerPercentageField.sendKeys(owner_1_percentage);
 		clickSave.click();
 		Thread.sleep(3000);
+		driver.findElement(AppiumBy
+				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Skip & Continue\"));"));
 		owner_adding(country_code, owner_2_phone_number, owner_2_email, owner_2_name, owner_2_percentage);
-		Thread.sleep(2000);
+		driver.findElement(AppiumBy
+				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Skip & Continue\"));"));
 		owner_adding(country_code, owner_3_phone_number, owner_3_email, owner_3_name, owner_3_percentage);
 		driver.findElement(AppiumBy
 				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Save & Continue\"));"));
@@ -210,8 +251,7 @@ public class AddOwnerShipDetails extends AndroidActions {
 		ownerPercentageField.sendKeys(owner_1_percentage);
 		clickSave.click();
 		Thread.sleep(3000);
-		owner_adding(country_code,owner_2_phone_number, owner_2_email, owner_2_name, owner_2_percentage);
-		Thread.sleep(2000);
+		//owner_adding(country_code,owner_2_phone_number, owner_2_email, owner_2_name, owner_2_percentage);
 		driver.findElement(AppiumBy
 				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Skip & Continue\"));"));
 		skipAndContinue.click();
@@ -234,19 +274,19 @@ public class AddOwnerShipDetails extends AndroidActions {
 		
 		Thread.sleep(3000);
 		driver.findElement(AppiumBy
-				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Add Owner 2/4\"));"));
+				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Skip & Continue\"));"));
 		owner_adding(country_code_2,owner_2_phone_number,owner_2_email,owner_2_name,owner_2_percentage);
 		Thread.sleep(3000);
 		driver.findElement(AppiumBy
-				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Add Owner 3/4\"));"));
+				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Skip & Continue\"));"));
 		owner_adding(country_code_3,owner_3_phone_number,owner_3_email,owner_3_name,owner_3_percentage);
 		Thread.sleep(2000);
 		driver.findElement(AppiumBy
-				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Add Owner 4/4\"));"));
+				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Skip & Continue\"));"));
 		owner_adding(country_code_4,owner_4_phone_number,owner_4_email,owner_4_name,owner_4_percentage);
 		driver.findElement(AppiumBy
 				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Save & Continue\"));"));
-		skipAndContinue.click();
+		clickSaveAndContinue.click();
 		return new AddProperty(driver);
 	}
 

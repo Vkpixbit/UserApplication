@@ -49,11 +49,12 @@ public class IosGlobalData {
 		service = AppiumDriverLocalService.buildService(builder);
 
 		XCUITestOptions options=new XCUITestOptions();
-		options.setDeviceName("iPhone 15");
-		//options.setApp("/Users/vk14/Downloads/Apps/User_App/user_app_staging.app");
-		options.setPlatformName("17.0");
+		options.setDeviceName("Pixbit's iPhone 12");
+		options.setApp("/Users/vk14/git/UserApplication/src/test/java/com/pixbit/appium/test/project/resources/user_app_staging.app");
+		options.setPlatformName("16.3.1");
 		options.setWdaLaunchTimeout(Duration.ofSeconds(30));
-		
+		options.setCapability("xcodeSigningId","iPhone Developer");
+
 		
 		driver = new IOSDriver(new URL("http://127.0.0.1:4723"), options);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));

@@ -1,5 +1,6 @@
 package utilites;
 
+import java.awt.Dimension;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -12,6 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.google.common.collect.ImmutableMap;
+import com.pixbit.appium.pageobject.MarketplaceDetailsPage;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.TouchAction;
@@ -104,14 +106,24 @@ public class AndroidActions {
 		driver.findElement(By.className("android.widget.ImageView")).click();
 	}
 	
-	@SuppressWarnings("deprecation")
-	public void scrollByCordinates(int startX,int startY, int endX, int endY) {
-		TouchAction touchAction = new TouchAction(driver);
-		touchAction.press(PointOption.point(startX, startY))
-		              .moveTo(PointOption.point(endX, endY))
-		              .release()
-		              .perform();
+	public boolean scrollManually(WebElement element) {
+		boolean canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: flingGesture", ImmutableMap.of(
+			    "elementId", ((RemoteWebElement) element).getId(),
+			    "direction", "down",
+			    "speed", 500
+			));
+		return canScrollMore;
 	}
-		
-
+	
+	public MarketplaceDetailsPage openPropertyFromMarketplace(String property_name) {
+		if(driver.findElement(By.xpath("//android.widget.TextView[@text='"+property_name+"']")).isDisplayed()) {
+			driver.findElement(By.xpath("//android.widget.TextView[@text='"+property_name+"']")).click();
+		}
+		else {
+			scrollToElementByText(property_name);
+			driver.findElement(By.xpath("//android.widget.TextView[@text='"+property_name+"']")).click();
+		}
+		return new  MarketplaceDetailsPage(driver);
+	}
+	
 }

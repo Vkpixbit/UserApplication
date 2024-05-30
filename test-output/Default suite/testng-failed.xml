@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.pixbit.appium.test.property.add.NewUserPropertyAdd">
+      <class name="com.pixbit.userapp.test.marketplace.MarketplaceEnqueryMade">
         <methods>
           <include name="close"/>
+          <include name="sale_enquery_made_from_login" invocation-numbers="0"/>
           <include name="configuration"/>
-          <include name="single_villa_ready_property" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.pixbit.appium.test.property.add.NewUserPropertyAdd -->
+      </class> <!-- com.pixbit.userapp.test.marketplace.MarketplaceEnqueryMade -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

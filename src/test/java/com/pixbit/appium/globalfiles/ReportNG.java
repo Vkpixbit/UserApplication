@@ -10,7 +10,6 @@ public class ReportNG {
 	static ExtentReports extent;
 
 	public static ExtentReports reportConfig() {
-		// String path = System.getProperty("user.dir")+"\\reports\\index.html";
 		String reportsFolderPath = System.getProperty("user.dir") + File.separator + "reports";
 		new File(reportsFolderPath).mkdirs();
 

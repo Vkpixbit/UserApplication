@@ -8,9 +8,11 @@
     <classes>
       <class name="com.pixbit.appium.test.property.add.SinglePropertyAdd">
         <methods>
+          <include name="property_villa_ready" invocation-numbers="0"/>
           <include name="close"/>
-          <include name="single_property_with_villa_townhouse_underconstruction_status" invocation-numbers="0"/>
+          <include name="property_underconstruction_paymentplan" invocation-numbers="0"/>
           <include name="configuration"/>
+          <include name="property_office_underconstruction" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.pixbit.appium.test.property.add.SinglePropertyAdd -->
     </classes>

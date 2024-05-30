@@ -1,10 +1,10 @@
 package com.pixbit.appium.pageobject;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-
+import org.testng.Assert;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.pagefactory.AndroidBy;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import utilites.AndroidActions;
@@ -52,7 +52,7 @@ public class LoginPage extends AndroidActions {
 	@AndroidFindBy(xpath = "//android.widget.EditText[@index='6']")
 	private WebElement signUpPasswordField;
 
-	@AndroidFindBy(xpath = "//android.widget.CheckBox[@index='9']")
+	@AndroidFindBy(xpath = "//android.widget.CheckBox")
 	private WebElement privacyPolicyClick;
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Create Account Now']")
@@ -60,15 +60,18 @@ public class LoginPage extends AndroidActions {
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Skip now, I will do it later']")
 	private WebElement skipVerification;
-	
+
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='+971']")
 	private WebElement countryPickerClick;
-	
+
 	@AndroidFindBy(xpath = "//android.widget.EditText[@index='0']")
 	private WebElement countryEnterField;
-	
+
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='+91']")
 	private WebElement clickIndia;
+
+	@AndroidFindBy(xpath = "//android.widget.EditText[@index='9']")
+	private WebElement languageDropdown;
 
 	public HomePage loginToApp(String emailId, String password) {
 		emailField.sendKeys(emailId);
@@ -77,7 +80,44 @@ public class LoginPage extends AndroidActions {
 		return new HomePage(driver);
 	}
 
-	public void userSignUp(String emailId,String phoneNumber, String userName, String password)
+	public void selectLanguage(String prefred_language) {
+		languageDropdown.click();
+		driver.findElement(By.xpath("//android.widget.TextView[@text='" + prefred_language + "']")).click();
+
+	}
+
+	public void userSignUp(String emailId, String phoneNumber, String userName, String password,
+			String prefred_language) throws InterruptedException {
+		signUpTab.click();
+		signUpEmailField.sendKeys(emailId);
+		sendOtpButton.click();
+		Thread.sleep(2000);
+		otpEnterField.sendKeys("1234");
+		verifyButton.click();
+		countryPickerClick.click();
+		countryEnterField.sendKeys("India");
+		clickIndia.click();
+		signUpPhoneField.sendKeys(phoneNumber);
+		sendOtpButton.click();
+		Thread.sleep(2000);
+		otpEnterField.sendKeys("1234");
+		verifyButton.click();
+		Thread.sleep(2000);
+		signUpFullNameField.sendKeys(userName);
+		signUpPasswordField.sendKeys(password);
+		Thread.sleep(2000);
+		selectLanguage(prefred_language);
+		privacyPolicyClick.click();
+		createAccount.click();
+
+	}
+
+	public void get_language_validation_message() {
+		WebElement language_error = driver.findElement(By.id("in.pixbit.proptech:id/alertTitle"));
+		Assert.assertEquals(language_error.getText(), "Choose a Preferred Communication Language");
+	}
+
+	public void userSignUpWithOutLanguage(String emailId, String phoneNumber, String userName, String password)
 			throws InterruptedException {
 		signUpTab.click();
 		signUpEmailField.sendKeys(emailId);
@@ -99,7 +139,8 @@ public class LoginPage extends AndroidActions {
 		Thread.sleep(2000);
 		privacyPolicyClick.click();
 		createAccount.click();
-		
+		get_language_validation_message();
+
 	}
 
 	public HomePage skipVerification() throws InterruptedException {

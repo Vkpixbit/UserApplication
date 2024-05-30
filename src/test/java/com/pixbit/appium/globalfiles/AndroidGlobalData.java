@@ -11,12 +11,14 @@ import java.util.List;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.openqa.selenium.OutputType;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableMap;
@@ -38,18 +40,20 @@ public class AndroidGlobalData {
 		environment.put("PATH", "/usr/local/bin:" + System.getenv("PATH"));
 		AppiumServiceBuilder builder = new AppiumServiceBuilder();
 
+
 		builder.withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js"))
 				.usingDriverExecutable(new File("/usr/local/bin/node")).usingPort(4723).withEnvironment(environment)
 				.withArgument(GeneralServerFlag.LOCAL_TIMEZONE).withLogFile(new File("AppiumLog.txt"));
+
 
 		service = AppiumDriverLocalService.buildService(builder);
 
 		UiAutomator2Options options = new UiAutomator2Options();
 		options.setDeviceName("QAAndroid");
+
 		options.setApp(System.getProperty("user.dir")+"/src/test/java/com/pixbit/appium/test/project/resources/user_app_staging.apk");
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
-
 	}
 
 	@AfterMethod
@@ -103,5 +107,13 @@ public class AndroidGlobalData {
 				});
 		return data;
 	}
-
+	
+	public String getScreenShot(String testcase_name) throws IOException
+	{
+		TakesScreenshot ts = (TakesScreenshot)driver;
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		File file= new File(System.getProperty("user.dir")+ "//reports//" + testcase_name + ".png");
+		FileUtils.copyFile(source, file);
+		return System.getProperty("user.dir")+ "//reports//" + testcase_name + ".png";
+	}
 }
