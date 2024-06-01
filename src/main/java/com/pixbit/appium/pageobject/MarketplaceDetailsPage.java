@@ -35,10 +35,11 @@ public class MarketplaceDetailsPage extends AndroidActions {
 
 	public String enqueryMadeLoginedUser() {
 		
-
+		System.out.println("Get in the function!");
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		wait.until(ExpectedConditions.elementToBeClickable(intrestButton)).click();
-		//System.out.println("Text");
+		//wait.until(ExpectedConditions.elementToBeClickable(intrestButton)).click();
+		intrestButton.click();
+		System.out.println("Text");
 
 		String enqueryAssignedPs = wait.until(ExpectedConditions.visibilityOf(assignedPSNameField)).getText();
 

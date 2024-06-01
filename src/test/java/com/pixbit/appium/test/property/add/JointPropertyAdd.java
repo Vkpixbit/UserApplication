@@ -31,8 +31,7 @@ public class JointPropertyAdd extends AndroidGlobalData {
 		ProfilePage ProfilePage = HomePage.openProfile();
 		MyProperties MyProperties = ProfilePage.openMyPropertiesPage();
 		AddOwnerShipDetails AddOwnerShipDetails = MyProperties.openPropertyAdd();
-		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"), input.get("title_deed_number"),
-				input.get("year"));
+		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"));
 		AddOwnerShipDetails.selectJointOwnership();
 		AddProperty AddProperty = AddOwnerShipDetails.twoOwnersSkipAll();
 		AddProperty.enter_property_name(input.get("property_name"));
@@ -66,7 +65,7 @@ public class JointPropertyAdd extends AndroidGlobalData {
 	 * Two owners joint property and we one owner and skip one Service apartment
 	 * property with under construction property status add payment plan
 	 */
-	@Test(dataProvider = "two_owner_add_one_serviceapartment_underconstruction_data", enabled = true)
+	@Test(dataProvider = "two_owner_add_one_serviceapartment_underconstruction_data",groups = "joint_property", enabled = true)
 	public void two_owners__oneaddoneskip_serviceapartment_underconstruction_property(HashMap<String, String> input)
 			throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
@@ -76,8 +75,7 @@ public class JointPropertyAdd extends AndroidGlobalData {
 		ProfilePage ProfilePage = HomePage.openProfile();
 		MyProperties MyProperties = ProfilePage.openMyPropertiesPage();
 		AddOwnerShipDetails AddOwnerShipDetails = MyProperties.openPropertyAdd();
-		AddOwnerShipDetails.initialContractVerification(input.get("titledeedDocument"), input.get("title_deed_number"),
-				input.get("year"));
+		AddOwnerShipDetails.initialContractVerification(input.get("titledeedDocument"));
 		AddOwnerShipDetails.selectJointOwnership();
 		AddProperty AddProperty = AddOwnerShipDetails.addOneOwnerAndSkipOne(input.get("owner_1_percentage"));
 		AddProperty.enter_property_name(input.get("property_name"));
@@ -110,7 +108,7 @@ public class JointPropertyAdd extends AndroidGlobalData {
 	 * Two owner joint property and we add two owner service apartment property
 	 * Enter mortgage details
 	 */
-	@Test(dataProvider = "two_owners_joint_apartment_property_ready_data", enabled = true)
+	@Test(dataProvider = "two_owners_joint_apartment_property_ready_data",groups = "joint_property", enabled = true)
 	public void two_owners_apartment_ready_property(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();
@@ -119,8 +117,7 @@ public class JointPropertyAdd extends AndroidGlobalData {
 		ProfilePage ProfilePage = HomePage.openProfile();
 		MyProperties MyProperties = ProfilePage.openMyPropertiesPage();
 		AddOwnerShipDetails AddOwnerShipDetails = MyProperties.openPropertyAdd();
-		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"), input.get("title_deed_number"),
-				input.get("year"));
+		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"));
 		AddOwnerShipDetails.selectJointOwnership();
 		AddProperty AddProperty = AddOwnerShipDetails.twoOwnerCountSelectionAndAdd(input.get("owner_1_percentage"),
 				input.get("country_code"), input.get("owner_2_phone_number"), input.get("owner_2_email"),
@@ -153,10 +150,10 @@ public class JointPropertyAdd extends AndroidGlobalData {
 	}
 
 	/*
-	 * Three owners are in the prosper Property type is Villa property
+	 * Three owners are in the prosper Property type is townhouse property
 	 * underconstruction Add payment plan
 	 */
-	@Test(dataProvider = "three_owners_townhouseunderconstruction_data", enabled = true)
+	@Test(dataProvider = "three_owners_townhouseunderconstruction_data",groups = "joint_property", enabled = true)
 	public void three_owners_townhouse_underconstruction_property(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();
@@ -165,8 +162,7 @@ public class JointPropertyAdd extends AndroidGlobalData {
 		ProfilePage ProfilePage = HomePage.openProfile();
 		MyProperties MyProperties = ProfilePage.openMyPropertiesPage();
 		AddOwnerShipDetails AddOwnerShipDetails = MyProperties.openPropertyAdd();
-		AddOwnerShipDetails.initialContractVerification(input.get("titledeedDocument"), input.get("title_deed_number"),
-				input.get("year"));
+		AddOwnerShipDetails.initialContractVerification(input.get("titledeedDocument"));
 		AddOwnerShipDetails.selectJointOwnership();
 		AddProperty AddProperty = AddOwnerShipDetails.threeOwnersSelectAndAdd(input.get("owner_1_percentage"),
 				input.get("country_code"), input.get("owner_2_phone_number"), input.get("owner_2_email"),
@@ -204,7 +200,7 @@ public class JointPropertyAdd extends AndroidGlobalData {
 	 * villa property
 	 * Ready and enter mortgage details
 	 */
-	@Test(dataProvider = "twoowners_oneguest_office_underconstruction_data", enabled = true)
+	@Test(dataProvider = "twoowners_oneguest_office_underconstruction_data",groups = "joint_property", enabled = true)
 	public void two_owners_one_guest_office_ready_property(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();
@@ -213,8 +209,7 @@ public class JointPropertyAdd extends AndroidGlobalData {
 		ProfilePage ProfilePage = HomePage.openProfile();
 		MyProperties MyProperties = ProfilePage.openMyPropertiesPage();
 		AddOwnerShipDetails AddOwnerShipDetails = MyProperties.openPropertyAdd();
-		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"), input.get("title_deed_number"),
-				input.get("year"));
+		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"));
 		AddOwnerShipDetails.selectJointOwnership();
 		AddProperty AddProperty = AddOwnerShipDetails.twoOwnerCountSelectionAndAdd(input.get("owner_1_percentage"),
 				input.get("country_code"), input.get("owner_2_phone_number"), input.get("owner_2_email"),
@@ -251,7 +246,7 @@ public class JointPropertyAdd extends AndroidGlobalData {
 	 * underconstruction property status
 	 * add payment plan and mortgage details
 	 */
-	@Test(dataProvider = "threeowners_threeadd_townhouse_undercontruction_data", enabled = true)
+	@Test(dataProvider = "threeowners_threeadd_townhouse_undercontruction_data",groups = "joint_property", enabled = true)
 	public void threee_owners_townhouse_underconstruction_property(HashMap<String, String> input)
 			throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
@@ -261,8 +256,7 @@ public class JointPropertyAdd extends AndroidGlobalData {
 		ProfilePage ProfilePage = HomePage.openProfile();
 		MyProperties MyProperties = ProfilePage.openMyPropertiesPage();
 		AddOwnerShipDetails AddOwnerShipDetails = MyProperties.openPropertyAdd();
-		AddOwnerShipDetails.initialContractVerification(input.get("titledeedDocument"), input.get("title_deed_number"),
-				input.get("year"));
+		AddOwnerShipDetails.initialContractVerification(input.get("titledeedDocument"));
 		AddOwnerShipDetails.selectJointOwnership();
 		AddProperty AddProperty = AddOwnerShipDetails.threeOwnersSelectAndAdd(input.get("owner_1_percentage"),
 				input.get("country_code"), input.get("owner_2_phone_number"), input.get("owner_2_email"),
@@ -303,7 +297,7 @@ public class JointPropertyAdd extends AndroidGlobalData {
 	 * Apartment property
 	 * ready status
 	 */
-	@Test(dataProvider = "threeowners_twoadd_skipone_apartment_ready_data", enabled = true)
+	@Test(dataProvider = "threeowners_twoadd_skipone_apartment_ready_data",groups = "joint_property", enabled = true)
 	public void three_owners_addtwo_skipone_apartment_ready_property(HashMap<String, String> input)
 			throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
@@ -313,8 +307,7 @@ public class JointPropertyAdd extends AndroidGlobalData {
 		ProfilePage ProfilePage = HomePage.openProfile();
 		MyProperties MyProperties = ProfilePage.openMyPropertiesPage();
 		AddOwnerShipDetails AddOwnerShipDetails = MyProperties.openPropertyAdd();
-		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"), input.get("title_deed_number"),
-				input.get("year"));
+		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"));
 		AddOwnerShipDetails.selectJointOwnership();
 		AddProperty AddProperty = AddOwnerShipDetails.threeOwnerCountSelectionAndSkipOne(
 				input.get("owner_1_percentage"), input.get("country_code"), input.get("owner_2_phone_number"),
@@ -356,8 +349,7 @@ public class JointPropertyAdd extends AndroidGlobalData {
 		ProfilePage ProfilePage = HomePage.openProfile();
 		MyProperties MyProperties = ProfilePage.openMyPropertiesPage();
 		AddOwnerShipDetails AddOwnerShipDetails = MyProperties.openPropertyAdd();
-		AddOwnerShipDetails.initialContractVerification(input.get("titledeedDocument"), input.get("title_deed_number"),
-				input.get("year"));
+		AddOwnerShipDetails.initialContractVerification(input.get("titledeedDocument"));
 		AddOwnerShipDetails.selectJointOwnership();
 		AddProperty AddProperty = AddOwnerShipDetails.fourOwnerAddFour(input.get("owner_1_percentage"),
 				input.get("country_code_2"), input.get("owner_2_phone_number"), input.get("owner_2_email"),

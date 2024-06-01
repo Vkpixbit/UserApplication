@@ -1,0 +1,25 @@
+[
+	{
+		"_comment": "rentalAddAsTenantWithTitledeedData",
+		"email": "adish123@gmail.com",
+		"password": "Qapixbit@14",
+		"ejari_document": "",
+		"tenancy_document": "",
+		"titledeedDocument": "",
+		"cheque_count": "2",
+		"cheque_document": "",
+		"bank_name": "",
+		"cheque_date": ""
+	},
+	{
+		"_comment": "rentalAddAsTenantWithTitledeedData",
+		"email": "adish123@gmail.com",
+		"password": "Qapixbit@14",
+		"ejari_document": "",
+		"tenancy_document": "",
+		"cheque_count": "2",
+		"cheque_document": "",
+		"bank_name": "",
+		"cheque_date": ""
+	}
+]

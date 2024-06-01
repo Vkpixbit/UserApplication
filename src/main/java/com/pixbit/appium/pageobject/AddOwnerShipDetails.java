@@ -1,12 +1,8 @@
 package com.pixbit.appium.pageobject;
 
-import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -26,7 +22,7 @@ public class AddOwnerShipDetails extends AndroidActions {
 	@AndroidFindBy(accessibility = "ic_doc_upload_btn")
 	private WebElement titleDeedUpload;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Verify']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Verify & Continue']")
 	private WebElement verifyButton;
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Continue']")
@@ -76,61 +72,44 @@ public class AddOwnerShipDetails extends AndroidActions {
 
 	private boolean permissionApproved = false;
 	
-	public void open_title_deed_section() {
-		driver.findElement(By.xpath("//android.widget.TextView[@text='Docs_for_testing']")).click();
-		driver.findElement(By.xpath("//android.widget.TextView[@text='Title_Deed']")).click();
-	}
-	
-	public void open_initial_contract_section() {
-		driver.findElement(By.xpath("//android.widget.TextView[@text='Docs_for_testing']")).click();
-		driver.findElement(By.xpath("//android.widget.TextView[@text='Title_Deed']")).click();
-		driver.findElement(By.xpath("//android.widget.TextView[@text='Initial Contract']")).click();
-	}
-
-	public void titleDeedVerification(String titledeedDocument, String title_deed_number, String year)
-			throws InterruptedException {
+	public void open_title_deed_section(String titledeedDocument) throws InterruptedException {
 		titleDeedUpload.click();
 		if (!permissionApproved) {
 			approvePermission();
 			permissionApproved = true; // Set the flag to true after approval
 		}
-		open_title_deed_section();
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Docs_for_testing']")).click();
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Title_Deed']")).click();
 		scrollToElementByText(titledeedDocument);
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//android.widget.TextView[@text='" + titledeedDocument + "']")).click();
 		Thread.sleep(3000);
-		continueButton.click();
-		titleDeedNumberField.sendKeys(title_deed_number);
-		calender.click();
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.visibilityOf(yearPicker));
-		driver.findElement(AppiumBy
-				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + year + "\"));"));
-		driver.findElement(By.xpath("//android.widget.TextView[@text='" + year + "']")).click();
-		verifyButton.click();
+		
 	}
 	
-	public void initialContractVerification(String titledeedDocument, String title_deed_number, String year) throws InterruptedException {
-		// System.out.println("test");
+	public void open_initial_contract_section(String titledeedDocument) throws InterruptedException {
 		titleDeedUpload.click();
 		if (!permissionApproved) {
 			approvePermission();
-			permissionApproved = true; /* Set the flag to true after approval */
+			permissionApproved = true; // Set the flag to true after approval
 		}
-		//driver.findElement(By.xpath("//android.widget.TextView[@text='Initial Contract']")).click();
-		open_initial_contract_section();
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Docs_for_testing']")).click();
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Title_Deed']")).click();
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Initial Contract']")).click();
 		scrollToElementByText(titledeedDocument);
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//android.widget.TextView[@text='"+titledeedDocument+"']")).click();
-		Thread.sleep(2000);
-		continueButton.click();
-		titleDeedNumberField.sendKeys(title_deed_number);
-		calender.click();
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.visibilityOf(yearPicker));
-		driver.findElement(AppiumBy
-				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + year + "\"));"));
-		driver.findElement(By.xpath("//android.widget.TextView[@text='" + year + "']")).click();
+		driver.findElement(By.xpath("//android.widget.TextView[@text='" + titledeedDocument + "']")).click();
+		Thread.sleep(3000);
+	}
+
+	public void titleDeedVerification(String titledeedDocument)
+			throws InterruptedException {
+		open_title_deed_section(titledeedDocument);
+		verifyButton.click();
+	}
+	
+	public void initialContractVerification(String titledeedDocument) throws InterruptedException {
+		open_initial_contract_section(titledeedDocument);
 		verifyButton.click();		
 	}
 

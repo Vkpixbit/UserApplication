@@ -22,7 +22,7 @@ public class MarketplaceEnqueryMade extends AndroidGlobalData {
 		HomePage HomePage = LoginPage.loginToApp(input.get("email"), input.get("password"));
 		approvePermission();
 		MarketplacePage MarketplacePage=HomePage.openSaleMarketplace();
-		MarketplaceDetailsPage MarketplaceDetailsPage=MarketplacePage.openPropertyFromMarketplace(input.get("property_name"));
+		MarketplaceDetailsPage MarketplaceDetailsPage = MarketplacePage.openProperty(input.get("property_name"));
 		MarketplaceDetailsPage.enqueryMadeLoginedUser();
 	}
 	

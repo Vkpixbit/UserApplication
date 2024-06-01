@@ -31,11 +31,10 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 		ProfilePage ProfilePage = HomePage.openProfile();
 		MyProperties MyProperties = ProfilePage.openMyPropertiesPage();
 		AddOwnerShipDetails AddOwnerShipDetails = MyProperties.openPropertyAdd();
-		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"), input.get("title_deed_number"),
-				input.get("year"));
+		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"));
 		AddProperty AddProperty = AddOwnerShipDetails.selectSingleOwnership();
 		System.out.println("Basic Details section showing");
-		/*AddProperty.enter_property_name(input.get("property_name"));
+		AddProperty.enter_property_name(input.get("property_name"));
 		AddProperty.select_property_category(input.get("property_category"));
 		AddProperty.select_apartment();
 		AddProperty.select_ready_status(input.get("age_of_property"), input.get("present_use"));
@@ -50,7 +49,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 		AddProperty.select_map_location();
 		AddProperty.select_furnishing_status(input.get("furnishing_status"));
 		AddProperty.click_save();
-		AddProperty.skip_rent();*/
+		AddProperty.skip_rent();
 
 	}
 
@@ -76,11 +75,10 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 		ProfilePage ProfilePage = HomePage.openProfile();
 		MyProperties MyProperties = ProfilePage.openMyPropertiesPage();
 		AddOwnerShipDetails AddOwnerShipDetails = MyProperties.openPropertyAdd();
-		AddOwnerShipDetails.initialContractVerification(input.get("titledeedDocument"), input.get("title_deed_number"),
-				input.get("year"));
+		AddOwnerShipDetails.initialContractVerification(input.get("titledeedDocument"));
 		AddProperty AddProperty = AddOwnerShipDetails.selectSingleOwnership();
 		System.out.println("Basic Details section showing");
-		/*AddProperty.enter_property_name(input.get("property_name"));
+		AddProperty.enter_property_name(input.get("property_name"));
 		AddProperty.select_property_category(input.get("property_category"));
 		AddProperty.select_townhouse();
 		AddProperty.select_under_construction_status();
@@ -98,7 +96,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 		AddProperty.select_map_location();
 		AddProperty.select_furnishing_status(input.get("furnishing_status"));
 		AddProperty.click_save();
-		AddProperty.goToProperties();*/
+		AddProperty.goToProperties();
 	}
 
 	@DataProvider
@@ -122,11 +120,10 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 		ProfilePage ProfilePage = HomePage.openProfile();
 		MyProperties MyProperties = ProfilePage.openMyPropertiesPage();
 		AddOwnerShipDetails AddOwnerShipDetails = MyProperties.openPropertyAdd();
-		AddOwnerShipDetails.initialContractVerification(input.get("titledeedDocument"), input.get("title_deed_number"),
-				input.get("year"));
+		AddOwnerShipDetails.initialContractVerification(input.get("titledeedDocument"));
 		AddProperty AddProperty = AddOwnerShipDetails.selectSingleOwnership();
 		System.out.println("Basic Details section showing");
-		/*AddProperty.enter_property_name(input.get("propert_name"));
+		AddProperty.enter_property_name(input.get("propert_name"));
 		AddProperty.select_property_category(input.get("property_category"));
 		AddProperty.select_office();
 		AddProperty.select_under_construction_status();
@@ -142,7 +139,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 		AddProperty.select_map_location();
 		AddProperty.select_furnishing_status(input.get("furnishing_status"));
 		AddProperty.click_save();
-		AddProperty.skip_rent();*/
+		AddProperty.skip_rent();
 
 	}
 
@@ -168,11 +165,10 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 		ProfilePage ProfilePage = HomePage.openProfile();
 		MyProperties MyProperties = ProfilePage.openMyPropertiesPage();
 		AddOwnerShipDetails AddOwnerShipDetails = MyProperties.openPropertyAdd();
-		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"), input.get("title_deed_number"),
-				input.get("year"));
+		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"));
 		AddProperty AddProperty = AddOwnerShipDetails.selectSingleOwnership();
 		System.out.println("Basic Details section showing");
-		/*AddProperty.enter_property_name(input.get("property_name"));
+		AddProperty.enter_property_name(input.get("property_name"));
 		AddProperty.select_property_category(input.get("property_category"));
 		AddProperty.select_villa();
 		AddProperty.select_ready_status(input.get("age_of_property"), input.get("present_use"));
@@ -189,7 +185,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 		AddProperty.select_map_location();
 		AddProperty.select_furnishing_status(input.get("furnishing_status"));
 		AddProperty.click_save();
-		AddProperty.skip_rent();*/
+		AddProperty.skip_rent();
 	}
 
 	@DataProvider
@@ -214,11 +210,10 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 		ProfilePage ProfilePage = HomePage.openProfile();
 		MyProperties MyProperties = ProfilePage.openMyPropertiesPage();
 		AddOwnerShipDetails AddOwnerShipDetails = MyProperties.openPropertyAdd();
-		AddOwnerShipDetails.initialContractVerification(input.get("titledeedDocument"), input.get("title_deed_number"),
-				input.get("year"));
+		AddOwnerShipDetails.initialContractVerification(input.get("titledeedDocument"));
 		AddProperty AddProperty = AddOwnerShipDetails.selectSingleOwnership();
 		System.out.println("Basic Details section showing");
-		/*AddProperty.enter_property_name(input.get("property_name"));
+		AddProperty.enter_property_name(input.get("property_name"));
 		AddProperty.select_property_category(input.get("property_category"));
 		AddProperty.select_service_apartment();
 		AddProperty.select_under_construction_status();
@@ -238,7 +233,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 		AddProperty.select_map_location();
 		AddProperty.select_furnishing_status(input.get("furnishing_status"));
 		AddProperty.click_save();
-		AddProperty.goToProperties();*/
+		AddProperty.goToProperties();
 	}
 
 	@DataProvider

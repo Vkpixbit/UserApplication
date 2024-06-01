@@ -2,6 +2,7 @@ package utilites;
 
 import java.awt.Dimension;
 import java.time.Duration;
+import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -91,7 +92,7 @@ public class AndroidActions {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
 		return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(String.format(locator.toString(), value))));
 	}
-		
+
 	public void click_done() throws InterruptedException {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//android.widget.TextView[@text='Done']")).click();
@@ -101,29 +102,40 @@ public class AndroidActions {
 		cancelButton.click();
 		cancelYes.click();
 	}
-	
+
 	public void horizontalScroll() {
 		driver.findElement(By.className("android.widget.ImageView")).click();
 	}
-	
+
 	public boolean scrollManually(WebElement element) {
-		boolean canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: flingGesture", ImmutableMap.of(
-			    "elementId", ((RemoteWebElement) element).getId(),
-			    "direction", "down",
-			    "speed", 500
-			));
+		boolean canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: flingGesture",
+				ImmutableMap.of("elementId", ((RemoteWebElement) element).getId(), "direction", "down", "speed", 500));
 		return canScrollMore;
 	}
-	
-	public MarketplaceDetailsPage openPropertyFromMarketplace(String property_name) {
-		if(driver.findElement(By.xpath("//android.widget.TextView[@text='"+property_name+"']")).isDisplayed()) {
-			driver.findElement(By.xpath("//android.widget.TextView[@text='"+property_name+"']")).click();
-		}
-		else {
-			scrollToElementByText(property_name);
-			driver.findElement(By.xpath("//android.widget.TextView[@text='"+property_name+"']")).click();
-		}
-		return new  MarketplaceDetailsPage(driver);
+
+	public MarketplaceDetailsPage openPropertyFromMarketplace(String propertyName) {
+	    try {
+	        // Locate the element
+	        WebElement propertyElement = driver.findElement(By.xpath("//android.widget.TextView[@text='" + propertyName + "']"));
+	        
+	        // Check if the element is displayed, if not, scroll to it
+	        if (propertyElement.isDisplayed()) {
+	            propertyElement.click();
+	        } else {
+	            System.out.println("Scroll to the property!");
+	            scrollToElementByText(propertyName);
+	            propertyElement.click();
+	        }
+	    } catch (NoSuchElementException e) {
+	        System.out.println("Property not found: " + propertyName);
+	        // Handle exception as needed (e.g., throw an exception, return a different page object, etc.)
+	    } catch (Exception e) {
+	        System.out.println("An error occurred: " + e.getMessage());
+	        // Handle other exceptions
+	    }
+	    
+	    return new MarketplaceDetailsPage(driver);
 	}
-	
+
+
 }

@@ -49,8 +49,8 @@ public class AddRental extends AndroidActions {
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Verify']")
 	private WebElement clickVerify;
 	
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='8']")
-	private WebElement endDateField;
+	//@AndroidFindBy(xpath = "//android.widget.EditText[@index='8']")
+	//private WebElement endDateField;
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Save without cheque']")
 	private WebElement savewithoutCheque;
@@ -212,6 +212,7 @@ public class AddRental extends AndroidActions {
 			datePicker();
 			addChequeAmount();
 		}
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Save']")).click();
 	}
 
 	

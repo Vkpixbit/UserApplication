@@ -1,20 +1,21 @@
 [
-{
-"email":"abhilash@gmail.com",
-"password":"Qapixbit@14",
-"titledeedDocument":"Initial Contract 623.pdf",
-"title_deed_number":"434354455",
-"year":"2009",
-"owner_1_percentage":"50",
-"property_name":"Chestertons",
-"property_category":"Commercial",
-"schedule_count":"2",
-"schedule_particulars":"Test",
-"schedule_period":"12",
-"bedroom_cabin_count":"4",
-"bathroom_count":"2",
-"kitchen_pantry_count":"2",
-"balcony_count":"2",
-"furnishing_status":"Furnished"
-}
+	{
+		"_comment": "two_owner_add_one_serviceapartment_underconstruction_data",
+		"email": "abhilash@gmail.com",
+		"password": "Qapixbit@14",
+		"titledeedDocument": "Initial Contract 623.pdf",
+		"title_deed_number": "434354455",
+		"year": "2009",
+		"owner_1_percentage": "50",
+		"property_name": "Chestertons",
+		"property_category": "Commercial",
+		"schedule_count": "2",
+		"schedule_particulars": "Test",
+		"schedule_period": "12",
+		"bedroom_cabin_count": "4",
+		"bathroom_count": "2",
+		"kitchen_pantry_count": "2",
+		"balcony_count": "2",
+		"furnishing_status": "Furnished"
+	}
 ]

@@ -19,4 +19,5 @@ public class MarketplacePage extends AndroidActions {
 		openPropertyFromMarketplace(property_name);
 		return new MarketplaceDetailsPage(driver);
 	}
+
 }

@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="YourTestSuite">
-    <listeners>
-        <listener class-name="com.pixbit.appium.globalfiles.Listeners" />
-    </listeners>
-    <test name="YourTest" preserve-order="true">
-        <classes>
-            <class name="com.pixbit.appium.test.property.add.JointPropertyAdd">
-                <methods>
-                    <include name="fourowner_add_villa_underconstruction_property" />
-                </methods>
-            </class>
-        </classes>
-    </test>
+<suite name="Joint_Property_Add">
+	<listeners>
+		<listener class-name="com.pixbit.appium.globalfiles.Listeners" />
+	</listeners>
+	<test name="Joint Property Add" preserve-order="true">
+		<groups>
+			<run>
+				<include name="joint_property" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.pixbit.appium.test.property.add.JointPropertyAdd">
+			</class>
+		</classes>
+	</test>
 </suite>

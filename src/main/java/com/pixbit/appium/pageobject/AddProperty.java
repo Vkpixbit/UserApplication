@@ -68,7 +68,7 @@ public class AddProperty extends AndroidActions {
 	@AndroidFindBy(id = "android:id/title")
 	private List<WebElement> DocumentsList;
 
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='7']")
+	/*@AndroidFindBy(xpath = "//android.widget.EditText[@index='7']")
 	private WebElement communityField;
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Select One']")
@@ -117,7 +117,7 @@ public class AddProperty extends AndroidActions {
 	private WebElement totalAreaSqFt;
 
 	@AndroidFindBy(xpath = "//android.widget.EditText[@index='10']")
-	private WebElement commonArea;
+	private WebElement commonArea;*/
 
 	@AndroidFindBy(accessibility = "My Location")
 	private WebElement myLocationClick;
@@ -762,7 +762,9 @@ public class AddProperty extends AndroidActions {
 	 */
 	public void goToProperties() throws InterruptedException {
 		Thread.sleep(2000);
+		System.out.println(goToPropertiesButton.getText());
 		goToPropertiesButton.click();
+		
 	}
 
 }

@@ -34,8 +34,7 @@ public class NewUserPropertyAdd extends AndroidGlobalData {
 		approvePermission();
 		ProfilePage ProfilePage = HomePage.openProfile();
 		AddOwnerShipDetails AddOwnerShipDetails = ProfilePage.openPropertyAddPage();
-		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"), input.get("title_deed_number"),
-				input.get("year"));
+		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"));
 		AddProperty AddProperty = AddOwnerShipDetails.selectSingleOwnership();
 		AddProperty.enter_property_name(input.get("property_name"));
 		AddProperty.select_property_category(input.get("property_category"));
@@ -72,8 +71,7 @@ public class NewUserPropertyAdd extends AndroidGlobalData {
 		approvePermission();
 		ProfilePage ProfilePage = HomePage.openProfile();
 		AddOwnerShipDetails AddOwnerShipDetails = ProfilePage.openPropertyAddPage();
-		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"), input.get("title_deed_number"),
-				input.get("year"));
+		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"));
 		AddProperty AddProperty = AddOwnerShipDetails.selectSingleOwnership();
 		AddProperty.enter_property_name(input.get("property_name"));
 		AddProperty.select_property_category(input.get("property_category"));

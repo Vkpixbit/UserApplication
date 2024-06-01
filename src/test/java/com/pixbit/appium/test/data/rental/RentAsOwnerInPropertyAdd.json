@@ -1,0 +1,36 @@
+[
+	{
+		"_comment": "rental_add_owner_list_data",
+		"email": "adish123@gmail.com",
+		"password": "Qapixbit@14",
+		"titledeedDocument": "",
+		"property_name": "",
+		"property_category": "",
+		"age_of_property": "",
+		"present_use": "Rented",
+		"bedroom_cabin_count": "",
+		"bathroom_count": "",
+		"kitchen_pantry_count": "",
+		"balcony_count": "",
+		"furnishing_status": "",
+		"ejari_document": "",
+		"tenancy_document": "",
+		"cheque_count": "2",
+		"cheque_document": "",
+		"bank_name": "",
+		"cheque_date": ""
+	},
+	{
+		"_comment": "rental_add_owner_list_data",
+		"email": "adish123@gmail.com",
+		"password": "Qapixbit@14",
+		"titledeedDocument": "",
+		"property_name": "",
+		"property_category": "",
+		"bedroom_cabin_count": "",
+		"bathroom_count": "",
+		"kitchen_pantry_count": "",
+		"balcony_count": "",
+		"furnishing_status": ""
+	}
+]
