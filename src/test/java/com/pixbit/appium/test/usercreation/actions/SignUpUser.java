@@ -1,8 +1,6 @@
 package com.pixbit.appium.test.usercreation.actions;
 
 import org.testng.annotations.Test;
-
-import com.pixbit.agencyportal.pages.HomePage;
 import com.pixbit.appium.globalfiles.AndroidGlobalData;
 import com.pixbit.appium.pageobject.LoginPage;
 import com.pixbit.appium.pageobject.SplashScreen;
@@ -14,8 +12,6 @@ import java.util.List;
 import org.testng.annotations.DataProvider;
 
 public class SignUpUser extends AndroidGlobalData{
-	
-	HomePage homepage= new HomePage(driver);
 	
 
 	@Test(dataProvider = "userCreationData",enabled = true,groups = "SMOKE_TESTING")
