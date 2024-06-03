@@ -203,7 +203,7 @@ public class AddRental extends AndroidActions {
 	}
 	
 	
-	public void enter_cheque_details(String cheque_count,String cheque_document,String bank_name,String cheque_date) {
+	public void enter_cheque_details(String cheque_count,String cheque_document,String bank_name) {
 		int count = Integer.parseInt(cheque_count);
 		for (int i=0;i<=count;i++) {
 			addChequeButton.click();

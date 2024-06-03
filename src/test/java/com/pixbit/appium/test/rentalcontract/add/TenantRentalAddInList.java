@@ -33,8 +33,7 @@ public class TenantRentalAddInList extends AndroidGlobalData {
 		AddOwnerShipDetails AddOwnerShipDetails = new AddOwnerShipDetails(driver);
 		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"));
 		AddRental.nextButtonClick();
-		AddRental.enter_cheque_details(input.get("cheque_count"), input.get("cheque_document"), input.get("bank_name"),
-				input.get("cheque_date"));
+		AddRental.enter_cheque_details(input.get("cheque_count"), input.get("cheque_document"), input.get("bank_name"));
 	}
 
 	@DataProvider
@@ -59,14 +58,13 @@ public class TenantRentalAddInList extends AndroidGlobalData {
 		AddRental.uploadEjariRentalFlow(input.get("ejari_document"));
 		AddRental.uploadTenancy(input.get("tenancy_document"));
 		AddRental.nextButtonClick();
-		AddRental.enter_cheque_details(input.get("cheque_count"), input.get("cheque_document"), input.get("bank_name"),
-				input.get("cheque_date"));
+		AddRental.enter_cheque_details(input.get("cheque_count"), input.get("cheque_document"), input.get("bank_name"));
 	}
 
 	@DataProvider
 	public Object[][] rentalAddTenantWithoutTitledeedData() throws IOException {
-		List<HashMap<String, String>> value = getjsondata(System.getProperty("user.dir")+
-				"/src/test/java/com/pixbit/appium/test/data/rental/RentalAsTenantList.json");
+		List<HashMap<String, String>> value = getjsondata(System.getProperty("user.dir")
+				+ "/src/test/java/com/pixbit/appium/test/data/rental/RentalAsTenantList.json");
 		return new Object[][] { { value.get(1) } };
 	}
 }

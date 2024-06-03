@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Single_Property_Test_Suite" parallel="tests" thread-count="5">
+	<listeners>
+		<listener class-name="com.pixbit.appium.globalfiles.Listeners" />
+	</listeners>
+	<test name="SinglePropertyTest" preserve-order="true">
+		<groups>
+			<run>
+				<include name="mark_as_sold_user" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.pixbit.appium.test.property.mark_as_sold.UserPropertyMarkAsSold">
+			</class>
+		</classes>
+	</test>
+</suite>

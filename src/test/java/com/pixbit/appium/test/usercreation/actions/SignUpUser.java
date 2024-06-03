@@ -14,7 +14,7 @@ import org.testng.annotations.DataProvider;
 public class SignUpUser extends AndroidGlobalData{
 	
 
-	@Test(dataProvider = "userCreationData",enabled = true,groups = "SMOKE_TESTING")
+	@Test(dataProvider = "userCreationData",enabled = true,groups = "sign_up")
 	public void createUser(HashMap<String, String>input) throws InterruptedException {
 		SplashScreen SplashScreen=new SplashScreen(driver);
 		LoginPage LoginPage=SplashScreen.clickSkipButton();
@@ -31,6 +31,8 @@ public class SignUpUser extends AndroidGlobalData{
 				"/src/test/java/com/pixbit/appium/test/usercreation/actions/UserDetails.json");
 		return new Object[][] {{ value.get(0) }};
 	}
+	
+	
 	
 	@Test(dataProvider = "user_creation_without_language",enabled = false )
 	public void check_preferred_language_validation(HashMap<String, String>input) throws InterruptedException {

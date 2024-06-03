@@ -29,15 +29,14 @@ public class OwnerRentalAddInList extends AndroidGlobalData {
 		AddRental.uploadEjariRentalFlow(input.get("ejari_document"));
 		AddRental.uploadTenancy(input.get("tenancy_document"));
 		AddRental.nextButtonClick();
-		AddRental.enter_cheque_details(input.get("cheque_count"), input.get("cheque_document"), input.get("bank_name"),
-				input.get("cheque_date"));
+		AddRental.enter_cheque_details(input.get("cheque_count"), input.get("cheque_document"), input.get("bank_name"));
 	}
 
 	@DataProvider
 	public Object[][] rental_add_owner_list_data() throws IOException {
-		List<HashMap<String, String>> value = getjsondata(
-				System.getProperty("user.dir") + "/src/test/java/com/pixbit/appium/test/data/rental/RentAsOwnerInList.json");
+		List<HashMap<String, String>> value = getjsondata(System.getProperty("user.dir")
+				+ "/src/test/java/com/pixbit/appium/test/data/rental/RentAsOwnerInList.json");
 		return new Object[][] { { value.get(0) } };
 	}
-	
+
 }

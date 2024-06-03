@@ -1,15 +1,30 @@
 [
-{
-"emailId":"romario123@gmail.com",
-"phoneNumber":"9007329180",
-"userName":"Romario",
-"password":"Qapixbit@14",
-"prefred_language":"German"
-},
-{
-"emailId":"romario123@gmail.com",
-"phoneNumber":"9007329180",
-"userName":"Romario",
-"password":"Qapixbit@14"
-}
+	{
+		"emailId": "asheek@pixbitsolutions.com",
+		"phoneNumber": "9796059900",
+		"userName": "Asheek",
+		"password": "Qapixbit@14",
+		"prefred_language": "German"
+	},
+	{
+		"emailId": "abdulmuhsin@pixbitsolutions.com",
+		"phoneNumber": "9654349509",
+		"userName": "muhsin",
+		"password": "Qapixbit@14",
+		"prefred_language": "English"
+	},
+	{
+		"emailId": "megha@pixbitsolutions.com",
+		"phoneNumber": "9654300009",
+		"userName": "Megha",
+		"password": "Qapixbit@14",
+		"prefred_language": "French"
+	},
+	{
+		"emailId": "shyam@pixbitsolutions.com",
+		"phoneNumber": "9654311109",
+		"userName": "Shyam",
+		"password": "Qapixbit@14",
+		"prefred_language": "Urdu"
+	}
 ]

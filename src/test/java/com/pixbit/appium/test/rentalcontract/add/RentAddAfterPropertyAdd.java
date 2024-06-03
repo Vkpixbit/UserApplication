@@ -47,22 +47,22 @@ public class RentAddAfterPropertyAdd extends AndroidGlobalData {
 		AddRental.uploadEjariRentalFlow(input.get("ejari_document"));
 		AddRental.uploadTenancy(input.get("tenancy_document"));
 		AddRental.nextButtonClick();
-		AddRental.enter_cheque_details(input.get("cheque_count"), input.get("cheque_document"), input.get("bank_name"),
-				input.get("cheque_date"));
+		AddRental.enter_cheque_details(input.get("cheque_count"), input.get("cheque_document"), input.get("bank_name"));
 	}
 
 	@DataProvider
 	public Object[][] rentalAddInPropertyData() throws IOException {
-		List<HashMap<String, String>> value = getjsondata(
-				System.getProperty("user.dir") + "/src/test/java/com/pixbit/appium/test/data/rental/RentAsOwnerInPropertyAdd.json");
+		List<HashMap<String, String>> value = getjsondata(System.getProperty("user.dir")
+				+ "/src/test/java/com/pixbit/appium/test/data/rental/RentAsOwnerInPropertyAdd.json");
 		return new Object[][] { { value.get(0) } };
 	}
-	
+
 	/*
-	 * Verify if we add pre title deed property then rental adding in property add is working or not	
+	 * Verify if we add pre title deed property then rental adding in property add
+	 * is working or not
 	 */
 	@Test(dataProvider = "rentalPreventionPropertyData", groups = "rental_add", enabled = true)
-	public void rentalAddSinglePropertyPretitledeedFlow(HashMap<String, String>input) throws InterruptedException {
+	public void rentalAddSinglePropertyPretitledeedFlow(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();
 		HomePage HomePage = LoginPage.loginToApp(input.get("email"), input.get("password"));
@@ -87,11 +87,11 @@ public class RentAddAfterPropertyAdd extends AndroidGlobalData {
 		AddProperty.goToProperties();
 		System.out.println("Property is Underconstruction we can't add rental contract!");
 	}
-	
+
 	@DataProvider
 	public Object[][] rentalPreventionPropertyData() throws IOException {
-		List<HashMap<String, String>> value = getjsondata(
-				System.getProperty("user.dir") + "/src/test/java/com/pixbit/appium/test/data/rental/RentAsOwnerInPropertyAdd.json");
+		List<HashMap<String, String>> value = getjsondata(System.getProperty("user.dir")
+				+ "/src/test/java/com/pixbit/appium/test/data/rental/RentAsOwnerInPropertyAdd.json");
 		return new Object[][] { { value.get(1) } };
 	}
 
