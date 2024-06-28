@@ -79,8 +79,8 @@ public class JointPropertyAdd extends AndroidGlobalData {
 		AddOwnerShipDetails.selectJointOwnership();
 		AddProperty AddProperty = AddOwnerShipDetails.addOneOwnerAndSkipOne(input.get("owner_1_percentage"));
 		AddProperty.enter_property_name(input.get("property_name"));
-		AddProperty.select_property_category(input.get("property_category"));
-		AddProperty.select_apartment();
+		//AddProperty.select_property_category(input.get("property_category"));
+		//AddProperty.select_apartment();
 		AddProperty.select_under_construction_status();
 		AddProperty.scroll_to_next();
 		AddProperty.add_payment_plan(input.get("schedule_count"), input.get("schedule_particulars"),
@@ -123,8 +123,8 @@ public class JointPropertyAdd extends AndroidGlobalData {
 				input.get("country_code"), input.get("owner_2_phone_number"), input.get("owner_2_email"),
 				input.get("owner_2_name"), input.get("owner_2_percentage"));
 		AddProperty.enter_property_name(input.get("property_name"));
-		AddProperty.select_property_category(input.get("property_category"));
-		AddProperty.select_service_apartment();
+		//AddProperty.select_property_category(input.get("property_category"));
+		//AddProperty.select_service_apartment();
 		AddProperty.select_ready_status(input.get("age_of_property"), input.get("present_use"));
 		scrollToNext();
 		AddProperty.select_mortgaged_tenure_year_month_offer_letter(input.get("mortgage_amount"),

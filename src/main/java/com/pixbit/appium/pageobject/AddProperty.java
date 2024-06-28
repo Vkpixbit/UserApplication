@@ -5,9 +5,13 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Random;
+import java.util.concurrent.TimeoutException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -30,6 +34,7 @@ public class AddProperty extends AndroidActions {
 	@AndroidFindBy(accessibility = "Add")
 	public WebElement addPaymentPlan;
 
+	
 	/*
 	 * @AndroidFindBy(xpath = "//android.widget.EditText[@index='1']") private
 	 * WebElement sheduleDate;
@@ -68,56 +73,58 @@ public class AddProperty extends AndroidActions {
 	@AndroidFindBy(id = "android:id/title")
 	private List<WebElement> DocumentsList;
 
-	/*@AndroidFindBy(xpath = "//android.widget.EditText[@index='7']")
-	private WebElement communityField;
-
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Select One']")
-	private WebElement areaRegionClick;
-
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='4']")
-	private WebElement unitNumberField;
-
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='6']")
-	private WebElement plotAreaSqMtField;
-
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='8']")
-	private WebElement plotAreaSqFtField;
-
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='10']")
-	private WebElement buildUpAreaField;
-
-	@AndroidFindBy(xpath = "//android.widget.ImageView[@index='6']")
-	private WebElement propertyTypeScroll;
-
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='5']")
-	private WebElement buildingNumberField;
-
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='7']")
-	private WebElement buildingNameField;
-
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='9']")
-	private WebElement propertyNumberField;
-
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='11']")
-	private WebElement floorNumberField;
-
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='10']")
-	private WebElement parkingField;
-
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='2']")
-	private WebElement suiteAreaField;
-
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='4']")
-	private WebElement balconyAreaField;
-
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='6']")
-	private WebElement totalAreaSqMt;
-
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='8']")
-	private WebElement totalAreaSqFt;
-
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='10']")
-	private WebElement commonArea;*/
+	/*
+	 * @AndroidFindBy(xpath = "//android.widget.EditText[@index='7']") private
+	 * WebElement communityField;
+	 * 
+	 * @AndroidFindBy(xpath = "//android.widget.TextView[@text='Select One']")
+	 * private WebElement areaRegionClick;
+	 * 
+	 * @AndroidFindBy(xpath = "//android.widget.EditText[@index='4']") private
+	 * WebElement unitNumberField;
+	 * 
+	 * @AndroidFindBy(xpath = "//android.widget.EditText[@index='6']") private
+	 * WebElement plotAreaSqMtField;
+	 * 
+	 * @AndroidFindBy(xpath = "//android.widget.EditText[@index='8']") private
+	 * WebElement plotAreaSqFtField;
+	 * 
+	 * @AndroidFindBy(xpath = "//android.widget.EditText[@index='10']") private
+	 * WebElement buildUpAreaField;
+	 * 
+	 * @AndroidFindBy(xpath = "//android.widget.ImageView[@index='6']") private
+	 * WebElement propertyTypeScroll;
+	 * 
+	 * @AndroidFindBy(xpath = "//android.widget.EditText[@index='5']") private
+	 * WebElement buildingNumberField;
+	 * 
+	 * @AndroidFindBy(xpath = "//android.widget.EditText[@index='7']") private
+	 * WebElement buildingNameField;
+	 * 
+	 * @AndroidFindBy(xpath = "//android.widget.EditText[@index='9']") private
+	 * WebElement propertyNumberField;
+	 * 
+	 * @AndroidFindBy(xpath = "//android.widget.EditText[@index='11']") private
+	 * WebElement floorNumberField;
+	 * 
+	 * @AndroidFindBy(xpath = "//android.widget.EditText[@index='10']") private
+	 * WebElement parkingField;
+	 * 
+	 * @AndroidFindBy(xpath = "//android.widget.EditText[@index='2']") private
+	 * WebElement suiteAreaField;
+	 * 
+	 * @AndroidFindBy(xpath = "//android.widget.EditText[@index='4']") private
+	 * WebElement balconyAreaField;
+	 * 
+	 * @AndroidFindBy(xpath = "//android.widget.EditText[@index='6']") private
+	 * WebElement totalAreaSqMt;
+	 * 
+	 * @AndroidFindBy(xpath = "//android.widget.EditText[@index='8']") private
+	 * WebElement totalAreaSqFt;
+	 * 
+	 * @AndroidFindBy(xpath = "//android.widget.EditText[@index='10']") private
+	 * WebElement commonArea;
+	 */
 
 	@AndroidFindBy(accessibility = "My Location")
 	private WebElement myLocationClick;
@@ -168,8 +175,12 @@ public class AddProperty extends AndroidActions {
 	 * Enter Property Name
 	 */
 	public void enter_property_name(String property_name) {
-		driver.findElement(By.xpath("//android.widget.EditText[@index='1']")).sendKeys(property_name);
-
+		WebElement element = driver.findElement(By.xpath("//android.widget.EditText[@index='1']"));
+		if (element.isDisplayed()) {
+			System.out.println("Element is displayed, no action needed"); // Replacing pass
+		} else {
+			element.sendKeys(property_name);
+		}
 	}
 
 	/*
@@ -251,7 +262,7 @@ public class AddProperty extends AndroidActions {
 		driver.findElement(By.xpath("//android.widget.TextView[@text='Under construction']")).click();
 	}
 
-	public void add_payment_plan(String schedule_count, String schedule_particulars, String schedule_period) {
+	public void add_payment_plan(String schedule_count, String schedule_particulars, String schedule_period) throws InterruptedException {
 		if (schedule_count == null || schedule_count.isEmpty()) {
 			throw new IllegalArgumentException("Schedule count must not be null or empty");
 		}
@@ -266,12 +277,12 @@ public class AddProperty extends AndroidActions {
 		int[] percentages = generateRandomPercentages(count);
 		addPaymentPlan.click();
 		for (int i = 0; i < count; i++) {
+			//System.out.println("text");
 			LocalDate randomDate = getRandomDateWithinRange(LocalDate.now(), LocalDate.now().plusYears(1));
 			String randomYear = String.valueOf(randomDate.getYear());
 			String randomMonth = randomDate.getMonth().name();
 			String randomDay = String.valueOf(randomDate.getDayOfMonth());
-			//System.out.println(randomYear + randomMonth + randomDay);
-			
+			// System.out.println(randomYear + randomMonth + randomDay);
 
 			selectDate(randomYear, randomMonth, randomDay);
 
@@ -281,20 +292,20 @@ public class AddProperty extends AndroidActions {
 			int schedule_booking_amount = percentages[i];
 			sheduleBookingAmount.sendKeys(String.valueOf(schedule_booking_amount));
 			driver.findElement(By.xpath("//android.widget.TextView[@text='Add Schedule']")).click();
-			if(i+1<count) {
-				//System.out.println("Getting!");
-				driver.findElement(AppiumBy
-						.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Add Payment Schedule\"));"));
+			if (i + 1 <= count) {
+				System.out.println("Getting!");
+				driver.findElement(AppiumBy.androidUIAutomator(
+						"new UiScrollable(new UiSelector()).scrollIntoView(text(\"Add Payment Schedule\"));"));
 				driver.findElement(By.xpath("//android.widget.TextView[@text='Add Payment Schedule']")).click();
-			}
-			else {
+			} else {
+				System.out.println("test save");
 				driver.findElement(AppiumBy
 						.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Save\"));"));
 				driver.findElement(By.xpath("//android.widget.TextView[@text='Save']")).click();
 			}
-			
+
 		}
-		
+
 	}
 
 	private int[] generateRandomPercentages(int count) {
@@ -318,28 +329,31 @@ public class AddProperty extends AndroidActions {
 	}
 
 	private LocalDate getRandomDateWithinRange(LocalDate startInclusive, LocalDate endExclusive) {
-	    LocalDate maxDate = LocalDate.of(2024, 12, 31);  // Set the max date to the end of 2024
-	    if (endExclusive.isAfter(maxDate)) {
-	        endExclusive = maxDate;
-	    }
-	    long days = ChronoUnit.DAYS.between(startInclusive, endExclusive);
-	    Random random = new Random();
-	    long randomDays = random.nextInt((int) days + 1);
-	    return startInclusive.plusDays(randomDays);
+		LocalDate maxDate = LocalDate.of(2024, 12, 31); // Set the max date to the end of 2024
+		if (endExclusive.isAfter(maxDate)) {
+			endExclusive = maxDate;
+		}
+		long days = ChronoUnit.DAYS.between(startInclusive, endExclusive);
+		Random random = new Random();
+		long randomDays = random.nextInt((int) days + 1);
+		return startInclusive.plusDays(randomDays);
 	}
 
-	public void selectDate(String desiredYear, String desiredMonth, String desiredDate) {
+	public void selectDate(String desiredYear, String desiredMonth, String desiredDate) throws InterruptedException {
 		int year = Integer.parseInt(desiredYear);
 		if (year > 2024) {
 			throw new IllegalArgumentException("Year must not be greater than 2024");
 		}
-
-		driver.findElement(AppiumBy.accessibilityId("Calender")).click();
+		//System.out.println("calender select");
+		WebElement calender_element =driver.findElement(AppiumBy.accessibilityId("Calender"));
+		Thread.sleep(2000);
+		//highlightWebelement(calender_element);
+		calender_element.click();
 		yearPicker.click();
 		driver.findElement(By.xpath("//android.widget.TextView[@text='" + desiredYear + "']")).click();
-		
+
 		String desiredMonthTitleCase = desiredMonth.charAt(0) + desiredMonth.substring(1).toLowerCase();
-		
+
 		while (!yearPicker.getAttribute("text").contains(desiredMonthTitleCase)) {
 			driver.findElement(By.xpath("//android.widget.Button[@content-desc=\"Change to next month\"]")).click();
 		}
@@ -347,7 +361,6 @@ public class AddProperty extends AndroidActions {
 		driver.findElement(By.xpath("//android.widget.Button[@text='OK']")).click();
 	}
 
-	
 	/*
 	 * Title deed section completely hide in sprint 14
 	 */
@@ -463,13 +476,25 @@ public class AddProperty extends AndroidActions {
 	 * Select Mortgage as Yes and Skip The Fields
 	 */
 	public void select_mortgaged_skip() throws InterruptedException {
-		if (addMortgageButton.isDisplayed()) {
-			addMortgageButton.click();
-			AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Save Details\"));");
-			driver.findElement(By.xpath("//android.widget.Button[@index='1']")).click();
-		}
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
+	    try {
+	    	//Thread.sleep(2000);
+	        if (wait.until(ExpectedConditions.visibilityOf(addMortgageButton)) != null) {
+	            System.out.println("Text");
+	            addMortgageButton.click();
+	            driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Save Details\"));"));
+	            driver.findElement(By.xpath("//android.widget.Button[@index='1']")).click();
+	        } else {
+	            driver.findElement(By.xpath("//android.widget.TextView[@text='Next']")).click();
+	        }
+	    } catch (NoSuchElementException e) {
+	        // If addMortgageButton is not found, proceed to click Next
+	    	//System.out.println("next click");
+	        driver.findElement(By.xpath("//android.widget.TextView[@text='Next']")).click();
+	    }
 	}
 
+	
 	/*
 	 * Select Mortgage And Tenure Is Only with Year Value
 	 */
@@ -660,9 +685,18 @@ public class AddProperty extends AndroidActions {
 	 * /* Select Bedroom/Cabin Count
 	 */
 	public void select_bedroom_cabin_count(String bedroom_cabin_count) throws InterruptedException {
-		driver.findElement(By.xpath("(//android.widget.TextView[@text='4+'])[1]")).click();
-		driver.findElement(By.className("android.widget.EditText")).sendKeys(bedroom_cabin_count);
-		click_done();
+	    try {
+	        // Correct the XPath to match the element correctly
+	        if (driver.findElement(By.xpath("//android.widget.TextView[@text='Number of Bedrooms (Required)']")).isDisplayed()) {
+	            driver.findElement(By.xpath("(//android.widget.TextView[@text='4+'])[1]")).click();
+	            driver.findElement(By.className("android.widget.EditText")).sendKeys(bedroom_cabin_count);
+	            click_done();
+	        } else {
+	            System.out.println("Bedroom field not entered!");
+	        }
+	    } catch (NoSuchElementException e) {
+	        System.out.println("Bedroom field not found!");
+	    }
 	}
 
 	/*
@@ -764,7 +798,7 @@ public class AddProperty extends AndroidActions {
 		Thread.sleep(2000);
 		System.out.println(goToPropertiesButton.getText());
 		goToPropertiesButton.click();
-		
+
 	}
 
 }

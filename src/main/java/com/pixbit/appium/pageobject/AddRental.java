@@ -28,10 +28,10 @@ public class AddRental extends AndroidActions {
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='I’m Property Owner']")
 	private WebElement propertyOwnerJourny;
 
-	@AndroidFindBy(xpath = "(//android.view.View[@content-desc=\"ic_add_document\"])[1]")
+	@AndroidFindBy(xpath = "(//android.view.View[@content-desc=\"Add PDF File\"])[1]")
 	private WebElement ejariUploadClick;
 
-	@AndroidFindBy(accessibility = "ic_add_document")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Choose Tenancy Contract File']")
 	private WebElement tenancyUploadClick;
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Next']")
@@ -46,8 +46,8 @@ public class AddRental extends AndroidActions {
 	@AndroidFindBy(xpath = "//android.widget.EditText[@index='7']")
 	private WebElement titleDeedYearField;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Verify']")
-	private WebElement clickVerify;
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Verify & Continue']")
+	public WebElement clickVerifyAndContinue;
 	
 	//@AndroidFindBy(xpath = "//android.widget.EditText[@index='8']")
 	//private WebElement endDateField;
@@ -76,7 +76,7 @@ public class AddRental extends AndroidActions {
 	
 	public void openEjariDocumentFolder() {
 		driver.findElement(By.xpath("//android.widget.TextView[@text='Docs_for_testing']")).click();
-		driver.findElement(By.xpath("//android.widget.TextView[@text='Ejari']")).click();
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Ejary']")).click();
 	}
 	
 	public void openTenancyDocumentFolder() {

@@ -26,5 +26,19 @@
 		"userName": "Shyam",
 		"password": "Qapixbit@14",
 		"prefred_language": "Urdu"
+	},
+	{
+		"emailId": "aleena@pixbitsolutions.com",
+		"phoneNumber": "9654311109",
+		"userName": "Aleena",
+		"password": "Qapixbit@14",
+		"prefred_language": "Urdu"
+	},
+	{
+		"emailId": "maria@pixbitsolutions.com",
+		"phoneNumber": "9654311109",
+		"userName": "maria",
+		"password": "Qapixbit@14",
+		"prefred_language": "Urdu"
 	}
 ]

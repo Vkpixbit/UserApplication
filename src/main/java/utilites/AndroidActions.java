@@ -81,7 +81,7 @@ public class AndroidActions {
 		driver.findElement(AppiumBy.androidUIAutomator(uiAutomatorExpression));
 	}
 
-	public static WebElement waitForElementToBeClickable(WebDriver driver, By locator, String value,
+	public WebElement waitForElementToBeClickable(By locator, String value,
 			int timeoutInSeconds) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
 		return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(String.format(locator.toString(), value))));
@@ -129,6 +129,14 @@ public class AndroidActions {
 	    }
 	    
 	    return new MarketplaceDetailsPage(driver);
+	}
+	
+	
+	public void highlightWebelement(WebElement element)
+	{
+	    //highlighting webelement using javascript executer
+	    JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+	    jsExecutor.executeScript("arguments[0].setAttribute('style', 'border:2px solid red; background:yellow')", element);
 	}
 
 

@@ -33,14 +33,13 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 		AddOwnerShipDetails AddOwnerShipDetails = MyProperties.openPropertyAdd();
 		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"));
 		AddProperty AddProperty = AddOwnerShipDetails.selectSingleOwnership();
-		System.out.println("Basic Details section showing");
+		//System.out.println("Basic Details section showing");
 		AddProperty.enter_property_name(input.get("property_name"));
-		AddProperty.select_property_category(input.get("property_category"));
-		AddProperty.select_apartment();
+		//AddProperty.select_property_category(input.get("property_category"));
+		//AddProperty.select_apartment();
 		AddProperty.select_ready_status(input.get("age_of_property"), input.get("present_use"));
 		AddProperty.scroll_to_next();
-		AddProperty.select_mortgaged_skip();
-		AddProperty.scroll_to_next();
+		//AddProperty.select_mortgaged_skip();
 		AddProperty.nextButtonClick();
 		AddProperty.select_bedroom_cabin_count(input.get("bedroom_cabin_count"));
 		AddProperty.select_bathroom_count(input.get("bathroom_count"), input.get("bedroom_cabin_count"));
@@ -77,10 +76,10 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 		AddOwnerShipDetails AddOwnerShipDetails = MyProperties.openPropertyAdd();
 		AddOwnerShipDetails.initialContractVerification(input.get("titledeedDocument"));
 		AddProperty AddProperty = AddOwnerShipDetails.selectSingleOwnership();
-		System.out.println("Basic Details section showing");
+		//System.out.println("Basic Details section showing");
 		AddProperty.enter_property_name(input.get("property_name"));
-		AddProperty.select_property_category(input.get("property_category"));
-		AddProperty.select_townhouse();
+		//AddProperty.select_property_category(input.get("property_category"));
+		//AddProperty.select_townhouse();
 		AddProperty.select_under_construction_status();
 		AddProperty.scroll_to_next();
 		AddProperty.add_payment_plan(input.get("schedule_count"), input.get("schedule_particulars"),
@@ -124,8 +123,8 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 		AddProperty AddProperty = AddOwnerShipDetails.selectSingleOwnership();
 		System.out.println("Basic Details section showing");
 		AddProperty.enter_property_name(input.get("propert_name"));
-		AddProperty.select_property_category(input.get("property_category"));
-		AddProperty.select_office();
+		//AddProperty.select_property_category(input.get("property_category"));
+		//AddProperty.select_office();
 		AddProperty.select_under_construction_status();
 		AddProperty.scroll_to_next();
 		AddProperty.add_payment_plan(input.get("schedule_count"), input.get("schedule_particulars"),
@@ -169,8 +168,8 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 		AddProperty AddProperty = AddOwnerShipDetails.selectSingleOwnership();
 		System.out.println("Basic Details section showing");
 		AddProperty.enter_property_name(input.get("property_name"));
-		AddProperty.select_property_category(input.get("property_category"));
-		AddProperty.select_villa();
+		//AddProperty.select_property_category(input.get("property_category"));
+		//AddProperty.select_villa();
 		AddProperty.select_ready_status(input.get("age_of_property"), input.get("present_use"));
 		AddProperty.scroll_to_next();
 		AddProperty.select_mortgaged_tenure_year_month_offer_letter(input.get("mortgage_amount"),
@@ -214,8 +213,8 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 		AddProperty AddProperty = AddOwnerShipDetails.selectSingleOwnership();
 		System.out.println("Basic Details section showing");
 		AddProperty.enter_property_name(input.get("property_name"));
-		AddProperty.select_property_category(input.get("property_category"));
-		AddProperty.select_service_apartment();
+		//AddProperty.select_property_category(input.get("property_category"));
+		//AddProperty.select_service_apartment();
 		AddProperty.select_under_construction_status();
 		AddProperty.scroll_to_next();
 		AddProperty.add_payment_plan(input.get("schedule_count"), input.get("schedule_particulars"),

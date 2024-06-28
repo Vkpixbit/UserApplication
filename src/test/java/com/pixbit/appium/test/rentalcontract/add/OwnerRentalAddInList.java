@@ -28,7 +28,7 @@ public class OwnerRentalAddInList extends AndroidGlobalData {
 		AddRental.selectProperty(input.get("rent_property"));
 		AddRental.uploadEjariRentalFlow(input.get("ejari_document"));
 		AddRental.uploadTenancy(input.get("tenancy_document"));
-		AddRental.nextButtonClick();
+		AddRental.clickVerifyAndContinue.click();
 		AddRental.enter_cheque_details(input.get("cheque_count"), input.get("cheque_document"), input.get("bank_name"));
 	}
 
