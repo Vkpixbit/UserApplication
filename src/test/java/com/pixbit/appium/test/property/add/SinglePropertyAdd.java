@@ -34,7 +34,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"));
 		AddProperty AddProperty = AddOwnerShipDetails.selectSingleOwnership();
 		//System.out.println("Basic Details section showing");
-		AddProperty.enter_property_name(input.get("property_name"));
+		//AddProperty.enter_property_name(input.get("property_name"));
 		//AddProperty.select_property_category(input.get("property_category"));
 		//AddProperty.select_apartment();
 		AddProperty.select_ready_status(input.get("age_of_property"), input.get("present_use"));

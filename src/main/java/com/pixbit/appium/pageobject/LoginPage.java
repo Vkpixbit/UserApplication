@@ -37,7 +37,7 @@ public class LoginPage extends AndroidActions {
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Send OTP']")
 	private WebElement sendOtpButton;
 
-	@AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[2]")
+	@AndroidFindBy(xpath = "//android.widget.EditText[@index='6']")
 	private WebElement otpEnterField;
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Verify']")
@@ -70,7 +70,7 @@ public class LoginPage extends AndroidActions {
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='+91']")
 	private WebElement clickIndia;
 
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='9']")
+	@AndroidFindBy(xpath = "//android.widget.EditText[@index='18']")
 	private WebElement languageDropdown;
 
 	public HomePage loginToApp(String emailId, String password) {
@@ -80,7 +80,8 @@ public class LoginPage extends AndroidActions {
 		return new HomePage(driver);
 	}
 
-	public void selectLanguage(String prefred_language) {
+	public void selectLanguage(String prefred_language) throws InterruptedException {
+		Thread.sleep(3000);
 		languageDropdown.click();
 		driver.findElement(By.xpath("//android.widget.TextView[@text='" + prefred_language + "']")).click();
 
@@ -95,9 +96,9 @@ public class LoginPage extends AndroidActions {
 		Thread.sleep(2000);
 		otpEnterField.sendKeys("1234");
 		verifyButton.click();
-		countryPickerClick.click();
-		countryEnterField.sendKeys("India");
-		clickIndia.click();
+		//countryPickerClick.click();
+		//countryEnterField.sendKeys("United Arab Emirates");
+		//clickIndia.click();
 		signUpPhoneField.sendKeys(phoneNumber);
 		sendOtpButton.click();
 		Thread.sleep(2000);

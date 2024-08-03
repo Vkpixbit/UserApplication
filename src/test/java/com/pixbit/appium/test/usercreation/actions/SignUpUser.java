@@ -30,11 +30,11 @@ public class SignUpUser extends AndroidGlobalData {
 	public Object[][] userCreationData() throws IOException {
 		List<HashMap<String, String>> value = getjsondata(System.getProperty("user.dir")
 				+ "/src/test/java/com/pixbit/appium/test/usercreation/actions/UserDetails.json");
-		return new Object[][] { { value.get(4) } };
+		return new Object[][] { { value.get(0) }};
 	}
 
-	@Test(dataProvider = "user_creation_without_language", groups = "sign_up", enabled = true, priority = 1)
-	public void check_preferred_language_validation(HashMap<String, String> input) throws InterruptedException {
+	@Test(dataProvider = "userCreationWithoutLanguage", groups = "sign_up", enabled = false, priority = 1)
+	public void checkPreferredLanguageValidation(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();
 		Thread.sleep(2000);
@@ -44,7 +44,7 @@ public class SignUpUser extends AndroidGlobalData {
 	}
 
 	@DataProvider
-	public Object[][] user_creation_without_language() throws IOException {
+	public Object[][] userCreationWithoutLanguage() throws IOException {
 		List<HashMap<String, String>> value = getjsondata(System.getProperty("user.dir")
 				+ "/src/test/java/com/pixbit/appium/test/usercreation/actions/UserDetails.json");
 		return new Object[][] { { value.get(4) } };

@@ -5,13 +5,11 @@
 		<listener class-name="com.pixbit.appium.globalfiles.Listeners" />
 	</listeners>
 	<test name="SinglePropertyTest" preserve-order="true">
-		<groups>
-			<run>
-				<include name="single_property" />
-			</run>
-		</groups>
 		<classes>
 			<class name="com.pixbit.appium.test.property.add.SinglePropertyAdd">
+				<methods>
+					<include name="property_apartment_ready" />
+				</methods>
 			</class>
 		</classes>
 	</test>
