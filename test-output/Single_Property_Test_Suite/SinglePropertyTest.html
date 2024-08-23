@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jul 18 12:29:24 IST 2024</td>
+<td>Started on:</td><td>Wed Aug 21 15:36:07 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>95 seconds (95417 ms)</td>
+<tr><td>Total time:</td><td>67 seconds (67756 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,58 +76,53 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.pixbit.appium.test.property.add.SinglePropertyAdd.property_apartment_ready()'><b>property_apartment_ready</b><br>Test class: com.pixbit.appium.test.property.add.SinglePropertyAdd<br>Parameters: {present_use=Vacant, age_of_property=10, password=Qapixbit@14, kitchen_pantry_count=4, _comment=property_apartment_ready_data, titledeedDocument=ilyas pre title deed.pdf, bedroom_cabin_count=8, balcony_count=2, bathroom_count=3, email=hariharan123@gmail.com, furnishing_status=Furnished}</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.22.0&apos;, revision: &apos;c5f3146703*&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;14.4.1&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [ae16d48f-472d-4973-ad69-50621aed1070, findElement {value=//android.widget.TextView[@text=&apos;2+&apos;], using=xpath}]
-Capabilities {appium:app: /Users/vk14/git/UserApplica..., appium:appPackage: in.pixbit.proptech, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {app: /Users/vk14/git/UserApplica..., automationName: UIAutomator2, deviceName: QAAndroid, platformName: ANDROID}, appium:deviceApiLevel: 34, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_arm64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 560, appium:deviceScreenSize: 1440x3120, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3.5, appium:platformVersion: 14, appium:statBarHeight: 144, appium:takesScreenshot: true, appium:viewportRect: {height: 2748, left: 0, top: 144, width: 1440}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: ae16d48f-472d-4973-ad69-50621aed1070
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at com.pixbit.appium.pageobject.AddProperty.select_ready_status(AddProperty.java:238)
-	at com.pixbit.appium.test.property.add.SinglePropertyAdd.property_apartment_ready(SinglePropertyAdd.java:40)
+<td title='com.pixbit.appium.test.property.add.SinglePropertyAdd.property_apartment_ready()'><b>property_apartment_ready</b><br>Test class: com.pixbit.appium.test.property.add.SinglePropertyAdd<br>Parameters: {present_use=Vacant, password=Qapixbit@14, kitchen_pantry_count=4, _comment=property_apartment_ready_data, titledeedDocument=apartment_mortgaged_1.pdf, bedroom_cabin_count=8, balcony_count=2, bathroom_count=3, email=farispm@pixbitsolutions.com, furnishing_status=Furnished}</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({AppiumBy.accessibilityId: img_property_add})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:166)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:75)
+	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
+	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$uwv0GMDs.click(Unknown Source)
+	at com.pixbit.appium.pageobject.MyProperties.openPropertyAdd(MyProperties.java:27)
+	at com.pixbit.appium.test.property.add.SinglePropertyAdd.property_apartment_ready(SinglePropertyAdd.java:33)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 22 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1305750025", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1305750025'><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@6fc88e2c (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:265)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:135)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:160)
+	... 27 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({AppiumBy.accessibilityId: img_property_add})
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.22.0&apos;, revision: &apos;c5f3146703*&apos;
+Build info: version: &apos;4.23.1&apos;, revision: &apos;656257d8e9&apos;
 System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;14.4.1&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [ae16d48f-472d-4973-ad69-50621aed1070, findElement {value=//android.widget.TextView[@text=&apos;2+&apos;], using=xpath}]
-Capabilities {appium:app: /Users/vk14/git/UserApplica..., appium:appPackage: in.pixbit.proptech, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {app: /Users/vk14/git/UserApplica..., automationName: UIAutomator2, deviceName: QAAndroid, platformName: ANDROID}, appium:deviceApiLevel: 34, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_arm64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 560, appium:deviceScreenSize: 1440x3120, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3.5, appium:platformVersion: 14, appium:statBarHeight: 144, appium:takesScreenshot: true, appium:viewportRect: {height: 2748, left: 0, top: 144, width: 1440}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: ae16d48f-472d-4973-ad69-50621aed1070
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+Driver info: driver.version: RemoteWebDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at com.pixbit.appium.pageobject.AddProperty.select_ready_status(AddProperty.java:238)
-	at com.pixbit.appium.test.property.add.SinglePropertyAdd.property_apartment_ready(SinglePropertyAdd.java:40)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:53)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$findElement$1(AppiumElementLocator.java:160)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:217)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:210)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 29 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1183489718", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1183489718'><pre>org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({AppiumBy.accessibilityId: img_property_add})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:166)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:75)
+	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
+	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$uwv0GMDs.click(Unknown Source)
+	at com.pixbit.appium.pageobject.MyProperties.openPropertyAdd(MyProperties.java:27)
+	at com.pixbit.appium.test.property.add.SinglePropertyAdd.property_apartment_ready(SinglePropertyAdd.java:33)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -150,8 +145,34 @@ Session ID: ae16d48f-472d-4973-ad69-50621aed1070
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@6fc88e2c (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:265)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:135)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:160)
+	... 27 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({AppiumBy.accessibilityId: img_property_add})
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.23.1&apos;, revision: &apos;656257d8e9&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;14.4.1&apos;, java.version: &apos;17.0.8.1&apos;
+Driver info: driver.version: RemoteWebDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:53)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$findElement$1(AppiumElementLocator.java:160)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:217)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:210)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 29 more
 </pre></div></td>
-<td>79</td>
+<td>51</td>
 <td>com.pixbit.appium.test.property.add.SinglePropertyAdd@554e218</td></tr>
 </table><p>
 </body>

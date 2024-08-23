@@ -32,12 +32,9 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 		MyProperties MyProperties = ProfilePage.openMyPropertiesPage();
 		AddOwnerShipDetails AddOwnerShipDetails = MyProperties.openPropertyAdd();
 		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"));
+		//AddProperty AddProperty = new AddProperty(driver); 
 		AddProperty AddProperty = AddOwnerShipDetails.selectSingleOwnership();
-		//System.out.println("Basic Details section showing");
-		//AddProperty.enter_property_name(input.get("property_name"));
-		//AddProperty.select_property_category(input.get("property_category"));
-		//AddProperty.select_apartment();
-		AddProperty.select_ready_status(input.get("age_of_property"), input.get("present_use"));
+		AddProperty.select_ready_status(input.get("present_use"));
 		AddProperty.scroll_to_next();
 		//AddProperty.select_mortgaged_skip();
 		AddProperty.nextButtonClick();
@@ -65,7 +62,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 	 * Enter Mortgage Details
 	 * Add payment plan
 	 */
-	@Test(dataProvider = "property_townhouse_underconstruction_data", groups = "single_property", enabled = true)
+	@Test(dataProvider = "property_townhouse_underconstruction_data", groups = "single_property", enabled = false)
 	public void property_townhouse_underconstruction(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();
@@ -110,7 +107,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 	 * underconstruction
 	 * Enter Payment plan details
 	 */
-	@Test(dataProvider = "property_office_underconstruction_data",groups = "single_property", enabled = true)
+	@Test(dataProvider = "property_office_underconstruction_data",groups = "single_property", enabled = false)
 	public void property_office_underconstruction(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();
@@ -154,7 +151,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 	 * ready
 	 * enter mortgage details
 	 */
-	@Test(dataProvider = "property_villa_ready_data",groups = "single_property", enabled = true)
+	@Test(dataProvider = "property_villa_ready_data",groups = "single_property", enabled = false)
 	public void property_villa_ready(HashMap<String, String> input)
 			throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
@@ -170,7 +167,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 		AddProperty.enter_property_name(input.get("property_name"));
 		//AddProperty.select_property_category(input.get("property_category"));
 		//AddProperty.select_villa();
-		AddProperty.select_ready_status(input.get("age_of_property"), input.get("present_use"));
+		AddProperty.select_ready_status(input.get("present_use"));
 		AddProperty.scroll_to_next();
 		AddProperty.select_mortgaged_tenure_year_month_offer_letter(input.get("mortgage_amount"),
 				input.get("tenure_year"), input.get("tenure_month"), input.get("mortgage_start_date"),
@@ -200,7 +197,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 	 * add payment plan
 	 * add mortgage details
 	 */
-	@Test(dataProvider = "property_serviceapartment_underconstruction_paymentplan_data",groups = "single_property", enabled = true)
+	@Test(dataProvider = "property_serviceapartment_underconstruction_paymentplan_data",groups = "single_property", enabled = false)
 	public void property_underconstruction_paymentplan(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();

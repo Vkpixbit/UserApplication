@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sat Aug 03 18:23:18 IST 2024</td>
+<td>Started on:</td><td>Fri Aug 23 17:20:47 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>28 seconds (28980 ms)</td>
+<tr><td>Total time:</td><td>51 seconds (51069 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -76,130 +76,9 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.pixbit.appium.test.usercreation.actions.SignUpUser.createUser()'><b>createUser</b><br>Test class: com.pixbit.appium.test.usercreation.actions.SignUpUser<br>Parameters: {prefred_language=German, password=Qapixbit@14, emailId=bharath@gmail.com, phoneNumber=867676564, userName=Bharath}</td>
-<td><div><pre>org.openqa.selenium.StaleElementReferenceException: androidx.test.uiautomator.StaleObjectException
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;14.4.1&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [6ac9ddfe-6695-4bbd-8934-01890e6b0d22, sendKeysToElement {value=[Ljava.lang.CharSequence;@7bc44ce8, id=00000000-0000-00c4-0000-006600000007}]
-Capabilities {appium:app: /Users/vk14/git/UserApplica..., appium:appPackage: in.pixbit.proptech, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {app: /Users/vk14/git/UserApplica..., automationName: UIAutomator2, deviceName: QAAndroid, platformName: ANDROID}, appium:deviceApiLevel: 34, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_arm64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 560, appium:deviceScreenSize: 1440x3120, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3.5, appium:platformVersion: 14, appium:statBarHeight: 144, appium:takesScreenshot: true, appium:viewportRect: {height: 2748, left: 0, top: 144, width: 1440}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Element: [[AndroidDriver:  on ANDROID (6ac9ddfe-6695-4bbd-8934-01890e6b0d22)] -&gt; xpath: //android.widget.EditText[@index=&apos;4&apos;]]
-Session ID: 6ac9ddfe-6695-4bbd-8934-01890e6b0d22
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at io.appium.java_client.pagefactory.ElementInterceptor.getObject(ElementInterceptor.java:42)
-	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:79)
-	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
-	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$lxZVvjHg.sendKeys(Unknown Source)
-	at com.pixbit.appium.pageobject.LoginPage.userSignUp(LoginPage.java:94)
-	at com.pixbit.appium.test.usercreation.actions.SignUpUser.createUser(SignUpUser.java:19)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:739)
-	at org.testng.TestRunner.run(TestRunner.java:614)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1815501246", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1815501246'><pre>org.openqa.selenium.StaleElementReferenceException: androidx.test.uiautomator.StaleObjectException
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;14.4.1&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [6ac9ddfe-6695-4bbd-8934-01890e6b0d22, sendKeysToElement {value=[Ljava.lang.CharSequence;@7bc44ce8, id=00000000-0000-00c4-0000-006600000007}]
-Capabilities {appium:app: /Users/vk14/git/UserApplica..., appium:appPackage: in.pixbit.proptech, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {app: /Users/vk14/git/UserApplica..., automationName: UIAutomator2, deviceName: QAAndroid, platformName: ANDROID}, appium:deviceApiLevel: 34, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_arm64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 560, appium:deviceScreenSize: 1440x3120, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3.5, appium:platformVersion: 14, appium:statBarHeight: 144, appium:takesScreenshot: true, appium:viewportRect: {height: 2748, left: 0, top: 144, width: 1440}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Element: [[AndroidDriver:  on ANDROID (6ac9ddfe-6695-4bbd-8934-01890e6b0d22)] -&gt; xpath: //android.widget.EditText[@index=&apos;4&apos;]]
-Session ID: 6ac9ddfe-6695-4bbd-8934-01890e6b0d22
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at io.appium.java_client.pagefactory.ElementInterceptor.getObject(ElementInterceptor.java:42)
-	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:79)
-	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
-	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$lxZVvjHg.sendKeys(Unknown Source)
-	at com.pixbit.appium.pageobject.LoginPage.userSignUp(LoginPage.java:94)
-	at com.pixbit.appium.test.usercreation.actions.SignUpUser.createUser(SignUpUser.java:19)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:739)
-	at org.testng.TestRunner.run(TestRunner.java:614)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>9</td>
+<td title='com.pixbit.appium.test.usercreation.actions.SignUpUser.createUser()'><b>createUser</b><br>Test class: com.pixbit.appium.test.usercreation.actions.SignUpUser<br>Parameters: {prefred_language=English, password=Qapixbit@14, emailId=khalel123@gmail.com, phoneNumber=6859495943, userName=Khalel}</td>
+<td></td>
+<td>43</td>
 <td>com.pixbit.appium.test.usercreation.actions.SignUpUser@d86a6f</td></tr>
 </table><p>
 </body>

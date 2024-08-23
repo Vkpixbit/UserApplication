@@ -94,8 +94,7 @@ public class AddOwnerShipDetails extends AndroidActions {
 			permissionApproved = true; // Set the flag to true after approval
 		}
 		driver.findElement(By.xpath("//android.widget.TextView[@text='Docs_for_testing']")).click();
-		driver.findElement(By.xpath("//android.widget.TextView[@text='Title_Deed']")).click();
-		driver.findElement(By.xpath("//android.widget.TextView[@text='Initial Contract']")).click();
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Initial_contract']")).click();
 		scrollToElementByText(titledeedDocument);
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//android.widget.TextView[@text='" + titledeedDocument + "']")).click();

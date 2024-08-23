@@ -233,11 +233,8 @@ public class AddProperty extends AndroidActions {
 	 * Select Property Status as Ready and Enter Age Of Property and Select Present
 	 * Use
 	 */
-	public void select_ready_status(String age_of_property, String present_use) throws InterruptedException {
+	public void select_ready_status(String present_use) throws InterruptedException {
 		driver.findElement(By.xpath("//android.widget.TextView[@text='Ready']")).click();
-		driver.findElement(By.xpath("//android.widget.TextView[@text='2+']")).click();
-		driver.findElement(By.xpath("//android.widget.EditText[@index='2']")).sendKeys(age_of_property);
-		click_done();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//android.widget.TextView[@text='" + present_use + "']")).click();
 	}
@@ -292,20 +289,16 @@ public class AddProperty extends AndroidActions {
 			int schedule_booking_amount = percentages[i];
 			sheduleBookingAmount.sendKeys(String.valueOf(schedule_booking_amount));
 			driver.findElement(By.xpath("//android.widget.TextView[@text='Add Schedule']")).click();
-			if (i + 1 <= count) {
-				System.out.println("Getting!");
+			if (i + 1 < count) {
+				//System.out.println("Getting!");
 				driver.findElement(AppiumBy.androidUIAutomator(
 						"new UiScrollable(new UiSelector()).scrollIntoView(text(\"Add Payment Schedule\"));"));
 				driver.findElement(By.xpath("//android.widget.TextView[@text='Add Payment Schedule']")).click();
-			} else {
-				System.out.println("test save");
-				driver.findElement(AppiumBy
-						.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Save\"));"));
-				driver.findElement(By.xpath("//android.widget.TextView[@text='Save']")).click();
-			}
-
+			} 
 		}
-
+		driver.findElement(AppiumBy
+				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text('Save'));"));
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Save']")).click();
 	}
 
 	private int[] generateRandomPercentages(int count) {
@@ -480,11 +473,12 @@ public class AddProperty extends AndroidActions {
 	    try {
 	    	//Thread.sleep(2000);
 	        if (wait.until(ExpectedConditions.visibilityOf(addMortgageButton)) != null) {
-	            System.out.println("Text");
+	            //System.out.println("Text");
 	            addMortgageButton.click();
 	            driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Save Details\"));"));
 	            driver.findElement(By.xpath("//android.widget.Button[@index='1']")).click();
 	        } else {
+	        	System.out.println("Next Opened");
 	            driver.findElement(By.xpath("//android.widget.TextView[@text='Next']")).click();
 	        }
 	    } catch (NoSuchElementException e) {

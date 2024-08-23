@@ -96,9 +96,9 @@ public class LoginPage extends AndroidActions {
 		Thread.sleep(2000);
 		otpEnterField.sendKeys("1234");
 		verifyButton.click();
-		//countryPickerClick.click();
-		//countryEnterField.sendKeys("United Arab Emirates");
-		//clickIndia.click();
+		countryPickerClick.click();
+		countryEnterField.sendKeys("India");
+		clickIndia.click();
 		signUpPhoneField.sendKeys(phoneNumber);
 		sendOtpButton.click();
 		Thread.sleep(2000);

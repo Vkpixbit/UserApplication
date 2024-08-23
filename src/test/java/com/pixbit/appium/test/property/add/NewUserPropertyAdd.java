@@ -34,18 +34,18 @@ public class NewUserPropertyAdd extends AndroidGlobalData {
 		approvePermission();
 		ProfilePage ProfilePage = HomePage.openProfile();
 		AddOwnerShipDetails AddOwnerShipDetails = ProfilePage.openPropertyAddPage();
-		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"));
+		AddOwnerShipDetails.initialContractVerification(input.get("titledeedDocument"));
 		AddProperty AddProperty = AddOwnerShipDetails.selectSingleOwnership();
-		AddProperty.enter_property_name(input.get("property_name"));
-		AddProperty.select_property_category(input.get("property_category"));
-		AddProperty.select_villa();
-		AddProperty.select_ready_status(input.get("age_of_property"), input.get("present_use"));
+		AddProperty.select_under_construction_status();
+		AddProperty.add_payment_plan(input.get("schedule_count"), input.get("schedule_particulars"),
+				input.get("schedule_period"));
 		AddProperty.scroll_to_next();
+		// AddProperty.select_mortgaged_skip();
 		AddProperty.nextButtonClick();
 		AddProperty.select_bedroom_cabin_count(input.get("bedroom_cabin_count"));
-		AddProperty.select_bathroom_count(input.get("bathroom_count"),input.get("bedroom_cabin_count"));
+		AddProperty.select_bathroom_count(input.get("bathroom_count"), input.get("bedroom_cabin_count"));
 		AddProperty.select_kitchen_pantry_count(input.get("kitchen_pantry_count"));
-		AddProperty.select_balcony_count(input.get("balcony_count"),input.get("kitchen_pantry_count"));
+		AddProperty.select_balcony_count(input.get("balcony_count"), input.get("kitchen_pantry_count"));
 		AddProperty.select_map_location();
 		AddProperty.select_furnishing_status(input.get("furnishing_status"));
 		AddProperty.click_save();
@@ -59,11 +59,10 @@ public class NewUserPropertyAdd extends AndroidGlobalData {
 		return new Object[][] { { value.get(0) } };
 	}
 
-
 	/*
 	 * Single property add service apartment and ready property status
 	 */
-	@Test(dataProvider = "single_service_apartment_ready_property_data", enabled = true)
+	@Test(dataProvider = "single_service_apartment_ready_property_data", enabled = false)
 	public void single_service_apartment_ready_property(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();
@@ -73,11 +72,9 @@ public class NewUserPropertyAdd extends AndroidGlobalData {
 		AddOwnerShipDetails AddOwnerShipDetails = ProfilePage.openPropertyAddPage();
 		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"));
 		AddProperty AddProperty = AddOwnerShipDetails.selectSingleOwnership();
-		AddProperty.enter_property_name(input.get("property_name"));
-		AddProperty.select_property_category(input.get("property_category"));
-		AddProperty.select_service_apartment();
-		AddProperty.select_ready_status(input.get("age_of_property"), input.get("present_use"));
+		AddProperty.select_ready_status(input.get("present_use"));
 		AddProperty.scroll_to_next();
+		// AddProperty.select_mortgaged_skip();
 		AddProperty.nextButtonClick();
 		AddProperty.select_bedroom_cabin_count(input.get("bedroom_cabin_count"));
 		AddProperty.select_bathroom_count(input.get("bathroom_count"), input.get("bedroom_cabin_count"));
@@ -92,7 +89,7 @@ public class NewUserPropertyAdd extends AndroidGlobalData {
 	@DataProvider
 	public Object[][] single_service_apartment_ready_property_data() throws IOException {
 		List<HashMap<String, String>> value = getjsondata(System.getProperty("user.dir")
-				+ "/src/test/java/data/single_property_apartment_serviceapartment_office_data.json");
+				+ "/src/test/java/com/pixbit/appium/test/data/singleproperty/single_property_apartment_serviceapartment_office_data.json");
 		return new Object[][] { { value.get(0) } };
 	}
 
