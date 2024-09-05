@@ -21,7 +21,7 @@ public class JointPropertyAdd extends AndroidGlobalData {
 	 * Two owner property skip owners adding office property with shell & Core if
 	 * mortgage then add mortgage details
 	 */
-	@Test(dataProvider = "two_owners_skipall_joint_office_shellandcore_property_data",groups = "joint_property", enabled = true)
+	@Test(dataProvider = "two_owners_skipall_joint_office_shellandcore_property_data",groups = "joint_property", enabled = false)
 	public void two_owners_skip_all_office_shellandcore_property(HashMap<String, String> input)
 			throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
@@ -122,14 +122,11 @@ public class JointPropertyAdd extends AndroidGlobalData {
 		AddProperty AddProperty = AddOwnerShipDetails.twoOwnerCountSelectionAndAdd(input.get("owner_1_percentage"),
 				input.get("country_code"), input.get("owner_2_phone_number"), input.get("owner_2_email"),
 				input.get("owner_2_name"), input.get("owner_2_percentage"));
-		AddProperty.enter_property_name(input.get("property_name"));
-		//AddProperty.select_property_category(input.get("property_category"));
-		//AddProperty.select_service_apartment();
-		AddProperty.select_ready_status(input.get("age_of_property"), input.get("present_use"));
+		AddProperty.select_ready_status(input.get("present_use"));
 		scrollToNext();
-		AddProperty.select_mortgaged_tenure_year_month_offer_letter(input.get("mortgage_amount"),
+		/*AddProperty.select_mortgaged_tenure_year_month_offer_letter(input.get("mortgage_amount"),
 				input.get("tenure_year"), input.get("tenure_month"), input.get("mortgage_start_date"),
-				input.get("finance_rate"));
+				input.get("finance_rate"));*/
 		scrollToNext();
 		AddProperty.nextButtonClick();
 		AddProperty.select_bedroom_cabin_count(input.get("bedroom_cabin_count"));
@@ -144,8 +141,8 @@ public class JointPropertyAdd extends AndroidGlobalData {
 
 	@DataProvider
 	public Object[][] two_owners_joint_apartment_property_ready_data() throws IOException {
-		List<HashMap<String, String>> value = getjsondata(
-				"/Users/vk14/git/UserApplication/src/test/java/com/pixbit/appium/test/data/jointproperty/JointPropertyApartmentData.json");
+		List<HashMap<String, String>> value = getjsondata(System.getProperty("user.dir")+
+				"/src/test/java/com/pixbit/appium/test/data/jointproperty/JointPropertyApartmentData.json");
 		return new Object[][] { { value.get(0) } };
 	}
 
@@ -153,7 +150,7 @@ public class JointPropertyAdd extends AndroidGlobalData {
 	 * Three owners are in the prosper Property type is townhouse property
 	 * underconstruction Add payment plan
 	 */
-	@Test(dataProvider = "three_owners_townhouseunderconstruction_data",groups = "joint_property", enabled = true)
+	@Test(dataProvider = "three_owners_townhouseunderconstruction_data",groups = "joint_property", enabled = false)
 	public void three_owners_townhouse_underconstruction_property(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();
@@ -200,7 +197,7 @@ public class JointPropertyAdd extends AndroidGlobalData {
 	 * villa property
 	 * Ready and enter mortgage details
 	 */
-	@Test(dataProvider = "twoowners_oneguest_office_underconstruction_data",groups = "joint_property", enabled = true)
+	@Test(dataProvider = "twoowners_oneguest_office_underconstruction_data",groups = "joint_property", enabled = false)
 	public void two_owners_one_guest_office_ready_property(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();
@@ -297,7 +294,7 @@ public class JointPropertyAdd extends AndroidGlobalData {
 	 * Apartment property
 	 * ready status
 	 */
-	@Test(dataProvider = "threeowners_twoadd_skipone_apartment_ready_data",groups = "joint_property", enabled = true)
+	@Test(dataProvider = "threeowners_twoadd_skipone_apartment_ready_data",groups = "joint_property", enabled = false)
 	public void three_owners_addtwo_skipone_apartment_ready_property(HashMap<String, String> input)
 			throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);

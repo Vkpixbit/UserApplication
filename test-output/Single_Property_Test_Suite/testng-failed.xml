@@ -9,7 +9,7 @@
       <class name="com.pixbit.appium.test.property.add.SinglePropertyAdd">
         <methods>
           <include name="close"/>
-          <include name="property_apartment_ready" invocation-numbers="0"/>
+          <include name="property_townhouse_underconstruction" invocation-numbers="0"/>
           <include name="configuration"/>
         </methods>
       </class> <!-- com.pixbit.appium.test.property.add.SinglePropertyAdd -->

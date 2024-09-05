@@ -7,11 +7,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Random;
-import java.util.concurrent.TimeoutException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -296,8 +293,8 @@ public class AddProperty extends AndroidActions {
 				driver.findElement(By.xpath("//android.widget.TextView[@text='Add Payment Schedule']")).click();
 			} 
 		}
-		driver.findElement(AppiumBy
-				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text('Save'));"));
+		//driver.findElement(AppiumBy
+				//.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text('Save'));"));
 		driver.findElement(By.xpath("//android.widget.TextView[@text='Save']")).click();
 	}
 
@@ -790,7 +787,6 @@ public class AddProperty extends AndroidActions {
 	 */
 	public void goToProperties() throws InterruptedException {
 		Thread.sleep(2000);
-		System.out.println(goToPropertiesButton.getText());
 		goToPropertiesButton.click();
 
 	}

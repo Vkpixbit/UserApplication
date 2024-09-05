@@ -1,15 +1,15 @@
 [
 	{
 		"_comment": "property_apartment_ready_data",
-		"email": "arun123@gmail.com",
+		"email": "amal@pixbitsolutions.com",
 		"password": "Qapixbit@14",
-		"titledeedDocument": "villa_notmortgaged_1.pdf",
+		"titledeedDocument": "flat_notmortgaged_2.pdf",
 		"present_use": "Vacant",
 		"bedroom_cabin_count": "8",
 		"bathroom_count": "3",
 		"kitchen_pantry_count": "4",
 		"balcony_count": "2",
-		"furnishing_status": "Furnished"
+		"furnishing_status": "Not Furnished"
 	},
 	{
 		"_comment": "property_office_underconstruction_data",

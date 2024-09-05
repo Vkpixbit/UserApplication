@@ -110,10 +110,10 @@ public class AndroidGlobalData {
 	
 	public String getScreenShot(String testcase_name) throws IOException
 	{
-		TakesScreenshot ts = (TakesScreenshot)driver;
+		TakesScreenshot ts = (TakesScreenshot) driver; // Proper casting
 		File source = ts.getScreenshotAs(OutputType.FILE);
 		File file= new File(System.getProperty("user.dir")+ "//reports//" + testcase_name + ".png");
 		FileUtils.copyFile(source, file);
-		return System.getProperty("user.dir")+ "//reports//" + testcase_name + ".png";
+		return System.getProperty("user.dir")+ "/reports//" + testcase_name + ".png";
 	}
 }

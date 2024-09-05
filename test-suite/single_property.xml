@@ -8,7 +8,7 @@
 		<classes>
 			<class name="com.pixbit.appium.test.property.add.SinglePropertyAdd">
 				<methods>
-					<include name="property_apartment_ready" />
+					<include name="property_townhouse_underconstruction" />
 				</methods>
 			</class>
 		</classes>

@@ -30,7 +30,7 @@ public class SignUpUser extends AndroidGlobalData {
 	public Object[][] userCreationData() throws IOException {
 		List<HashMap<String, String>> value = getjsondata(System.getProperty("user.dir")
 				+ "/src/test/java/com/pixbit/appium/test/usercreation/actions/UserDetails.json");
-		return new Object[][] {{value.get(0)}};
+		return new Object[][] {{value.get(1)}};
 	}
 
 	@Test(dataProvider = "userCreationWithoutLanguage", groups = "sign_up", enabled = false, priority = 1)

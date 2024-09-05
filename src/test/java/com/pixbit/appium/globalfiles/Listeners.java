@@ -1,5 +1,7 @@
 package com.pixbit.appium.globalfiles;
 
+import java.io.IOException;
+
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -26,14 +28,14 @@ public class Listeners extends AndroidGlobalData implements ITestListener {
 	@Override
 	public void onTestFailure(ITestResult result) {
 		test.fail(result.getThrowable());
-		/*String filepath = null;
+		String filepath = null;
 		try {
 			filepath = getScreenShot(result.getMethod().getMethodName());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		test.addScreenCaptureFromPath(filepath, result.getMethod().getMethodName());*/
+		test.addScreenCaptureFromPath(filepath, result.getMethod().getMethodName());
 	}
 
 	@Override

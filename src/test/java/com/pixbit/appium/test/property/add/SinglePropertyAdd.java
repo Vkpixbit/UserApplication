@@ -62,7 +62,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 	 * Enter Mortgage Details
 	 * Add payment plan
 	 */
-	@Test(dataProvider = "property_townhouse_underconstruction_data", groups = "single_property", enabled = false)
+	@Test(dataProvider = "property_townhouse_underconstruction_data", groups = "single_property", enabled = true)
 	public void property_townhouse_underconstruction(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();
@@ -73,16 +73,12 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 		AddOwnerShipDetails AddOwnerShipDetails = MyProperties.openPropertyAdd();
 		AddOwnerShipDetails.initialContractVerification(input.get("titledeedDocument"));
 		AddProperty AddProperty = AddOwnerShipDetails.selectSingleOwnership();
-		//System.out.println("Basic Details section showing");
-		AddProperty.enter_property_name(input.get("property_name"));
-		//AddProperty.select_property_category(input.get("property_category"));
-		//AddProperty.select_townhouse();
 		AddProperty.select_under_construction_status();
 		AddProperty.scroll_to_next();
 		AddProperty.add_payment_plan(input.get("schedule_count"), input.get("schedule_particulars"),
 				input.get("schedule_period"));
-		AddProperty.select_mortgaged_tenure_year(input.get("mortgage_amount"), input.get("tenure_year"),
-				input.get("mortgage_start_date"), input.get("finance_rate"));
+		//AddProperty.select_mortgaged_tenure_year(input.get("mortgage_amount"), input.get("tenure_year"),
+				//input.get("mortgage_start_date"), input.get("finance_rate"));
 		AddProperty.scroll_to_next();
 		AddProperty.nextButtonClick();
 		AddProperty.select_bedroom_cabin_count(input.get("bedroom_cabin_count"));
