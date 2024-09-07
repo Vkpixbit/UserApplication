@@ -1,0 +1,23 @@
+[
+	{
+		"_comment": "rentalAddAsTenantWithTitledeedData",
+		"email": "asheek@pixbitsolutions.com",
+		"password": "Qapixbit@14",
+		"ejari_document": "Ejari 149.pdf",
+		"tenancy_document": "Tenancy contract (1).pdf",
+		"titledeedDocument": "Title Deed.pdf",
+		"cheque_count": "2",
+		"cheque_document": "Listing Form.pdf",
+		"bank_name": "HDFC"
+	},
+	{
+		"_comment": "rentalAddAsTenantWithTitledeedData",
+		"email": "adish123@gmail.com",
+		"password": "Qapixbit@14",
+		"ejari_document": "Ejari 149.pdf",
+		"tenancy_document": "Tenancy contract (1).pdf",
+		"cheque_count": "2",
+		"cheque_document": "Listing Form.pdf",
+		"bank_name": "ICICI"
+	}
+]

@@ -60,7 +60,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Default_suite" class="navigator-link ">
-                    <span>1 group</span>
+                    <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +103,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.pixbit.appium.test.usercreation.actions.SignUpUser" class="method navigator-link" hash-for-method="createUser({prefred_language=Arabic, password=Qapixbit@14, emailId=aravind123@gmail.com, phoneNumber=6933117722...)">createUser({prefred_language=Arabic, password=Qapixbit@14, emailId=aravind123@gmail.com, phoneNumber=6933117722...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.pixbit.appium.propertypublish.PropertyPublishing" class="method navigator-link" hash-for-method="openMyPropertyPage({password=Qapixbit@14, email=nabeel@pixbitsolutions.com, property_name=Funda Real Estate})">openMyPropertyPage({password=Qapixbit@14, email=nabeel@pixbitsolutions.com, property_name=Funda Real Estate})</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -121,39 +121,26 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">com.pixbit.appium.test.usercreation.actions.SignUpUser</span>
+              <span class="class-name">com.pixbit.appium.propertypublish.PropertyPublishing</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="createUser({prefred_language=Arabic, password=Qapixbit@14, emailId=aravind123@gmail.com, phoneNumber=6933117722...)">
-                  </a> <!-- createUser({prefred_language=Arabic, password=Qapixbit@14, emailId=aravind123@gmail.com, phoneNumber=6933117722...) -->
-                  <span class="method-name">createUser</span>
-                  <span class="parameters">({prefred_language=Arabic, password=Qapixbit@14, emailId=aravind123@gmail.com, phoneNumber=6933117722, userName=Aravind})</span>
-                  <div class="stack-trace">org.openqa.selenium.StaleElementReferenceException: The element &apos;By.xpath: //android.widget.TextView[@index=&apos;2&apos;]&apos; does not exist in DOM anymore
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: &apos;4.23.1&apos;, revision: &apos;656257d8e9&apos;
+                  <a name="openMyPropertyPage({password=Qapixbit@14, email=nabeel@pixbitsolutions.com, property_name=Funda Real Estate})">
+                  </a> <!-- openMyPropertyPage({password=Qapixbit@14, email=nabeel@pixbitsolutions.com, property_name=Funda Real Estate}) -->
+                  <span class="method-name">openMyPropertyPage</span>
+                  <span class="parameters">({password=Qapixbit@14, email=nabeel@pixbitsolutions.com, property_name=Funda Real Estate})</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //android.widget.TextView[@text=&apos;Next&apos;] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.24.0&apos;, revision: &apos;748ffc9bc3&apos;
 System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;14.4.1&apos;, java.version: &apos;17.0.8.1&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [2230b717-1577-47f3-955c-8d245d72352d, getElementText {id=00000000-0000-0057-0000-005100000007}]
 Capabilities {appium:app: /Users/vk14/git/UserApplica..., appium:appPackage: in.pixbit.proptech, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {app: /Users/vk14/git/UserApplica..., automationName: UIAutomator2, deviceName: QAAndroid, platformName: ANDROID}, appium:deviceApiLevel: 34, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_arm64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 560, appium:deviceScreenSize: 1440x3120, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3.5, appium:platformVersion: 14, appium:statBarHeight: 144, appium:takesScreenshot: true, appium:viewportRect: {height: 2748, left: 0, top: 144, width: 1440}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Element: [[AndroidDriver:  on ANDROID (2230b717-1577-47f3-955c-8d245d72352d)] -&gt; xpath: //android.widget.TextView[@index=&apos;2&apos;]]
-Session ID: 2230b717-1577-47f3-955c-8d245d72352d
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:191)
-	at com.pixbit.appium.pageobject.LoginPage.verifySignUp(LoginPage.java:152)
-	at com.pixbit.appium.test.usercreation.actions.SignUpUser.createUser(SignUpUser.java:21)
+Session ID: 0e2b79a6-8556-452d-8d73-0ab1c561037a
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at utilites.AndroidActions.nextButtonClick(AndroidActions.java:71)
+	at com.pixbit.appium.pageobject.PublishProperty.publishSaleWithoutAnyDetails(PublishProperty.java:50)
+	at com.pixbit.appium.propertypublish.PropertyPublishing.openMyPropertyPage(PropertyPublishing.java:41)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -191,7 +178,7 @@ Session ID: 2230b717-1577-47f3-955c-8d245d72352d
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/private/var/folders/3n/9s6pyz5j60z5bgd7c_6qb43h0000gn/T/testng-eclipse--568354684/testng-customsuite.xml</span>
+            <span class="header-content">/private/var/folders/3n/9s6pyz5j60z5bgd7c_6qb43h0000gn/T/testng-eclipse--632314779/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -200,7 +187,7 @@ Session ID: 2230b717-1577-47f3-955c-8d245d72352d
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.pixbit.appium.test.usercreation.actions.SignUpUser&quot;/&gt;
+      &lt;class name=&quot;com.pixbit.appium.propertypublish.PropertyPublishing&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -224,14 +211,6 @@ Session ID: 2230b717-1577-47f3-955c-8d245d72352d
             <span class="header-content">Groups for Default suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="test-group">
-              <span class="test-group-name">sign_up</span>
-              <br/>
-              <div class="method-in-group">
-                <span class="method-in-group-name">createUser</span>
-                <br/>
-              </div> <!-- method-in-group -->
-            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Default_suite" class="panel">
@@ -250,14 +229,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'createUser')
-data.setCell(0, 2, 'com.pixbit.appium.test.usercreation.actions.SignUpUser')
-data.setCell(0, 3, 33342);
+data.setCell(0, 1, 'openMyPropertyPage')
+data.setCell(0, 2, 'com.pixbit.appium.propertypublish.PropertyPublishing')
+data.setCell(0, 3, 59287);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 33 seconds</span>
+              <span class="suite-total-time">Total running time: 59 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -272,16 +251,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">1 ignored method</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.pixbit.appium.test.usercreation.actions.SignUpUser</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">checkPreferredLanguageValidation</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -290,7 +262,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.pixbit.appium.test.usercreation.actions.SignUpUser</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.pixbit.appium.propertypublish.PropertyPublishing</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">configuration</span>
                 <span class="method-start">0 ms</span>
@@ -298,12 +270,14 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">createUser({prefred_language=Arabic, password=Qapixbit@14, emailId=aravind123@gmail.com, phoneNumber=6933117722...)</span>
-                <span class="method-start">17741 ms</span>
+                <span class="method-name">openMyPropertyPage({password=Qapixbit@14, email=nabeel@pixbitsolutions.com, property_name=Funda Real Estate})</span>
+                <span class="method-start">23113 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">close</span>
-                <span class="method-start">51263 ms</span>
+                <span class="method-start">82430 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

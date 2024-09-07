@@ -3,7 +3,6 @@ package com.pixbit.appium.pageobject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -72,6 +71,9 @@ public class LoginPage extends AndroidActions {
 
 	@AndroidFindBy(xpath = "//android.widget.EditText[@index='18']")
 	private WebElement languageDropdown;
+	
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Continue as Guest']")
+	private WebElement guestUsrBtn;
 
 	public HomePage loginToApp(String emailId, String password) {
 		emailField.sendKeys(emailId);
@@ -116,7 +118,6 @@ public class LoginPage extends AndroidActions {
 
 	public void get_language_validation_message() {
 		WebElement language_error = driver.findElement(By.id("in.pixbit.proptech:id/alertTitle"));
-		//Assert.assertEquals(language_error.getText(), "Choose a Preferred Communication Language");
 		if(language_error.isDisplayed()) {
 			System.out.println("Language is required for signup user!");
 		}
@@ -146,6 +147,12 @@ public class LoginPage extends AndroidActions {
 		createAccount.click();
 		get_language_validation_message();
 
+	}
+	
+	public HomePage guestUsrOpnMarketplace() throws InterruptedException {
+		Thread.sleep(2000);
+		guestUsrBtn.click();
+		return new HomePage(driver);
 	}
 
 	public String verifySignUp() {

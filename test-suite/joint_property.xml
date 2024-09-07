@@ -8,7 +8,7 @@
 		<classes>
 			<class name="com.pixbit.appium.test.property.add.JointPropertyAdd">
 			<methods>
-				<include name="two_owners_apartment_ready_property"></include>
+				<include name="twoOwnersSkipReadyRentedNotMortgaged"></include>
 			</methods>
 			</class>
 		</classes>

@@ -31,13 +31,13 @@ public class RentedPropertiesList extends AndroidActions {
 	
 	public AddRental openRentAsOwner() throws InterruptedException {
 
+       
         if(driver.findElement(By.xpath("//android.widget.TextView[@text='Rented Properties']")).isDisplayed())
         {
             uploadRentedPropertyButton.click();
             Thread.sleep(2000);
             rentAsOwner.click();
         }
-	    
 	    else
 	    {
 	    	if(driver.findElement(By.xpath("//android.widget.TextView[@text='Add Rental Details']")).isDisplayed()) // Removed semicolon

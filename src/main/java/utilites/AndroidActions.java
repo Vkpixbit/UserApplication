@@ -1,17 +1,14 @@
 package utilites;
 
 import java.time.Duration;
-import java.util.NoSuchElementException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.google.common.collect.ImmutableMap;
-import com.pixbit.appium.pageobject.MarketplaceDetailsPage;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -106,31 +103,6 @@ public class AndroidActions {
 				ImmutableMap.of("elementId", ((RemoteWebElement) element).getId(), "direction", "down", "speed", 500));
 		return canScrollMore;
 	}
-
-	public MarketplaceDetailsPage openPropertyFromMarketplace(String propertyName) {
-	    try {
-	        // Locate the element
-	        WebElement propertyElement = driver.findElement(By.xpath("//android.widget.TextView[@text='" + propertyName + "']"));
-	        
-	        // Check if the element is displayed, if not, scroll to it
-	        if (propertyElement.isDisplayed()) {
-	            propertyElement.click();
-	        } else {
-	            System.out.println("Scroll to the property!");
-	            scrollToElementByText(propertyName);
-	            propertyElement.click();
-	        }
-	    } catch (NoSuchElementException e) {
-	        System.out.println("Property not found: " + propertyName);
-	        // Handle exception as needed (e.g., throw an exception, return a different page object, etc.)
-	    } catch (Exception e) {
-	        System.out.println("An error occurred: " + e.getMessage());
-	        // Handle other exceptions
-	    }
-	    
-	    return new MarketplaceDetailsPage(driver);
-	}
-	
 	
 	public void highlightWebelement(WebElement element)
 	{

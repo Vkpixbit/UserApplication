@@ -1,0 +1,70 @@
+[
+	{
+		"email": "amal@pixbitsolutions.com",
+		"password": "Qapixbit@14",
+		"titledeedDocument": "flat_notmortgaged_2.pdf",
+		"presentUse": "Vacant",
+		"bedroomCabinCount": "8",
+		"bathroomCount": "3",
+		"kitchenPantryCount": "4",
+		"balconyCount": "2",
+		"furnishingStatus": "Not Furnished"
+	},
+	{
+		"email": "asheek@pixbitsolutions.com",
+		"password": "Qapixbit@14",
+		"titledeedDocument": "oquod marbella 47.pdf",
+		"scheduleCount": "3",
+		"scheduleParticulars": "Particular_Test",
+		"schedulePeriod": "20",
+		"mortgageAmount": "54000",
+		"tenureYear": "15",
+		"mortgageStartDate": "12/10/2010",
+		"financeRate": "4.3",
+		"bedroomCabinCount": "2",
+		"bathroomCount": "3",
+		"kitchenPantryCount": "2",
+		"balconyCount": "2",
+		"furnishingStatus": "Semi Furnished"
+	},
+	{
+		"email": "asheek@pixbitsolutions.com",
+		"password": "Qapixbit@14",
+		"titledeedDocument": "oquod marbella 47.pdf",
+		"scheduleCount": "3",
+		"scheduleParticulars": "Particular_Test",
+		"schedulePeriod": "20",
+		"bedroomCabinCount": "2",
+		"bathroomCount": "3",
+		"kitchenPantryCount": "2",
+		"balconyCount": "2",
+		"furnishingStatus": "Semi Furnished"
+	},
+	{
+		"email": "khalel123@gmail.com",
+		"password": "Qapixbit@14",
+		"titledeedDocument": "inital_mortgaged_1.pdf",
+		"presentUse":"Shell&Core",
+		"bedroomCabinCount": "2",
+		"bathroomCount": "2",
+		"kitchenPantryCount": "1",
+		"balconyCount": "2",
+		"furnishingStatus": "Semi Furnished"
+	},
+	{
+		"email": "asheek@pixbitsolutions.com",
+		"password": "Qapixbit@14",
+		"titledeedDocument": "oquod marbella 47.pdf",
+		"presentUse": "Rented",
+		"mortgageAmount": "54000",
+		"tenureYear": "15",
+		"tenure_month": "32",
+		"mortgageStartDate": "12/10/2010",
+		"financeRate": "4.3",
+		"bedroomCabinCount": "1",
+		"bathroomCount": "3",
+		"kitchenPantryCount": "2",
+		"balconyCount": "2",
+		"furnishingStatus": "Semi Furnished"
+	}
+]

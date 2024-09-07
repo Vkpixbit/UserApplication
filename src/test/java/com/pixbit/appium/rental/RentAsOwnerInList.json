@@ -1,0 +1,19 @@
+[
+	{
+		"email": "basheer123@gmail.com",
+		"password": "Qapixbit@14",
+		"rent_property": "Home & Joy Real Estate",
+		"ejari_document": "ejari_test_19.pdf",
+		"tenancy_document": "tenancy_test_2.pdf",
+		"cheque_count": "2",
+		"cheque_document": "Listing Form.pdf",
+		"bank_name": "SBI Bank"
+	},
+	{
+		"email": "basheer123@gmail.com",
+		"password": "Qapixbit@14",
+		"rent_property": "Home & Joy Real Estate",
+		"ejari_document": "ejari_test_19.pdf"
+	}
+	
+]

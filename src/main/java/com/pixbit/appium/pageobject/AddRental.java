@@ -42,15 +42,9 @@ public class AddRental extends AndroidActions {
 	
 	@AndroidFindBy(xpath = "//android.widget.EditText[@index='5']")
 	private WebElement titleDeedField;
-	
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='7']")
-	private WebElement titleDeedYearField;
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Verify & Continue']")
 	public WebElement clickVerifyAndContinue;
-	
-	//@AndroidFindBy(xpath = "//android.widget.EditText[@index='8']")
-	//private WebElement endDateField;
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Save without cheque']")
 	private WebElement savewithoutCheque;
@@ -72,6 +66,9 @@ public class AddRental extends AndroidActions {
 	
 	@AndroidFindBy(id = "in.pixbit.proptech:id/month_navigation_fragment_toggle")
 	private WebElement yearPicker;
+	
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Save']")
+	private WebElement saveBtn;
 	
 	
 	public void openEjariDocumentFolder() {
@@ -121,26 +118,6 @@ public class AddRental extends AndroidActions {
 		Thread.sleep(3000);
 	}
 
-	/*public void enterEjari(String ejari_number) throws InterruptedException {
-		Thread.sleep(2000);
-		ejariField.clear();
-		Thread.sleep(2000);
-		ejariField.sendKeys(ejari_number);
-		clickVerify.click();
-		Thread.sleep(20000);
-	}*/
-	
-	/*public void enterRentalDetailsOwner(String end_date) throws InterruptedException {
-		Thread.sleep(3000);
-		driver.findElement(AppiumBy
-				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"End Date (Required)\"));"));
-		endDateField.sendKeys(end_date);
-		driver.findElement(AppiumBy
-				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Next\"));"));
-		clickNext.click();
-		savewithoutCheque.click();
-		clickDone.click();
-	}*/
 	
 	public void uploadChequeDoc(String cheque_document) {
 		
@@ -221,6 +198,14 @@ public class AddRental extends AndroidActions {
 		ejariField.sendKeys(title_deed_number);
 	}
 	
+	public void saveWithOutCheque() throws InterruptedException {
+		Thread.sleep(5000);
+		savewithoutCheque.click();
+	}
+	
+	public void clickSave() {
+		saveBtn.click();
+	}
 	
 
 }

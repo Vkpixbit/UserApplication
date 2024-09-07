@@ -1,5 +1,6 @@
 package com.pixbit.appium.pageobject;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
@@ -28,7 +29,20 @@ public class PublishProperty extends AndroidActions {
 	@AndroidFindBy(xpath = "(//android.view.TextView[text()='My Properties'])[2]")
 	private WebElement myPropertiesTab;
 	
+	@AndroidFindBy(accessibility = "Upload Document")
+	private WebElement uploadDocumentIcon;
+	
+	
+	
+	public void skipDocumentVerification() {
+		if(uploadDocumentIcon.isDisplayed()) {
+			driver.findElement(By.xpath("//android.widget.TextView[@text='Skip, I will verify later']")).click();
+		}
+	}
+	
+	
 	public void publishSaleWithoutAnyDetails() throws InterruptedException {
+		skipDocumentVerification();
 		driver.findElement(AppiumBy
 				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Next\"));"));
 		nextButtonClick();
