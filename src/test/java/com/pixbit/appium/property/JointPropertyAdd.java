@@ -35,15 +35,15 @@ public class JointPropertyAdd extends AndroidGlobalData {
 		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"));
 		AddOwnerShipDetails.selectJointOwnership();
 		AddProperty AddProperty = AddOwnerShipDetails.twoOwnersSkipAll();
-		AddProperty.selectReadyStatus(input.get("present_use"));
+		AddProperty.selectReadyStatus(input.get("presentUse"));
 		AddProperty.scrollToNext();
 		AddProperty.nextButtonClick();
-		AddProperty.selectBedroomCabinCount(input.get("bedroom_cabin_count"));
-		AddProperty.selectBathroomCount(input.get("bathroom_count"), input.get("bedroom_cabin_count"));
-		AddProperty.selectKitchenPantryCount(input.get("kitchen_pantry_count"));
-		AddProperty.selectBalconyCount(input.get("balcony_count"), input.get("kitchen_pantry_count"));
+		AddProperty.selectBedroomCabinCount(input.get("bedroomCabinCount"));
+		AddProperty.selectBathroomCount(input.get("bathroomCount"), input.get("bedroomCabinCount"));
+		AddProperty.selectKitchenPantryCount(input.get("kitchenPantryCount"));
+		AddProperty.selectBalconyCount(input.get("balconyCount"), input.get("kitchenPantryCount"));
 		AddProperty.selectMapLocation();
-		AddProperty.selectFurnishingStatus(input.get("furnishing_status"));
+		AddProperty.selectFurnishingStatus(input.get("furnishingStatus"));
 		AddProperty.clickSave();
 		AddProperty.skipRent();
 	}
@@ -72,7 +72,7 @@ public class JointPropertyAdd extends AndroidGlobalData {
 		AddOwnerShipDetails AddOwnerShipDetails = MyProperties.openPropertyAdd();
 		AddOwnerShipDetails.initialContractVerification(input.get("titledeedDocument"));
 		AddOwnerShipDetails.selectJointOwnership();
-		AddProperty AddProperty = AddOwnerShipDetails.addOneOwnerAndSkipOne(input.get("owner_1_percentage"));
+		AddProperty AddProperty = AddOwnerShipDetails.addOwnerAndSkipOne(input.get("ownerName1"),input.get("ownerPercentage1"));
 		AddProperty.selectUnderConstructionStatus();
 		AddProperty.scrollToNext();
 		AddProperty.addPaymentPlan(input.get("schedule_count"), input.get("schedule_particulars"),
@@ -116,7 +116,7 @@ public class JointPropertyAdd extends AndroidGlobalData {
 				input.get("country_code"), input.get("owner_2_phone_number"), input.get("owner_2_email"),
 				input.get("owner_2_name"), input.get("owner_2_percentage"), input.get("owner_3_phone_number"),
 				input.get("owner_3_email"), input.get("owner_3_name"), input.get("owner_3_percentage"));
-		AddProperty.selectShellAndCoreStatus(input.get("present_use"));
+		AddProperty.selectShellAndCoreStatus(input.get("presentUse"));
 		scrollToNext();
 		AddProperty.selectMortgagedSkip();
 		scrollToNext();
@@ -164,12 +164,12 @@ public class JointPropertyAdd extends AndroidGlobalData {
 				input.get("schedule_period"));
 		scrollToNext();
 		AddProperty.nextButtonClick();
-		AddProperty.selectBedroomCabinCount(input.get("bedroom_cabin_count"));
-		AddProperty.selectBathroomCount(input.get("bathroom_count"), input.get("bedroom_cabin_count"));
-		AddProperty.selectKitchenPantryCount(input.get("kitchen_pantry_count"));
-		AddProperty.selectBalconyCount(input.get("balcony_count"), input.get("kitchen_pantry_count"));
+		AddProperty.selectBedroomCabinCount(input.get("bedroomCabinCount"));
+		AddProperty.selectBathroomCount(input.get("bathroomCount"), input.get("bedroomCabinCount"));
+		AddProperty.selectKitchenPantryCount(input.get("kitchenPantryCount"));
+		AddProperty.selectBalconyCount(input.get("balconyCount"), input.get("kitchenPantryCount"));
 		AddProperty.selectMapLocation();
-		AddProperty.selectFurnishingStatus(input.get("furnishing_status"));
+		AddProperty.selectFurnishingStatus(input.get("furnishingStatus"));
 		AddProperty.clickSave();
 		AddProperty.goToProperties();
 
@@ -201,19 +201,19 @@ public class JointPropertyAdd extends AndroidGlobalData {
 		AddProperty AddProperty = AddOwnerShipDetails.twoOwnerCountSelectionAndAdd(input.get("owner_1_percentage"),
 				input.get("country_code"), input.get("owner_2_phone_number"), input.get("owner_2_email"),
 				input.get("owner_2_name"), input.get("owner_2_percentage"));
-		AddProperty.selectShellAndCoreStatus(input.get("present_use"));
+		AddProperty.selectShellAndCoreStatus(input.get("presentUse"));
 		AddProperty.scrollToNext();
 		AddProperty.selectMortgagedTenureYearMonthOfferLetter(input.get("mortgage_amount"),
 				input.get("tenure_year"), input.get("tenure_month"), input.get("mortgage_start_date"),
 				input.get("finance_rate"));
 		scrollToNext();
 		AddProperty.nextButtonClick();
-		AddProperty.selectBedroomCabinCount(input.get("bedroom_cabin_count"));
-		AddProperty.selectBathroomCount(input.get("bathroom_count"), input.get("bedroom_cabin_count"));
-		AddProperty.selectKitchenPantryCount(input.get("kitchen_pantry_count"));
-		AddProperty.selectBalconyCount(input.get("balcony_count"), input.get("kitchen_pantry_count"));
+		AddProperty.selectBedroomCabinCount(input.get("bedroomCabinCount"));
+		AddProperty.selectBathroomCount(input.get("bathroomCount"), input.get("bedroomCabinCount"));
+		AddProperty.selectKitchenPantryCount(input.get("kitchenPantryCount"));
+		AddProperty.selectBalconyCount(input.get("balconyCount"), input.get("kitchenPantryCount"));
 		AddProperty.selectMapLocation();
-		AddProperty.selectFurnishingStatus(input.get("furnishing_status"));
+		AddProperty.selectFurnishingStatus(input.get("furnishingStatus"));
 		AddProperty.clickSave();
 		AddProperty.skipRent();
 	}
@@ -255,12 +255,12 @@ public class JointPropertyAdd extends AndroidGlobalData {
 				input.get("finance_rate"));
 		scrollToNext();
 		AddProperty.nextButtonClick();
-		AddProperty.selectBedroomCabinCount(input.get("bedroom_cabin_count"));
-		AddProperty.selectBathroomCount(input.get("bathroom_count"), input.get("bedroom_cabin_count"));
-		AddProperty.selectKitchenPantryCount(input.get("kitchen_pantry_count"));
-		AddProperty.selectBalconyCount(input.get("balcony_count"), input.get("kitchen_pantry_count"));
+		AddProperty.selectBedroomCabinCount(input.get("bedroomCabinCount"));
+		AddProperty.selectBathroomCount(input.get("bathroomCount"), input.get("bedroomCabinCount"));
+		AddProperty.selectKitchenPantryCount(input.get("kitchenPantryCount"));
+		AddProperty.selectBalconyCount(input.get("balconyCount"), input.get("kitchenPantryCount"));
 		AddProperty.selectMapLocation();
-		AddProperty.selectFurnishingStatus(input.get("furnishing_status"));
+		AddProperty.selectFurnishingStatus(input.get("furnishingStatus"));
 		AddProperty.clickSave();
 		AddProperty.goToProperties();
 
@@ -293,14 +293,14 @@ public class JointPropertyAdd extends AndroidGlobalData {
 		AddProperty AddProperty = AddOwnerShipDetails.threeOwnerCountSelectionAndSkipOne(
 				input.get("owner_1_percentage"), input.get("country_code"), input.get("owner_2_phone_number"),
 				input.get("owner_2_email"), input.get("owner_2_name"), input.get("owner_2_percentage"));
-		AddProperty.selectShellAndCoreStatus(input.get("present_use"));
+		AddProperty.selectShellAndCoreStatus(input.get("presentUse"));
 		AddProperty.nextButtonClick();
-		AddProperty.selectBedroomCabinCount(input.get("bedroom_cabin_count"));
-		AddProperty.selectBathroomCount(input.get("bathroom_count"), input.get("bedroom_cabin_count"));
-		AddProperty.selectKitchenPantryCount(input.get("kitchen_pantry_count"));
-		AddProperty.selectBalconyCount(input.get("balcony_count"), input.get("kitchen_pantry_count"));
+		AddProperty.selectBedroomCabinCount(input.get("bedroomCabinCount"));
+		AddProperty.selectBathroomCount(input.get("bathroomCount"), input.get("bedroomCabinCount"));
+		AddProperty.selectKitchenPantryCount(input.get("kitchenPantryCount"));
+		AddProperty.selectBalconyCount(input.get("balconyCount"), input.get("kitchenPantryCount"));
 		AddProperty.selectMapLocation();
-		AddProperty.selectFurnishingStatus(input.get("furnishing_status"));
+		AddProperty.selectFurnishingStatus(input.get("furnishingStatus"));
 		AddProperty.clickSave();
 		AddProperty.skipRent();
 
@@ -340,12 +340,12 @@ public class JointPropertyAdd extends AndroidGlobalData {
 		AddProperty.addPaymentPlan(input.get("schedule_count"), input.get("schedule_particulars"),
 				input.get("schedule_period"));
 		AddProperty.nextButtonClick();
-		AddProperty.selectBedroomCabinCount(input.get("bedroom_cabin_count"));
-		AddProperty.selectBathroomCount(input.get("bathroom_count"), input.get("bedroom_cabin_count"));
-		AddProperty.selectKitchenPantryCount(input.get("kitchen_pantry_count"));
-		AddProperty.selectBalconyCount(input.get("balcony_count"), input.get("kitchen_pantry_count"));
+		AddProperty.selectBedroomCabinCount(input.get("bedroomCabinCount"));
+		AddProperty.selectBathroomCount(input.get("bathroomCount"), input.get("bedroomCabinCount"));
+		AddProperty.selectKitchenPantryCount(input.get("kitchenPantryCount"));
+		AddProperty.selectBalconyCount(input.get("balconyCount"), input.get("kitchenPantryCount"));
 		AddProperty.selectMapLocation();
-		AddProperty.selectFurnishingStatus(input.get("furnishing_status"));
+		AddProperty.selectFurnishingStatus(input.get("furnishingStatus"));
 		AddProperty.clickSave();
 		AddProperty.goToProperties();
 

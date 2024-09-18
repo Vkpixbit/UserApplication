@@ -1,19 +1,21 @@
 [
 	{
-		"email": "amal@pixbitsolutions.com",
+		"email": "alphinpathrose@gmail.com",
 		"password": "Qapixbit@14",
-		"titledeedDocument": "flat_notmortgaged_2.pdf",
+		"isTitleDeed":false,
+		"titledeedDocument": "initial_contract_1.pdf",
+		"propertyStatus":"Ready",
 		"presentUse": "Vacant",
 		"bedroomCabinCount": "8",
 		"bathroomCount": "3",
 		"kitchenPantryCount": "4",
 		"balconyCount": "2",
-		"furnishingStatus": "Not Furnished"
+		"furnishingStatus": "Furnished"
 	},
 	{
-		"email": "asheek@pixbitsolutions.com",
+		"email": "alphinpathrose@gmail.com",
 		"password": "Qapixbit@14",
-		"titledeedDocument": "oquod marbella 47.pdf",
+		"titledeedDocument": "inital_contract_5.pdf",
 		"scheduleCount": "3",
 		"scheduleParticulars": "Particular_Test",
 		"schedulePeriod": "20",
@@ -41,9 +43,9 @@
 		"furnishingStatus": "Semi Furnished"
 	},
 	{
-		"email": "khalel123@gmail.com",
+		"email": "alphinpathrose@gmail.com",
 		"password": "Qapixbit@14",
-		"titledeedDocument": "inital_mortgaged_1.pdf",
+		"titledeedDocument": "office_notmortgaged_1.pdf",
 		"presentUse":"Shell&Core",
 		"bedroomCabinCount": "2",
 		"bathroomCount": "2",

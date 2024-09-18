@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.pixbit.appium.propertypublish.PropertyPublishing">
+      <class name="com.pixbit.appium.property.NewUserPropertyAdd">
         <methods>
           <include name="close"/>
-          <include name="openMyPropertyPage" invocation-numbers="0"/>
+          <include name="singleVillaProperty"/>
           <include name="configuration"/>
         </methods>
-      </class> <!-- com.pixbit.appium.propertypublish.PropertyPublishing -->
+      </class> <!-- com.pixbit.appium.property.NewUserPropertyAdd -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -5,13 +5,11 @@
 		<listener class-name="com.pixbit.appium.globalfiles.Listeners" />
 	</listeners>
 	<test name="SinglePropertyTest" preserve-order="true">
-		<groups>
-			<run>
-				<include name="rental_add" />
-			</run>
-		</groups>
 		<classes>
-			<class name="com.pixbit.appium.test.rentalcontract.add.UserPropertyMarkAsSold">
+			<class name="com.pixbit.appium.rental.OwnerRentalAddInList">
+				<methods>
+					<include name="addRentalWithChequeDetails" />
+				</methods>
 			</class>
 		</classes>
 	</test>

@@ -6,13 +6,13 @@
   </listeners>
   <test thread-count="5" parallel="tests" name="SinglePropertyTest(failed)">
     <classes>
-      <class name="com.pixbit.appium.test.property.add.SinglePropertyAdd">
+      <class name="com.pixbit.appium.rental.OwnerRentalAddInList">
         <methods>
           <include name="close"/>
-          <include name="property_townhouse_underconstruction" invocation-numbers="0"/>
+          <include name="addRentalWithChequeDetails"/>
           <include name="configuration"/>
         </methods>
-      </class> <!-- com.pixbit.appium.test.property.add.SinglePropertyAdd -->
+      </class> <!-- com.pixbit.appium.rental.OwnerRentalAddInList -->
     </classes>
   </test> <!-- SinglePropertyTest(failed) -->
 </suite> <!-- Failed suite [Single_Property_Test_Suite] -->

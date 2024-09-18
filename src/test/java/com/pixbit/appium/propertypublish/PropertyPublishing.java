@@ -10,8 +10,6 @@ import com.pixbit.appium.pageobject.ProfilePage;
 import com.pixbit.appium.pageobject.PropertyDetails;
 import com.pixbit.appium.pageobject.PublishProperty;
 import com.pixbit.appium.pageobject.SplashScreen;
-
-import org.testng.annotations.BeforeClass;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;

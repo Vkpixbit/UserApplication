@@ -3,12 +3,12 @@
 		"email": "basheer123@gmail.com",
 		"password": "Qapixbit@14",
 		"titledeedDocument": "land_notmortgaged_3.pdf",
-		"present_use": "Rented",
-		"bedroom_cabin_count": "4",
-		"bathroom_count": "2",
-		"kitchen_pantry_count": "2",
-		"balcony_count": "2",
-		"furnishing_status": "Furnished"
+		"presentUse": "Rented",
+		"bedroomCabinCount": "4",
+		"bathroomCount": "2",
+		"kitchenPantryCount": "2",
+		"balconyCount": "2",
+		"furnishingStatus": "Furnished"
 	},
 	{
 		"email": "farispm@pixbitsolutions.com",
@@ -20,17 +20,17 @@
 		"owner_2_email": "bilsaj123@gmail.com",
 		"owner_2_name": "bilsaj",
 		"owner_2_percentage": "50",
-		"present_use": "Vacant",
-		"mortgage_amount": "54000",
+		"presentUse": "Vacant",
+		"mortgageAmount": "54000",
 		"tenure_year": "15",
 		"tenure_month": "32",
 		"mortgage_start_date": "12/10/2010",
 		"finance_rate": "4.3",
-		"bedroom_cabin_count": "4",
-		"bathroom_count": "2",
-		"kitchen_pantry_count": "2",
-		"balcony_count": "2",
-		"furnishing_status": "Furnished"
+		"bedroomCabinCount": "4",
+		"bathroomCount": "2",
+		"kitchenPantryCount": "2",
+		"balconyCount": "2",
+		"furnishingStatus": "Furnished"
 	},
 	{
 		"email": "asheek@pixbitsolutions.com",
@@ -45,11 +45,11 @@
 		"property_name": "Chestertons",
 		"property_category": "Commercial",
 		"age_of_property": "2",
-		"present_use": "Rented",
-		"bedroom_cabin_count": "4",
-		"bathroom_count": "2",
-		"kitchen_pantry_count": "2",
-		"balcony_count": "2",
-		"furnishing_status": "Furnished"
+		"presentUse": "Rented",
+		"bedroomCabinCount": "4",
+		"bathroomCount": "2",
+		"kitchenPantryCount": "2",
+		"balconyCount": "2",
+		"furnishingStatus": "Furnished"
 	}
 ]

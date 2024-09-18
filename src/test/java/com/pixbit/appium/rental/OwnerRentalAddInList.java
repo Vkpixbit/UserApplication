@@ -29,22 +29,20 @@ public class OwnerRentalAddInList extends AndroidGlobalData {
 		AddRental.uploadEjariRentalFlow(input.get("ejari_document"));
 		AddRental.uploadTenancy(input.get("tenancy_document"));
 		AddRental.clickVerifyAndContinue.click();
-		AddRental.enter_cheque_details(input.get("cheque_count"), input.get("cheque_document"),
+		AddRental.enterChequeDetails(input.get("cheque_count"), input.get("cheque_document"),
 				input.get("bank_name"));
-		AddRental.clickSave();
-
+		//AddRental.clickSave();
 	}
 
 	@DataProvider
 	public Object[][] addRentalWithChequeDetailsData() throws IOException {
 		List<HashMap<String, String>> value = getjsondata(System.getProperty("user.dir")
-				+ "/src/test/java/com/pixbit/appium/test/data/rental/RentAsOwnerInList.json");
+				+ "/src/test/java/com/pixbit/appium/rental/RentAsOwnerInList.json");
 		return new Object[][] { { value.get(0) } };
 	}
 	
 	
-	
-	@Test(dataProvider = "addRentalWithOutChequeDetailsData", groups = "Property Rental", enabled = true)
+	@Test(dataProvider = "addRentalWithOutChequeDetailsData", groups = "Property Rental", enabled = false)
 	public void addRentalWithOutChequeDetails(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();

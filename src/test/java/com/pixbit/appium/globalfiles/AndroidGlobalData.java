@@ -49,7 +49,7 @@ public class AndroidGlobalData {
 		service = AppiumDriverLocalService.buildService(builder);
 
 		UiAutomator2Options options = new UiAutomator2Options();
-		options.setDeviceName("QAAndroid");
+		options.setDeviceName("QaAndroid");
 
 		options.setApp(System.getProperty("user.dir")+"/src/test/java/com/pixbit/appium/resources/user_app_staging.apk");
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);

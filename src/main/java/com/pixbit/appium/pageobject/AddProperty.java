@@ -108,6 +108,13 @@ public class AddProperty extends AndroidActions {
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Add Mortgage Details (Optional)']")
 	private WebElement addMortgageButton;
+	
+	public void selectPropertyStatus(String propertyStatus,String presentUse) {
+		driver.findElement(By.xpath("//android.widget.TextView[@text='"+propertyStatus+"']")).click();
+		if(propertyStatus.equals("Ready") | propertyStatus.equals("Shell&Core")) {
+			driver.findElement(By.xpath("//android.widget.TextView[@text='" + presentUse + "']")).click();
+		}
+	}
 
 	/*
 	 * Select Property Status as Ready and Enter Age Of Property and Select Present

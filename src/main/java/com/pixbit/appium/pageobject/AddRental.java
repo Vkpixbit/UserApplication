@@ -52,16 +52,16 @@ public class AddRental extends AndroidActions {
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Done']")
 	private WebElement clickDone;
 	
-	@AndroidBy(xpath = "//android.widget.TextView[@text='Add Cheque']")
+	@AndroidFindBy(accessibility = "Add")
 	private WebElement addChequeButton;
 	
-	@AndroidBy(xpath = "//android.widget.EditText[@index='0']")
+	@AndroidFindBy(xpath = "//android.widget.EditText[@index='0']")
 	private WebElement bankNameField;
 	
-	@AndroidBy(xpath = "//android.widget.EditText[@index='2']")
+	@AndroidFindBy(xpath = "//android.widget.EditText[@index='2']")
 	private WebElement chequeDateField;
 	
-	@AndroidBy(xpath = "//android.widget.EditText[@index='2']")
+	@AndroidFindBy(xpath = "//android.widget.EditText[@index='2']")
 	private WebElement amountField;
 	
 	@AndroidFindBy(id = "in.pixbit.proptech:id/month_navigation_fragment_toggle")
@@ -180,14 +180,16 @@ public class AddRental extends AndroidActions {
 	}
 	
 	
-	public void enter_cheque_details(String cheque_count,String cheque_document,String bank_name) {
+	public void enterChequeDetails(String cheque_count,String cheque_document,String bank_name) throws InterruptedException {
 		int count = Integer.parseInt(cheque_count);
-		for (int i=0;i<=count;i++) {
+		for (int i=0;i<count;i++) {
+			Thread.sleep(2000);
 			addChequeButton.click();
 			uploadChequeDoc(cheque_document);
 			bankNameField.sendKeys(bank_name);
 			datePicker();
 			addChequeAmount();
+			driver.findElement(By.xpath("//android.widget.TextView[@text='Save']")).click();
 		}
 		driver.findElement(By.xpath("//android.widget.TextView[@text='Save']")).click();
 	}

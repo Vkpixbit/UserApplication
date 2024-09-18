@@ -31,16 +31,18 @@ public class AddOwnerShipDetails extends AndroidActions {
 	@AndroidFindBy(accessibility = "Add")
 	private WebElement addOwner;
 
+	/*
 	@AndroidFindBy(xpath = "//android.widget.EditText[@index='1']")
 	private WebElement ownerPhoneField;
 
 	@AndroidFindBy(xpath = "//android.widget.EditText[@index='3']")
 	private WebElement ownerEmailField;
+	*/
 
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='5']")
+	@AndroidFindBy(xpath = "//android.widget.EditText[@index='1']")
 	private WebElement ownerNameField;
 
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='7']")
+	@AndroidFindBy(xpath = "//android.widget.EditText[@index='3']")
 	private WebElement ownerPercentageField;
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Save']")
@@ -61,6 +63,7 @@ public class AddOwnerShipDetails extends AndroidActions {
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Year Picker']")
 	private WebElement yearPicker;
 
+	/*
 	@AndroidFindBy(xpath = "//android.widget.EditText[@index='0']")
 	private WebElement countryEnterField;
 
@@ -69,8 +72,41 @@ public class AddOwnerShipDetails extends AndroidActions {
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='+971']")
 	private WebElement countryPickerClick;
+	*/
 
 	private boolean permissionApproved = false;
+	
+	public void deedSelection(String isTitleDeed,String titledeedDocument) throws InterruptedException {
+		boolean isInitialContract = Boolean.getBoolean(isTitleDeed);
+		if(isInitialContract) {
+			titleDeedUpload.click();
+			if (!permissionApproved) {
+				approvePermission();
+				permissionApproved = true; // Set the flag to true after approval
+			}
+			driver.findElement(By.xpath("//android.widget.TextView[@text='Docs_for_testing']")).click();
+			driver.findElement(By.xpath("//android.widget.TextView[@text='Title_Deed']")).click();
+			scrollToElementByText(titledeedDocument);
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//android.widget.TextView[@text='" + titledeedDocument + "']")).click();
+			Thread.sleep(3000);
+			verifyButton.click();
+		}
+		else {
+			titleDeedUpload.click();
+			if (!permissionApproved) {
+				approvePermission();
+				permissionApproved = true; // Set the flag to true after approval
+			}
+			driver.findElement(By.xpath("//android.widget.TextView[@text='Docs_for_testing']")).click();
+			driver.findElement(By.xpath("//android.widget.TextView[@text='Initial_contract']")).click();
+			scrollToElementByText(titledeedDocument);
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//android.widget.TextView[@text='" + titledeedDocument + "']")).click();
+			Thread.sleep(3000);
+			verifyButton.click();
+		}
+	}
 	
 	public void open_title_deed_section(String titledeedDocument) throws InterruptedException {
 		titleDeedUpload.click();
@@ -80,6 +116,7 @@ public class AddOwnerShipDetails extends AndroidActions {
 		}
 		driver.findElement(By.xpath("//android.widget.TextView[@text='Docs_for_testing']")).click();
 		driver.findElement(By.xpath("//android.widget.TextView[@text='Title_Deed']")).click();
+		driver.findElement(By.xpath("//android.widget.TextView[@text='used_deed']")).click();
 		scrollToElementByText(titledeedDocument);
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//android.widget.TextView[@text='" + titledeedDocument + "']")).click();
@@ -94,7 +131,7 @@ public class AddOwnerShipDetails extends AndroidActions {
 			permissionApproved = true; // Set the flag to true after approval
 		}
 		driver.findElement(By.xpath("//android.widget.TextView[@text='Docs_for_testing']")).click();
-		driver.findElement(By.xpath("//android.widget.TextView[@text='Initial_contract']")).click();
+		driver.findElement(By.xpath("//android.widget.TextView[@text='inital_contract']")).click();
 		scrollToElementByText(titledeedDocument);
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//android.widget.TextView[@text='" + titledeedDocument + "']")).click();
@@ -123,13 +160,22 @@ public class AddOwnerShipDetails extends AndroidActions {
 		return new AddProperty(driver);
 	}
 	
+	public void ownnershipAdd(String ownersCount,String ownerName,String ownerNercentage) throws InterruptedException {
+		driver.findElement(By.xpath("//android.widget.TextView[@text='"+ownersCount+"']")).click();
+		for(int i=0; i<Integer.parseInt(ownersCount);i++) {
+			driver.findElement(AppiumBy
+					.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Add Owner\"));"));
+			ownerAdd(ownerName,ownerNercentage);
+		}
+	}
+	
 	/*
 	 * skip all owners adding
 	 */
 	public AddProperty twoOwnersSkipAll() {
 		driver.findElement(By.xpath("//android.widget.TextView[@text='5']")).click();
 		driver.findElement(AppiumBy
-				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Skip & Continue\"));"));
+				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Add Owner\"));"));
 		skipAndContinue.click();
 		return new AddProperty(driver);
 	}
@@ -137,22 +183,11 @@ public class AddOwnerShipDetails extends AndroidActions {
 	/*
 	 * Ownership add
 	 */
-	public void owner_adding(String country_code, String owner_phone_number, String owner_email, String owner_name,
-			String owner_percentage) throws InterruptedException {
+	public void ownerAdd(String ownerName,String ownerNercentage) throws InterruptedException {
 		addOwner.click();
-		countryPickerClick.click();
-		countryEnterField.sendKeys(country_code);
-		clickIndia.click();
-		ownerPhoneField.sendKeys(owner_phone_number);
 		Thread.sleep(2000);
-		if (ownerEmailField.getText().isEmpty()) {
-			ownerEmailField.sendKeys(owner_email);
-			ownerNameField.sendKeys(owner_name);
-			ownerPercentageField.sendKeys(owner_percentage);
-		} else {
-			ownerPercentageField.sendKeys(owner_percentage);
-		}
-		Thread.sleep(2000);
+		ownerNameField.sendKeys(ownerName);
+		ownerPercentageField.sendKeys(ownerNercentage);
 		clickSave.click();
 
 	}
@@ -160,12 +195,10 @@ public class AddOwnerShipDetails extends AndroidActions {
 	/*
 	 * all owners in india Add one owner and skip one owner
 	 */
-	public AddProperty addOneOwnerAndSkipOne(String owner_1_percentage) throws InterruptedException {
+	public AddProperty addOwnerAndSkipOne(String ownerName,String ownerPercentage) throws InterruptedException {
 		driver.findElement(By.xpath("//android.widget.TextView[@text='2']")).click();
-		addOwner.click();
 		Thread.sleep(2000);
-		ownerPercentageField.sendKeys(owner_1_percentage);
-		clickSave.click();
+		ownerAdd(ownerName, ownerPercentage);
 		driver.findElement(AppiumBy
 				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Skip & Continue\"));"));
 		skipAndContinue.click();

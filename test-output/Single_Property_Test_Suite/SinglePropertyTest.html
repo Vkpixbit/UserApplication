@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>SinglePropertyTest</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Aug 28 18:00:12 IST 2024</td>
+<td>Started on:</td><td>Wed Sep 18 15:48:49 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>101 seconds (101629 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (185 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -76,10 +76,127 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.pixbit.appium.test.property.add.SinglePropertyAdd.property_townhouse_underconstruction()'><b>property_townhouse_underconstruction</b><br>Test class: com.pixbit.appium.test.property.add.SinglePropertyAdd<br>Parameters: {finance_rate=4.3, schedule_particulars=Test, schedule_count=2, bedroom_cabin_count=2, balcony_count=2, furnishing_status=Semi Furnished, tenure_year=15, password=Qapixbit@14, mortgage_amount=54000, kitchen_pantry_count=1, _comment=property_townhouse_underconstruction_data, titledeedDocument=inital_mortgaged_1.pdf, mortgage_start_date=12/10/2010, bathroom_count=2, email=khalel123@gmail.com, schedule_period=2}</td>
-<td></td>
-<td>94</td>
-<td>com.pixbit.appium.test.property.add.SinglePropertyAdd@554e218</td></tr>
+<td title='com.pixbit.appium.property.SinglePropertyAdd.shellAndCoreNotMortgaged()'><b>shellAndCoreNotMortgaged</b><br>Test class: com.pixbit.appium.property.SinglePropertyAdd</td>
+<td><div><pre>java.lang.RuntimeException: com.fasterxml.jackson.core.JsonParseException: Unrecognized token &apos;package&apos;: was expecting (JSON String, Number, Array, Object or token &apos;null&apos;, &apos;true&apos; or &apos;false&apos;)
+ at [Source: (String)&quot;package com.pixbit.appium.property;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+
+import com.pixbit.appium.globalfiles.AndroidGlobalData;
+import com.pixbit.appium.pageobject.AddOwnerShipDetails;
+import com.pixbit.appium.pageobject.AddProperty;
+import com.pixbit.appium.pageobject.HomePage;
+import com.pixbit.appium.pageobject.LoginPage;
+import com.pixbit.appium.pageobject.MyProperties;
+&quot;[truncated 10220 chars]; line: 1, column: 8]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unrecognized token &apos;package&apos;: was expecting (JSON String, Number, Array, Object or token &apos;null&apos;, &apos;true&apos; or &apos;false&apos;)
+ at [Source: (String)&quot;package com.pixbit.appium.property;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+
+import com.pixbit.appium.globalfiles.AndroidGlobalData;
+import com.pixbit.appium.pageobject.AddOwnerShipDetails;
+import com.pixbit.appium.pageobject.AddProperty;
+import com.pixbit.appium.pageobject.HomePage;
+import com.pixbit.appium.pageobject.LoginPage;
+import com.pixbit.appium.pageobject.MyProperties;
+&quot;[truncated 10220 chars]; line: 1, column: 8]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2477)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:760)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._reportInvalidToken(ReaderBasedJsonParser.java:3041)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._handleOddValue(ReaderBasedJsonParser.java:2082)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextToken(ReaderBasedJsonParser.java:808)
+	at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:4912)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4818)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3772)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3755)
+	at com.pixbit.appium.globalfiles.AndroidGlobalData.getjsondata(AndroidGlobalData.java:105)
+	at com.pixbit.appium.property.SinglePropertyAdd.shellAndCoreNotMortgagedData(SinglePropertyAdd.java:170)
+	... 19 more
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace60127633", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace60127633'><pre>java.lang.RuntimeException: com.fasterxml.jackson.core.JsonParseException: Unrecognized token &apos;package&apos;: was expecting (JSON String, Number, Array, Object or token &apos;null&apos;, &apos;true&apos; or &apos;false&apos;)
+ at [Source: (String)&quot;package com.pixbit.appium.property;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import com.pixbit.appium.globalfiles.AndroidGlobalData;
+import com.pixbit.appium.pageobject.AddOwnerShipDetails;
+import com.pixbit.appium.pageobject.AddProperty;
+import com.pixbit.appium.pageobject.HomePage;
+import com.pixbit.appium.pageobject.LoginPage;
+import com.pixbit.appium.pageobject.MyProperties;
+&quot;[truncated 10220 chars]; line: 1, column: 8]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:58)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:159)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:809)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:734)
+	at org.testng.internal.invokers.ParameterHandler.handleParameters(ParameterHandler.java:72)
+	at org.testng.internal.invokers.ParameterHandler.createParameters(ParameterHandler.java:51)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:946)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unrecognized token &apos;package&apos;: was expecting (JSON String, Number, Array, Object or token &apos;null&apos;, &apos;true&apos; or &apos;false&apos;)
+ at [Source: (String)&quot;package com.pixbit.appium.property;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import com.pixbit.appium.globalfiles.AndroidGlobalData;
+import com.pixbit.appium.pageobject.AddOwnerShipDetails;
+import com.pixbit.appium.pageobject.AddProperty;
+import com.pixbit.appium.pageobject.HomePage;
+import com.pixbit.appium.pageobject.LoginPage;
+import com.pixbit.appium.pageobject.MyProperties;
+&quot;[truncated 10220 chars]; line: 1, column: 8]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2477)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:760)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._reportInvalidToken(ReaderBasedJsonParser.java:3041)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._handleOddValue(ReaderBasedJsonParser.java:2082)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextToken(ReaderBasedJsonParser.java:808)
+	at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:4912)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4818)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3772)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3755)
+	at com.pixbit.appium.globalfiles.AndroidGlobalData.getjsondata(AndroidGlobalData.java:105)
+	at com.pixbit.appium.property.SinglePropertyAdd.shellAndCoreNotMortgagedData(SinglePropertyAdd.java:170)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:54)
+	... 19 more
+</pre></div></td>
+<td>0</td>
+<td>com.pixbit.appium.property.SinglePropertyAdd@5bf8fa12</td></tr>
 </table><p>
 </body>
 </html>

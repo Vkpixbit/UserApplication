@@ -31,9 +31,9 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 		ProfilePage ProfilePage = HomePage.openProfile();
 		MyProperties MyProperties = ProfilePage.openMyPropertiesPage();
 		AddOwnerShipDetails AddOwnerShipDetails = MyProperties.openPropertyAdd();
-		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"));
+		AddOwnerShipDetails.deedSelection(input.get("isTitleDeed"),input.get("titledeedDocument"));
 		AddProperty AddProperty = AddOwnerShipDetails.selectSingleOwnership();
-		AddProperty.selectReadyStatus(input.get("presentUse"));
+		AddProperty.selectPropertyStatus(input.get("propertyStatus"),input.get("presentUse"));
 		AddProperty.scrollToNext();
 		AddProperty.nextButtonClick();
 		AddProperty.selectBedroomCabinCount(input.get("bedroomCabinCount"));
@@ -49,7 +49,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 	@DataProvider
 	public Object[][] readyVacantNotMortgagedData() throws IOException {
 		List<HashMap<String, String>> value = getjsondata(System.getProperty("user.dir")
-				+ "/src/test/java/com/pixbit/appium/test/data/singleproperty/SinglePropertyCreationData.json");
+				+ "/src/test/java/com/pixbit/appium/property/SinglePropertyCreationData.json");
 		return new Object[][] { { value.get(0) } };
 	}
 
@@ -90,7 +90,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 	@DataProvider
 	public Object[][] underConstructionPaymentPlanMortgagedPropertyData() throws IOException {
 		List<HashMap<String, String>> value = getjsondata(System.getProperty("user.dir")
-				+ "/src/test/java/com/pixbit/appium/test/data/singleproperty/SinglePropertyCreationData.json");
+				+ "/src/test/java/com/pixbit/appium/property/SinglePropertyCreationData.json");
 		return new Object[][] { { value.get(1) } };
 	}
 
@@ -153,7 +153,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 		AddProperty AddProperty = AddOwnerShipDetails.selectSingleOwnership();
 		AddProperty.selectShellAndCoreStatus(input.get("presentUse"));
 		AddProperty.scrollToNext();
-		AddProperty.selectMortgagedSkip();
+		//AddProperty.selectMortgagedSkip();
 		AddProperty.nextButtonClick();
 		AddProperty.selectBedroomCabinCount(input.get("bedroomCabinCount"));
 		AddProperty.selectBathroomCount(input.get("bathroomCount"), input.get("bedroomCabinCount"));
@@ -168,7 +168,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 	@DataProvider
 	public Object[][] shellAndCoreNotMortgagedData() throws IOException {
 		List<HashMap<String, String>> value = getjsondata(System.getProperty("user.dir")
-				+ "/src/test/java/com/pixbit/appium/test/data/singleproperty/SinglePropertyCreationData.json");
+				+ "/src/test/java/com/pixbit/appium/property/SinglePropertyAdd.java");
 		return new Object[][] { { value.get(3) } };
 	}
 

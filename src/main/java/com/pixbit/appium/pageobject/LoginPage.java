@@ -99,8 +99,8 @@ public class LoginPage extends AndroidActions {
 		otpEnterField.sendKeys("1234");
 		verifyButton.click();
 		countryPickerClick.click();
-		countryEnterField.sendKeys("India");
-		clickIndia.click();
+		countryEnterField.sendKeys("United Arab Emirates");
+		//clickIndia.click();
 		signUpPhoneField.sendKeys(phoneNumber);
 		sendOtpButton.click();
 		Thread.sleep(2000);
@@ -165,4 +165,7 @@ public class LoginPage extends AndroidActions {
 		skipVerification.click();
 		return new HomePage(driver);
 	}
+	
+	
+	
 }
