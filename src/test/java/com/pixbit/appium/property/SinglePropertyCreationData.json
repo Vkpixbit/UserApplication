@@ -1,12 +1,12 @@
 [
 	{
-		"email": "alphinpathrose@gmail.com",
+		"email": "arunpt@gmail.com",
 		"password": "Qapixbit@14",
-		"isTitleDeed":false,
-		"titledeedDocument": "initial_contract_1.pdf",
+		"isTitleDeed":"true",
+		"titledeedDocument": "flat_notmortgaged_1.pdf",
 		"propertyStatus":"Ready",
 		"presentUse": "Vacant",
-		"bedroomCabinCount": "8",
+		"bedroomCabinCount": "1",
 		"bathroomCount": "3",
 		"kitchenPantryCount": "4",
 		"balconyCount": "2",
@@ -15,7 +15,7 @@
 	{
 		"email": "alphinpathrose@gmail.com",
 		"password": "Qapixbit@14",
-		"titledeedDocument": "inital_contract_5.pdf",
+		"titledeedDocument": "initial_contract_2.pdf",
 		"scheduleCount": "3",
 		"scheduleParticulars": "Particular_Test",
 		"schedulePeriod": "20",

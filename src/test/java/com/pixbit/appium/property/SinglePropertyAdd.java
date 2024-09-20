@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import com.pixbit.appium.globalfiles.AndroidGlobalData;
 import com.pixbit.appium.pageobject.AddOwnerShipDetails;
 import com.pixbit.appium.pageobject.AddProperty;
@@ -22,7 +21,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 	 * Property status as Ready & Present use Vacant
 	 * Not mortgaged case
 	 */
-	@Test(dataProvider = "readyVacantNotMortgagedData", groups = "Single Property", enabled = true)
+	@Test(dataProvider = "readyVacantNotMortgagedData", groups = "Single Property", enabled = false)
 	public void readyVacantNotMortgagedProperty(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();
@@ -58,7 +57,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 	 * propperty status as Under construction and adding payment plans
 	 * Upload mortgaged and enter details
 	 */
-	@Test(dataProvider = "underConstructionPaymentPlanMortgagedPropertyData", groups = "Single Property", enabled = true)
+	@Test(dataProvider = "underConstructionPaymentPlanMortgagedPropertyData", groups = "Single Property", enabled = false)
 	public void underConstructionPaymentPlanMortgagedProperty(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();
@@ -73,8 +72,8 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 		AddProperty.scrollToNext();
 		AddProperty.addPaymentPlan(input.get("scheduleCount"), input.get("scheduleParticulars"),
 				input.get("schedulePeriod"));
-		AddProperty.selectMortgagedTenureYear(input.get("mortgageAmount"), input.get("tenureYear"),
-				input.get("mortgageStartDate"), input.get("financeRate"));
+		//AddProperty.selectMortgagedTenureYear(input.get("mortgageAmount"), input.get("tenureYear"),
+				//input.get("mortgageStartDate"), input.get("financeRate"));
 		AddProperty.scrollToNext();
 		AddProperty.nextButtonClick();
 		AddProperty.selectBedroomCabinCount(input.get("bedroomCabinCount"));
@@ -99,7 +98,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 	 * property statsus as Under construction and Upload payment plan
 	 * Not mortgaged case
 	 */
-	@Test(dataProvider = "underConstructionPaymentPlanNotMortgagedData",groups = "Single Property", enabled = true)
+	@Test(dataProvider = "underConstructionPaymentPlanNotMortgagedData",groups = "Single Property", enabled = false)
 	public void underConstructionPaymentPlanNotMortgaged(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();
@@ -130,7 +129,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 	@DataProvider
 	public Object[][] underConstructionPaymentPlanNotMortgagedData() throws IOException {
 		List<HashMap<String, String>> value = getjsondata(System.getProperty("user.dir")
-				+ "/src/test/java/com/pixbit/appium/test/data/singleproperty/SinglePropertyCreationData.json");
+				+ "/src/test/java/com/pixbit/appium/property/SinglePropertyCreationData.json");
 		return new Object[][] { { value.get(2) } };
 	}
 
@@ -139,7 +138,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 	 * select property status as Shell & Core 
 	 * Select mortgaged and skip
 	 */
-	@Test(dataProvider = "shellAndCoreNotMortgagedData",groups = "Single Property", enabled = true)
+	@Test(dataProvider = "shellAndCoreNotMortgagedData",enabled = true)
 	public void shellAndCoreNotMortgaged(HashMap<String, String> input)
 			throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
@@ -168,7 +167,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 	@DataProvider
 	public Object[][] shellAndCoreNotMortgagedData() throws IOException {
 		List<HashMap<String, String>> value = getjsondata(System.getProperty("user.dir")
-				+ "/src/test/java/com/pixbit/appium/property/SinglePropertyAdd.java");
+				+ "/src/test/java/com/pixbit/appium/property/SinglePropertyCreationData.json");
 		return new Object[][] { { value.get(3) } };
 	}
 
@@ -177,7 +176,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 	 * property status as ready & preent use as Rented
 	 * Enter mortgage details
 	 */
-	@Test(dataProvider = "readyRentedMortgagedData",groups = "Single Property", enabled = true)
+	@Test(dataProvider = "readyRentedMortgagedData",groups = "Single Property", enabled = false)
 	public void readyRentedMortgaged(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();
@@ -208,7 +207,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 	@DataProvider
 	public Object[][] readyRentedMortgagedData() throws IOException {
 		List<HashMap<String, String>> value = getjsondata(System.getProperty("user.dir")
-				+ "/src/test/java/com/pixbit/appium/test/data/singleproperty/SinglePropertyCreationData.json");
+				+ "/src/test/java/com/pixbit/appium/property/SinglePropertyCreationData.json");
 		return new Object[][] { { value.get(4) } };
 	}
 

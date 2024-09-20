@@ -384,6 +384,24 @@ public class AddProperty extends AndroidActions {
 
 		}
 	}
+	
+	
+	public void propertySaveAction(String propertyStatus,String presentUse) throws InterruptedException {
+		if(propertyStatus.equals("Ready") && presentUse.equals("Rented")) {
+			driver.findElement(AppiumBy
+					.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Save Property\"));"));
+			savePropertyButton.click();
+			skipRentButton.click();
+			Thread.sleep(2000);
+		}
+		else {
+			driver.findElement(AppiumBy
+					.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Save Property\"));"));
+			savePropertyButton.click();
+			Thread.sleep(2000);
+			goToPropertiesButton.click();
+		}
+	}
 
 	/*
 	 * Click save button in property add flow

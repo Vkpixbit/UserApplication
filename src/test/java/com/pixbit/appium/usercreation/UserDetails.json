@@ -1,8 +1,9 @@
 [
 	{
-		"emailId": "alphinpathrose@gmail.com",
-		"phoneNumber": "7567657644",
-		"userName": "Alphin",
+		"emailId": "arunpt@gmail.com",
+		"countryCode":"India",
+		"phoneNumber": "9967657644",
+		"userName": "Arun",
 		"password": "Qapixbit@14",
 		"prefred_language": "English"
 	},
@@ -35,10 +36,18 @@
 		"prefred_language": "Urdu"
 	},
 	{
-		"emailId": "bilal123@gmail.com",
-		"phoneNumber": "9774311109",
-		"userName": "Bilal",
+		
+		"emailId": "lobortis.tellus@icloud.net",
+		"phoneNumber": "876289670",
+		"userName": "Hasad Bennett",
 		"password": "Qapixbit@14",
 		"prefred_language": "Urdu"
+	},
+	{
+		"emailId": "barrymay@gmail.net",
+		"phoneNumber": "9933328390",
+		"userName": "Barry May",
+		"password": "Qapixbit@14",
+		"prefred_language": "Arabic"
 	}
 ]

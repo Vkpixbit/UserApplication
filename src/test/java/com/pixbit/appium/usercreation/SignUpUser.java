@@ -16,7 +16,7 @@ public class SignUpUser extends AndroidGlobalData {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();
 		Thread.sleep(2000);
-		LoginPage.userSignUp(input.get("emailId"), input.get("phoneNumber"), input.get("userName"),
+		LoginPage.userSignUp(input.get("emailId"),input.get("countryCode"),input.get("phoneNumber"), input.get("userName"),
 				input.get("password"), input.get("prefred_language"));
 		Boolean loginStatus = LoginPage.verifySignUp().contains("Thank you for signing up");
 		if (loginStatus) {

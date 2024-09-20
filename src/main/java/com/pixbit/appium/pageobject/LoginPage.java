@@ -89,7 +89,7 @@ public class LoginPage extends AndroidActions {
 
 	}
 
-	public void userSignUp(String emailId, String phoneNumber, String userName, String password,
+	public void userSignUp(String emailId,String countryCode,String phoneNumber, String userName, String password,
 			String prefred_language) throws InterruptedException {
 		Thread.sleep(2000);
 		signUpTab.click();
@@ -99,8 +99,8 @@ public class LoginPage extends AndroidActions {
 		otpEnterField.sendKeys("1234");
 		verifyButton.click();
 		countryPickerClick.click();
-		countryEnterField.sendKeys("United Arab Emirates");
-		//clickIndia.click();
+		countryEnterField.sendKeys(countryCode);
+		driver.findElement(By.xpath("//android.widget.TextView['"+countryCode+"']")).click();
 		signUpPhoneField.sendKeys(phoneNumber);
 		sendOtpButton.click();
 		Thread.sleep(2000);

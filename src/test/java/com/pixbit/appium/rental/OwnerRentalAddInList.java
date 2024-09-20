@@ -31,7 +31,7 @@ public class OwnerRentalAddInList extends AndroidGlobalData {
 		AddRental.clickVerifyAndContinue.click();
 		AddRental.enterChequeDetails(input.get("cheque_count"), input.get("cheque_document"),
 				input.get("bank_name"));
-		//AddRental.clickSave();
+		AddRental.clickSave();
 	}
 
 	@DataProvider

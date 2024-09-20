@@ -77,8 +77,8 @@ public class AddOwnerShipDetails extends AndroidActions {
 	private boolean permissionApproved = false;
 	
 	public void deedSelection(String isTitleDeed,String titledeedDocument) throws InterruptedException {
-		boolean isInitialContract = Boolean.getBoolean(isTitleDeed);
-		if(isInitialContract) {
+		boolean isDeed = Boolean.parseBoolean(isTitleDeed);
+		if(isDeed) {
 			titleDeedUpload.click();
 			if (!permissionApproved) {
 				approvePermission();
@@ -86,6 +86,7 @@ public class AddOwnerShipDetails extends AndroidActions {
 			}
 			driver.findElement(By.xpath("//android.widget.TextView[@text='Docs_for_testing']")).click();
 			driver.findElement(By.xpath("//android.widget.TextView[@text='Title_Deed']")).click();
+			driver.findElement(By.xpath("//android.widget.TextView[@text='used_deed']")).click();
 			scrollToElementByText(titledeedDocument);
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("//android.widget.TextView[@text='" + titledeedDocument + "']")).click();
@@ -99,7 +100,7 @@ public class AddOwnerShipDetails extends AndroidActions {
 				permissionApproved = true; // Set the flag to true after approval
 			}
 			driver.findElement(By.xpath("//android.widget.TextView[@text='Docs_for_testing']")).click();
-			driver.findElement(By.xpath("//android.widget.TextView[@text='Initial_contract']")).click();
+			driver.findElement(By.xpath("//android.widget.TextView[@text='inital_contract']")).click();
 			scrollToElementByText(titledeedDocument);
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("//android.widget.TextView[@text='" + titledeedDocument + "']")).click();

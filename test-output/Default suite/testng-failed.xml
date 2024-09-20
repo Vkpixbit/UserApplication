@@ -6,7 +6,7 @@
       <class name="com.pixbit.appium.property.NewUserPropertyAdd">
         <methods>
           <include name="close"/>
-          <include name="singleVillaProperty"/>
+          <include name="singleProperty"/>
           <include name="configuration"/>
         </methods>
       </class> <!-- com.pixbit.appium.property.NewUserPropertyAdd -->

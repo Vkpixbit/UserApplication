@@ -55,6 +55,9 @@ public class AddRental extends AndroidActions {
 	@AndroidFindBy(accessibility = "Add")
 	private WebElement addChequeButton;
 	
+	@AndroidFindBy(accessibility = "addChequeButton")
+	private WebElement uploadClick;
+	
 	@AndroidFindBy(xpath = "//android.widget.EditText[@index='0']")
 	private WebElement bankNameField;
 	
@@ -120,7 +123,8 @@ public class AddRental extends AndroidActions {
 
 	
 	public void uploadChequeDoc(String cheque_document) {
-		
+		uploadClick.click();
+		System.out.println("Test");
 		driver.findElement(By.xpath("//android.widget.TextView[@text='Docs_for_testing']")).click();
 		scrollToElementByText(cheque_document);
 		driver.findElement(By.xpath("//android.widget.TextView[@text='"+cheque_document+"']")).click();
@@ -186,6 +190,7 @@ public class AddRental extends AndroidActions {
 			Thread.sleep(2000);
 			addChequeButton.click();
 			uploadChequeDoc(cheque_document);
+			System.out.println("Test");
 			bankNameField.sendKeys(bank_name);
 			datePicker();
 			addChequeAmount();
