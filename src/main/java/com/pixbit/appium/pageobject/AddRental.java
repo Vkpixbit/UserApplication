@@ -46,7 +46,7 @@ public class AddRental extends AndroidActions {
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Verify & Continue']")
 	public WebElement clickVerifyAndContinue;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Save without cheque']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Skip & Continue']")
 	private WebElement savewithoutCheque;
 	
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Done']")
@@ -58,13 +58,13 @@ public class AddRental extends AndroidActions {
 	@AndroidFindBy(accessibility = "addChequeButton")
 	private WebElement uploadClick;
 	
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='0']")
+	@AndroidFindBy(xpath = "//android.widget.EditText[@index='2']")
 	private WebElement bankNameField;
 	
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='2']")
+	@AndroidFindBy(xpath = "//android.widget.EditText[@index='4']")
 	private WebElement chequeDateField;
 	
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='2']")
+	@AndroidFindBy(xpath = "//android.widget.EditText[@index='6']")
 	private WebElement amountField;
 	
 	@AndroidFindBy(id = "in.pixbit.proptech:id/month_navigation_fragment_toggle")
@@ -115,6 +115,13 @@ public class AddRental extends AndroidActions {
 		scrollToElementByText(tenancy_document);
 		driver.findElement(By.xpath("//android.widget.TextView[@text='" + tenancy_document + "']")).click();
 	}
+	
+	public void verifyAndContinue() throws InterruptedException {
+		clickVerifyAndContinue.click();
+		Thread.sleep(2000);
+	}
+	
+	
 
 	public void clickNext() throws InterruptedException {
 		clickNext.click();
@@ -130,7 +137,7 @@ public class AddRental extends AndroidActions {
 		driver.findElement(By.xpath("//android.widget.TextView[@text='"+cheque_document+"']")).click();
 	}
 	
-	public int addChequeAmount() {
+	public void addChequeAmount() {
 		 Random random = new Random();
 
 	     // Define the range
@@ -139,7 +146,7 @@ public class AddRental extends AndroidActions {
 
 	     // Generate a random integer between min (inclusive) and max (inclusive)
 	     int chequeAmount = random.nextInt((max - min) + 1) + min;
-	     return chequeAmount;
+	     amountField.sendKeys(String.valueOf(chequeAmount));
 	}
 	
 	public LocalDate getRandomDateWithinRange(LocalDate startInclusive, LocalDate endExclusive) {
@@ -189,8 +196,7 @@ public class AddRental extends AndroidActions {
 		for (int i=0;i<count;i++) {
 			Thread.sleep(2000);
 			addChequeButton.click();
-			uploadChequeDoc(cheque_document);
-			System.out.println("Test");
+			//uploadChequeDoc(cheque_document);
 			bankNameField.sendKeys(bank_name);
 			datePicker();
 			addChequeAmount();
@@ -211,7 +217,7 @@ public class AddRental extends AndroidActions {
 	}
 	
 	public void clickSave() {
-		saveBtn.click();
+		clickDone.click();
 	}
 	
 

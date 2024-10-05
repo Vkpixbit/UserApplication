@@ -1,23 +1,22 @@
 [
 	{
 		"_comment": "rentalAddAsTenantWithTitledeedData",
-		"email": "asheek@pixbitsolutions.com",
+		"email": "alphinpathrose@gmail.com",
 		"password": "Qapixbit@14",
-		"ejari_document": "Ejari 149.pdf",
-		"tenancy_document": "Tenancy contract (1).pdf",
-		"titledeedDocument": "Title Deed.pdf",
+		"ejari_document": "ejari_test_4.pdf",
+		"tenancy_document": "tenancy_test_2.pdf",
+		"isTitleDeed":"true",
+		"titledeedDocument": "flat_notmortgaged_3.pdf",
 		"cheque_count": "2",
 		"cheque_document": "Listing Form.pdf",
 		"bank_name": "HDFC"
 	},
 	{
 		"_comment": "rentalAddAsTenantWithTitledeedData",
-		"email": "adish123@gmail.com",
+		"email": "abymathew@gmail.com",
 		"password": "Qapixbit@14",
-		"ejari_document": "Ejari 149.pdf",
-		"tenancy_document": "Tenancy contract (1).pdf",
-		"cheque_count": "2",
-		"cheque_document": "Listing Form.pdf",
-		"bank_name": "ICICI"
+		"isFirstAdd":"true",
+		"ejari_document": "ejari_test_2.pdf",
+		"tenancy_document": "tenancy_test_5.pdf"
 	}
 ]

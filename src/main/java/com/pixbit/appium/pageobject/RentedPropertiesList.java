@@ -27,40 +27,38 @@ public class RentedPropertiesList extends AndroidActions {
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='I’m Tenant']")
 	private WebElement rentAsTenant;
-	
-	
+
 	public AddRental openRentAsOwner() throws InterruptedException {
 
-		if(driver.findElement(By.xpath("//android.widget.TextView[@text='Add Rental Details']")).isDisplayed()) // Removed semicolon
-	    {
+		if (driver.findElement(By.xpath("//android.widget.TextView[@text='Add Rental Details']")).isDisplayed()) // Removed
+																													// semicolon
+		{
 
-	        Thread.sleep(2000);
-	        rentAsOwner.click();
-	    }
-       
-	    else
-	    {
-	    	 if(driver.findElement(By.xpath("//android.widget.TextView[@text='Rented Properties']")).isDisplayed())
-	         {
-	             uploadRentedPropertyButton.click();
-	             Thread.sleep(2000);
-	             rentAsOwner.click();
-	         }
-	    }
-	    return new AddRental(driver);
+			Thread.sleep(2000);
+			rentAsOwner.click();
+		}
+
+		else {
+			if (driver.findElement(By.xpath("//android.widget.TextView[@text='Rented Properties']")).isDisplayed()) {
+				uploadRentedPropertyButton.click();
+				Thread.sleep(2000);
+				rentAsOwner.click();
+			}
+		}
+		return new AddRental(driver);
 	}
 
-
-	public AddRental openRentAsTenant() throws InterruptedException {
-		 if(driver.findElement(By.xpath("//android.widget.TextView[@text='Rented Properties']")).isDisplayed())
-	        {
-	            uploadRentedPropertyButton.click();
-	            Thread.sleep(2000);
-	            rentAsTenant.click();
-	        }
-		    
-		uploadRentedPropertyButton.click();
-		
+	public AddRental openRentAsTenant(String isFirstAdd) throws InterruptedException {
+		boolean isFirst = Boolean.parseBoolean(isFirstAdd);
+		if(isFirst) {
+			Thread.sleep(2000);
+			rentAsTenant.click();
+		}
+		else {
+			uploadRentedPropertyButton.click();
+			Thread.sleep(2000);
+			rentAsTenant.click();
+		}
 		return new AddRental(driver);
 	}
 

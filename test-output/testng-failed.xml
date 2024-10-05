@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.pixbit.appium.property.NewUserPropertyAdd">
+      <class name="com.pixbit.appium.usercreation.SignUpUser">
         <methods>
           <include name="close"/>
-          <include name="singleProperty"/>
           <include name="configuration"/>
+          <include name="createUser" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.pixbit.appium.property.NewUserPropertyAdd -->
+      </class> <!-- com.pixbit.appium.usercreation.SignUpUser -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

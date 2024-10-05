@@ -23,6 +23,7 @@ public class SignUpUser extends AndroidGlobalData {
 			LoginPage.skipVerification();
 			approvePermission();
 			Thread.sleep(3000);
+			System.out.println("SignUp Process Completed,Thankyou!!");
 		}
 	}
 

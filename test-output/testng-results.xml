@@ -2,31 +2,34 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-09-20T17:16:02 IST" name="Default suite" finished-at="2024-09-20T17:17:26 IST" duration-ms="84116">
+  <suite started-at="2024-10-05T17:11:17 IST" name="Default suite" finished-at="2024-10-05T17:12:23 IST" duration-ms="66653">
     <groups>
+      <group name="Sign Up">
+        <method signature="SignUpUser.createUser(java.util.HashMap)[pri:0, instance:com.pixbit.appium.usercreation.SignUpUser@298a5e20]" name="createUser" class="com.pixbit.appium.usercreation.SignUpUser"/>
+      </group> <!-- Sign Up -->
     </groups>
-    <test started-at="2024-09-20T17:16:02 IST" name="Default test" finished-at="2024-09-20T17:17:26 IST" duration-ms="84116">
-      <class name="com.pixbit.appium.property.NewUserPropertyAdd">
-        <test-method is-config="true" signature="configuration()[pri:0, instance:com.pixbit.appium.property.NewUserPropertyAdd@3646a422]" started-at="2024-09-20T17:16:02 IST" name="configuration" finished-at="2024-09-20T17:16:13 IST" duration-ms="10313" status="PASS">
+    <test started-at="2024-10-05T17:11:17 IST" name="Default test" finished-at="2024-10-05T17:12:23 IST" duration-ms="66653">
+      <class name="com.pixbit.appium.usercreation.SignUpUser">
+        <test-method is-config="true" signature="configuration()[pri:0, instance:com.pixbit.appium.usercreation.SignUpUser@298a5e20]" started-at="2024-10-05T17:11:17 IST" name="configuration" finished-at="2024-10-05T17:11:37 IST" duration-ms="20405" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configuration -->
-        <test-method signature="singleProperty(java.util.HashMap)[pri:0, instance:com.pixbit.appium.property.NewUserPropertyAdd@3646a422]" started-at="2024-09-20T17:16:13 IST" name="singleProperty" data-provider="singlePropertyData" finished-at="2024-09-20T17:17:26 IST" duration-ms="72986" status="PASS">
+        <test-method signature="createUser(java.util.HashMap)[pri:0, instance:com.pixbit.appium.usercreation.SignUpUser@298a5e20]" started-at="2024-10-05T17:11:37 IST" name="createUser" data-provider="userCreationData" finished-at="2024-10-05T17:12:22 IST" duration-ms="44916" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{propertyStatus=Ready, balconyCount=2, password=Qapixbit@14, bathroomCount=3, kitchenPantryCount=4, titledeedDocument=flat_notmortgaged_1.pdf, isTitleDeed=true, presentUse=Vacant, bedroomCabinCount=1, furnishingStatus=Furnished, email=arunpt@gmail.com}]]>
+                <![CDATA[{prefred_language=English, password=Qapixbit@14, phoneNumber=9903005224, countryCode=India, emailId=shalima123@gmail.com, userName=Shalima}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- singleProperty -->
-        <test-method is-config="true" signature="close()[pri:0, instance:com.pixbit.appium.property.NewUserPropertyAdd@3646a422]" started-at="2024-09-20T17:17:26 IST" name="close" finished-at="2024-09-20T17:17:26 IST" duration-ms="487" status="PASS">
+        </test-method> <!-- createUser -->
+        <test-method is-config="true" signature="close()[pri:0, instance:com.pixbit.appium.usercreation.SignUpUser@298a5e20]" started-at="2024-10-05T17:12:22 IST" name="close" finished-at="2024-10-05T17:12:23 IST" duration-ms="880" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
-      </class> <!-- com.pixbit.appium.property.NewUserPropertyAdd -->
+      </class> <!-- com.pixbit.appium.usercreation.SignUpUser -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -57,7 +57,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 	 * propperty status as Under construction and adding payment plans
 	 * Upload mortgaged and enter details
 	 */
-	@Test(dataProvider = "underConstructionPaymentPlanMortgagedPropertyData", groups = "Single Property", enabled = false)
+	@Test(dataProvider = "underConstructionPaymentPlanMortgagedPropertyData", groups = "Single Property", enabled = true)
 	public void underConstructionPaymentPlanMortgagedProperty(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();
@@ -66,7 +66,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 		ProfilePage ProfilePage = HomePage.openProfile();
 		MyProperties MyProperties = ProfilePage.openMyPropertiesPage();
 		AddOwnerShipDetails AddOwnerShipDetails = MyProperties.openPropertyAdd();
-		AddOwnerShipDetails.initialContractVerification(input.get("titledeedDocument"));
+		AddOwnerShipDetails.deedSelection(input.get("isTitleDeed"),input.get("titledeedDocument"));
 		AddProperty AddProperty = AddOwnerShipDetails.selectSingleOwnership();
 		AddProperty.selectUnderConstructionStatus();
 		AddProperty.scrollToNext();
@@ -82,8 +82,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 		AddProperty.selectBalconyCount(input.get("balconyCount"), input.get("kitchenPantryCount"));
 		AddProperty.selectMapLocation();
 		AddProperty.selectFurnishingStatus(input.get("furnishingStatus"));
-		AddProperty.clickSave();
-		AddProperty.goToProperties();
+		AddProperty.propertySaveAction(input.get("propertyStatus"),input.get("presentUse"));
 	}
 
 	@DataProvider
@@ -176,7 +175,7 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 	 * property status as ready & preent use as Rented
 	 * Enter mortgage details
 	 */
-	@Test(dataProvider = "readyRentedMortgagedData",groups = "Single Property", enabled = false)
+	@Test(dataProvider = "readyRentedMortgagedData",groups = "Single Property", enabled = true)
 	public void readyRentedMortgaged(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();
@@ -185,9 +184,9 @@ public class SinglePropertyAdd extends AndroidGlobalData {
 		ProfilePage ProfilePage = HomePage.openProfile();
 		MyProperties MyProperties = ProfilePage.openMyPropertiesPage();
 		AddOwnerShipDetails AddOwnerShipDetails = MyProperties.openPropertyAdd();
-		AddOwnerShipDetails.initialContractVerification(input.get("titledeedDocument"));
+		AddOwnerShipDetails.deedSelection(input.get("isTitleDeed"),input.get("titledeedDocument"));
 		AddProperty AddProperty = AddOwnerShipDetails.selectSingleOwnership();
-		AddProperty.selectReadyStatus(input.get("presentUse"));
+		AddProperty.selectPropertyStatus(input.get("propertyStatus"),input.get("presentUse"));
 		AddProperty.scrollToNext();
 		AddProperty.selectMortgagedTenureYearMonthOfferLetter(input.get("mortgageAmount"),
 				input.get("tenureYear"), input.get("tenure_month"), input.get("mortgageStartDate"),

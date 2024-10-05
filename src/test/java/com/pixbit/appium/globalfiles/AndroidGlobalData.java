@@ -54,6 +54,7 @@ public class AndroidGlobalData {
 		options.setApp(System.getProperty("user.dir")+"/src/test/java/com/pixbit/appium/resources/user_app_staging.apk");
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
+		System.out.println("Configuration completed");
 	}
 
 	@AfterMethod

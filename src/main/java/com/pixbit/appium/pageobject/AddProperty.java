@@ -100,20 +100,22 @@ public class AddProperty extends AndroidActions {
 	@AndroidFindBy(xpath = "//android.widget.EditText[@index='14']")
 	private WebElement financeRate;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text()='Save Details']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Save Details']")
 	private WebElement saveDetailsButton;
 
 	@AndroidFindBy(xpath = "//android.widget.ImageView[@index='6']")
 	private WebElement moreButton;
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Add Mortgage Details (Optional)']")
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Add Mortgage Details (optional)']")
 	private WebElement addMortgageButton;
 	
 	public void selectPropertyStatus(String propertyStatus,String presentUse) {
 		driver.findElement(By.xpath("//android.widget.TextView[@text='"+propertyStatus+"']")).click();
-		if(propertyStatus.equals("Ready") | propertyStatus.equals("Shell&Core")) {
+		if(propertyStatus.equals("Ready") || propertyStatus.equals("Shell&Core")) {
 			driver.findElement(By.xpath("//android.widget.TextView[@text='" + presentUse + "']")).click();
 		}
+		
+		
 	}
 
 	/*
@@ -393,6 +395,13 @@ public class AddProperty extends AndroidActions {
 			savePropertyButton.click();
 			skipRentButton.click();
 			Thread.sleep(2000);
+		}
+		else if(propertyStatus.equals("") && presentUse.equals("")){ 
+			driver.findElement(AppiumBy
+					.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Save Property\"));"));
+			savePropertyButton.click();
+			Thread.sleep(2000);
+			goToPropertiesButton.click();
 		}
 		else {
 			driver.findElement(AppiumBy

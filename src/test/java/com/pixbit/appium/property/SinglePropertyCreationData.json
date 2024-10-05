@@ -1,11 +1,11 @@
 [
 	{
-		"email": "arunpt@gmail.com",
+		"email": "ashok123@gmail.com",
 		"password": "Qapixbit@14",
 		"isTitleDeed":"true",
-		"titledeedDocument": "flat_notmortgaged_1.pdf",
+		"titledeedDocument": "flat_notmortgaged_4.pdf",
 		"propertyStatus":"Ready",
-		"presentUse": "Vacant",
+		"presentUse": "Rented",
 		"bedroomCabinCount": "1",
 		"bathroomCount": "3",
 		"kitchenPantryCount": "4",
@@ -13,9 +13,12 @@
 		"furnishingStatus": "Furnished"
 	},
 	{
-		"email": "alphinpathrose@gmail.com",
+		"email": "ashok123@gmail.com",
 		"password": "Qapixbit@14",
-		"titledeedDocument": "initial_contract_2.pdf",
+		"isTitleDeed":"false",
+		"titledeedDocument": "inital_contract_4.pdf",
+		"propertyStatus":"",
+		"presentUse":"",
 		"scheduleCount": "3",
 		"scheduleParticulars": "Particular_Test",
 		"schedulePeriod": "20",
@@ -27,12 +30,15 @@
 		"bathroomCount": "3",
 		"kitchenPantryCount": "2",
 		"balconyCount": "2",
-		"furnishingStatus": "Semi Furnished"
+		"furnishingStatus": "Furnished"
 	},
 	{
-		"email": "asheek@pixbitsolutions.com",
+		"email": "josethomas@gmail.com",
 		"password": "Qapixbit@14",
-		"titledeedDocument": "oquod marbella 47.pdf",
+		"isTitleDeed":"true",
+		"titledeedDocument": "flat_notmortgaged_5.pdf",
+		"propertyStatus":"Ready",
+		"presentUse":"Vacant",
 		"scheduleCount": "3",
 		"scheduleParticulars": "Particular_Test",
 		"schedulePeriod": "20",
@@ -54,9 +60,11 @@
 		"furnishingStatus": "Semi Furnished"
 	},
 	{
-		"email": "asheek@pixbitsolutions.com",
+		"email": "alphinpathrose@gmail.com",
 		"password": "Qapixbit@14",
-		"titledeedDocument": "oquod marbella 47.pdf",
+		"isTitleDeed":"true",
+		"titledeedDocument": "flat_mortgaged_1.pdf",
+		"propertyStatus":"Ready",
 		"presentUse": "Rented",
 		"mortgageAmount": "54000",
 		"tenureYear": "15",

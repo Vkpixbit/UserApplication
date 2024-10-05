@@ -6,9 +6,9 @@
 	</listeners>
 	<test name="Joint Property Add" preserve-order="true">
 		<classes>
-			<class name="com.pixbit.appium.test.property.add.JointPropertyAdd">
+			<class name="com.pixbit.appium.property.JointPropertyAdd">
 			<methods>
-				<include name="twoOwnersSkipReadyRentedNotMortgaged"></include>
+				<include name="oneOwnerAddOtherSkipUnderConstructionPaymentPlanMortgaged"></include>
 			</methods>
 			</class>
 		</classes>

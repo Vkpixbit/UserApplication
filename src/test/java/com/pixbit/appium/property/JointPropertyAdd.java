@@ -70,13 +70,13 @@ public class JointPropertyAdd extends AndroidGlobalData {
 		ProfilePage ProfilePage = HomePage.openProfile();
 		MyProperties MyProperties = ProfilePage.openMyPropertiesPage();
 		AddOwnerShipDetails AddOwnerShipDetails = MyProperties.openPropertyAdd();
-		AddOwnerShipDetails.initialContractVerification(input.get("titledeedDocument"));
+		AddOwnerShipDetails.deedSelection(input.get("isTitleDeed"),input.get("titledeedDocument"));
 		AddOwnerShipDetails.selectJointOwnership();
 		AddProperty AddProperty = AddOwnerShipDetails.addOwnerAndSkipOne(input.get("ownerName1"),input.get("ownerPercentage1"));
-		AddProperty.selectUnderConstructionStatus();
+		AddProperty.selectPropertyStatus(input.get("propertyStatus"),input.get("presentUse"));
 		AddProperty.scrollToNext();
-		AddProperty.addPaymentPlan(input.get("schedule_count"), input.get("schedule_particulars"),
-				input.get("schedule_period"));
+		//AddProperty.addPaymentPlan(input.get("schedule_count"), input.get("schedule_particulars"),
+				//input.get("schedule_period"));
 		AddProperty.scrollToNext();
 		AddProperty.nextButtonClick();
 		AddProperty.selectBedroomCabinCount(input.get("bedroomCabinCount"));
@@ -92,7 +92,7 @@ public class JointPropertyAdd extends AndroidGlobalData {
 	@DataProvider
 	public Object[][] oneOwnerAddOtherSkipUnderConstructionPaymentPlanMortgagedData() throws IOException {
 		List<HashMap<String, String>> value = getjsondata(System.getProperty("user.dir")
-				+ "/src/test/java/com/pixbit/appium/test/data/property/JointPropertyCreationData.json");
+				+ "/src/test/java/com/pixbit/appium/property/JointPropertyCreationData.json");
 		return new Object[][] { { value.get(1) } };
 	}
 

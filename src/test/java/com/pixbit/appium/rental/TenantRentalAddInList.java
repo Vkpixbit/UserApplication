@@ -19,27 +19,28 @@ public class TenantRentalAddInList extends AndroidGlobalData {
 	/*
 	 * Add Rental as Teannt from Rental page
 	 */
-	@Test(dataProvider = "rentalAddAsTenantWithTitledeedData", groups = "rental_add", enabled = true)
+	@Test(dataProvider = "rentalAddAsTenantWithTitledeedData", groups = "rental_add", enabled = false)
 	public void rentalAddAsTenantWithTitledeed(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();
-		HomePage HomePage = LoginPage.loginToApp("neethu@pixbitsolutions.com", "Qapixbit@14");
+		HomePage HomePage = LoginPage.loginToApp(input.get("email"),input.get("password"));
 		approvePermission();
 		ProfilePage ProfilePage = HomePage.openProfile();
 		RentedPropertiesList RentedPropertiesList = ProfilePage.openRentedProperties();
-		AddRental AddRental = RentedPropertiesList.openRentAsTenant();
+		AddRental AddRental = RentedPropertiesList.openRentAsTenant(input.get("isFirstAdd"));
 		AddRental.uploadEjariRentalFlow(input.get("ejari_document"));
 		AddRental.uploadTenancy(input.get("tenancy_document"));
 		AddOwnerShipDetails AddOwnerShipDetails = new AddOwnerShipDetails(driver);
-		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"));
-		AddRental.nextButtonClick();
-		AddRental.enter_cheque_details(input.get("cheque_count"), input.get("cheque_document"), input.get("bank_name"));
+		AddOwnerShipDetails.deedSelectionForRent(input.get("isTitleDeed"),input.get("titledeedDocument"));
+		AddRental.verifyAndContinue();
+		AddRental.enterChequeDetails(input.get("cheque_count"), input.get("cheque_document"), input.get("bank_name"));
+		AddRental.saveWithOutCheque();
 	}
 
 	@DataProvider
 	public Object[][] rentalAddAsTenantWithTitledeedData() throws IOException {
 		List<HashMap<String, String>> value = getjsondata(System.getProperty("user.dir")
-				+ "/src/test/java/com/pixbit/appium/test/data/rental/RentalAsTenantList.json");
+				+ "/src/test/java/com/pixbit/appium/rental/RentalAsTenantList.json");
 		return new Object[][] { { value.get(0) } };
 	}
 
@@ -50,21 +51,24 @@ public class TenantRentalAddInList extends AndroidGlobalData {
 	public void rentalAddAsTenantWithoutTitledeed(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();
-		HomePage HomePage = LoginPage.loginToApp("neethu@pixbitsolutions.com", "Qapixbit@14");
+		HomePage HomePage = LoginPage.loginToApp(input.get("email"),input.get("password"));
 		approvePermission();
 		ProfilePage ProfilePage = HomePage.openProfile();
 		RentedPropertiesList RentedPropertiesList = ProfilePage.openRentedProperties();
-		AddRental AddRental = RentedPropertiesList.openRentAsTenant();
+		AddRental AddRental = RentedPropertiesList.openRentAsTenant(input.get("isFirstAdd"));
 		AddRental.uploadEjariRentalFlow(input.get("ejari_document"));
 		AddRental.uploadTenancy(input.get("tenancy_document"));
-		AddRental.nextButtonClick();
-		AddRental.enter_cheque_details(input.get("cheque_count"), input.get("cheque_document"), input.get("bank_name"));
+		Thread.sleep(10000);	
+		AddRental.verifyAndContinue();
+		Thread.sleep(2000);
+		AddRental.saveWithOutCheque();
+		Thread.sleep(2000);
 	}
 
 	@DataProvider
 	public Object[][] rentalAddTenantWithoutTitledeedData() throws IOException {
 		List<HashMap<String, String>> value = getjsondata(System.getProperty("user.dir")
-				+ "/src/test/java/com/pixbit/appium/test/data/rental/RentalAsTenantList.json");
+				+ "/src/test/java/com/pixbit/appium/rental/RentalAsTenantList.json");
 		return new Object[][] { { value.get(1) } };
 	}
 }

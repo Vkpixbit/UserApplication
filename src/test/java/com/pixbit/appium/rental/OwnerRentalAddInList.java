@@ -16,7 +16,7 @@ import org.testng.annotations.DataProvider;
 
 public class OwnerRentalAddInList extends AndroidGlobalData {
 
-	@Test(dataProvider = "addRentalWithChequeDetailsData", groups = "Property Rental", enabled = true)
+	@Test(dataProvider = "addRentalWithChequeDetailsData", groups = "Property Rental", enabled = false)
 	public void addRentalWithChequeDetails(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();
@@ -42,7 +42,7 @@ public class OwnerRentalAddInList extends AndroidGlobalData {
 	}
 	
 	
-	@Test(dataProvider = "addRentalWithOutChequeDetailsData", groups = "Property Rental", enabled = false)
+	@Test(dataProvider = "addRentalWithOutChequeDetailsData", groups = "Property Rental", enabled = true)
 	public void addRentalWithOutChequeDetails(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();

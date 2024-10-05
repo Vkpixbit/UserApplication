@@ -23,7 +23,7 @@ public class NewUserPropertyAdd extends AndroidGlobalData {
 	 * Construction
 	 */
 	
-	@Test(dataProvider = "singlePropertyData", enabled = true)
+	@Test(dataProvider = "singlePropertyData", enabled = false)
 	public void singleProperty(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();
@@ -32,8 +32,8 @@ public class NewUserPropertyAdd extends AndroidGlobalData {
 		ProfilePage ProfilePage = HomePage.openProfile();
 		AddOwnerShipDetails AddOwnerShipDetails = ProfilePage.openPropertyAddPage();
 		AddOwnerShipDetails.deedSelection(input.get("isTitleDeed"),input.get("titledeedDocument"));
-		AddProperty AddProperty = new AddProperty(driver);
-		//AddProperty AddProperty = AddOwnerShipDetails.selectSingleOwnership();
+		//AddProperty AddProperty = new AddProperty(driver);
+		AddProperty AddProperty = AddOwnerShipDetails.selectSingleOwnership();
 		AddProperty.selectPropertyStatus(input.get("propertyStatus"),input.get("presentUse"));
 		AddProperty.scrollToNext();
 		AddProperty.nextButtonClick();
@@ -51,7 +51,7 @@ public class NewUserPropertyAdd extends AndroidGlobalData {
 	/*
 	 * Single property add villa property type with ready status
 	 */
-	@Test(dataProvider = "singleVillaPropertyData", enabled = false)
+	@Test(dataProvider = "singlePropertyData", enabled = true)
 	public void singleVillaProperty(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();
@@ -59,10 +59,14 @@ public class NewUserPropertyAdd extends AndroidGlobalData {
 		approvePermission();
 		ProfilePage ProfilePage = HomePage.openProfile();
 		AddOwnerShipDetails AddOwnerShipDetails = ProfilePage.openPropertyAddPage();
-		AddOwnerShipDetails.initialContractVerification(input.get("titledeedDocument"));
+		AddOwnerShipDetails.deedSelection(input.get("isTitleDeed"),input.get("titledeedDocument"));
 		AddProperty AddProperty = AddOwnerShipDetails.selectSingleOwnership();
-		AddProperty.selectReadyStatus(input.get("presentUse"));
+		AddProperty.selectPropertyStatus(input.get("propertyStatus"),input.get("presentUse"));
 		AddProperty.scrollToNext();
+		if(input.get("propertyStatus").equals("Under construction")) {
+			AddProperty.addPaymentPlan(input.get("scheduleCount"), input.get("scheduleParticulars"),
+					input.get("schedulePeriod"));
+		}
 		AddProperty.nextButtonClick();
 		AddProperty.selectBedroomCabinCount(input.get("bedroomCabinCount"));
 		AddProperty.selectBathroomCount(input.get("bathroomCount"), input.get("bedroomCabinCount"));
@@ -70,15 +74,14 @@ public class NewUserPropertyAdd extends AndroidGlobalData {
 		AddProperty.selectBalconyCount(input.get("balconyCount"), input.get("kitchenPantryCount"));
 		AddProperty.selectMapLocation();
 		AddProperty.selectFurnishingStatus(input.get("furnishingStatus"));
-		AddProperty.clickSave();
-		AddProperty.goToProperties();
+		AddProperty.propertySaveAction(input.get("propertyStatus"),input.get("presentUse"));
 	}
 
 	@DataProvider
 	public Object[][] singlePropertyData() throws IOException {
 		List<HashMap<String, String>> value = getjsondata(System.getProperty("user.dir")
 				+ "/src/test/java/com/pixbit/appium/property/SinglePropertyCreationData.json");
-		return new Object[][] { { value.get(0) } };
+		return new Object[][] { { value.get(2) } };
 	}
 
 	/*

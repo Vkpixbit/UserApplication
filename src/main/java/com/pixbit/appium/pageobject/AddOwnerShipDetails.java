@@ -31,6 +31,9 @@ public class AddOwnerShipDetails extends AndroidActions {
 	@AndroidFindBy(accessibility = "Add")
 	private WebElement addOwner;
 
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Choose Title Deed (optional)']")
+	private WebElement tenantTitleDeed;
+	
 	/*
 	@AndroidFindBy(xpath = "//android.widget.EditText[@index='1']")
 	private WebElement ownerPhoneField;
@@ -106,6 +109,34 @@ public class AddOwnerShipDetails extends AndroidActions {
 			driver.findElement(By.xpath("//android.widget.TextView[@text='" + titledeedDocument + "']")).click();
 			Thread.sleep(3000);
 			verifyButton.click();
+		}
+	}
+	
+	
+	public void deedSelectionForRent(String isTitleDeed,String titledeedDocument) throws InterruptedException {
+		boolean isDeed = Boolean.parseBoolean(isTitleDeed);
+		if(isDeed) {
+			tenantTitleDeed.click();
+			driver.findElement(By.xpath("//android.widget.TextView[@text='Docs_for_testing']")).click();
+			driver.findElement(By.xpath("//android.widget.TextView[@text='Title_Deed']")).click();
+			driver.findElement(By.xpath("//android.widget.TextView[@text='used_deed']")).click();
+			scrollToElementByText(titledeedDocument);
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//android.widget.TextView[@text='" + titledeedDocument + "']")).click();
+			Thread.sleep(3000);
+		}
+		else {
+			tenantTitleDeed.click();
+			if (!permissionApproved) {
+				approvePermission();
+				permissionApproved = true; // Set the flag to true after approval
+			}
+			driver.findElement(By.xpath("//android.widget.TextView[@text='Docs_for_testing']")).click();
+			driver.findElement(By.xpath("//android.widget.TextView[@text='inital_contract']")).click();
+			scrollToElementByText(titledeedDocument);
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//android.widget.TextView[@text='" + titledeedDocument + "']")).click();
+			Thread.sleep(3000);
 		}
 	}
 	
