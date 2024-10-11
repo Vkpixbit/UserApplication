@@ -27,6 +27,7 @@ public class ProfilePage {
 	@AndroidFindBy(accessibility = "rented_property")
 	private WebElement rentedPropertiesClick;
 
+
 	public AddOwnerShipDetails openPropertyAddPage() throws InterruptedException {
 		myPropertyClick.click();
 		Thread.sleep(2000);

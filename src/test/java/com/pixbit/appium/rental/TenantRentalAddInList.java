@@ -19,7 +19,7 @@ public class TenantRentalAddInList extends AndroidGlobalData {
 	/*
 	 * Add Rental as Teannt from Rental page
 	 */
-	@Test(dataProvider = "rentalAddAsTenantWithTitledeedData", groups = "rental_add", enabled = false)
+	@Test(dataProvider = "rentalAddAsTenantWithTitledeedData", groups = "rental_add", enabled = true)
 	public void rentalAddAsTenantWithTitledeed(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();
@@ -34,7 +34,7 @@ public class TenantRentalAddInList extends AndroidGlobalData {
 		AddOwnerShipDetails.deedSelectionForRent(input.get("isTitleDeed"),input.get("titledeedDocument"));
 		AddRental.verifyAndContinue();
 		AddRental.enterChequeDetails(input.get("cheque_count"), input.get("cheque_document"), input.get("bank_name"));
-		AddRental.saveWithOutCheque();
+		AddRental.clickSave();
 	}
 
 	@DataProvider
@@ -47,7 +47,7 @@ public class TenantRentalAddInList extends AndroidGlobalData {
 	/*
 	 * Add rental as tenant without title deed
 	 */
-	@Test(dataProvider = "rentalAddTenantWithoutTitledeedData", groups = "rental_add", enabled = true)
+	@Test(dataProvider = "rentalAddTenantWithoutTitledeedData", groups = "rental_add", enabled = false)
 	public void rentalAddAsTenantWithoutTitledeed(HashMap<String, String> input) throws InterruptedException {
 		SplashScreen SplashScreen = new SplashScreen(driver);
 		LoginPage LoginPage = SplashScreen.clickSkipButton();

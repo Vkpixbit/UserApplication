@@ -41,12 +41,12 @@ public class PublishProperty extends AndroidActions {
 	}
 	
 	
-	public void publishSaleWithoutAnyDetails() throws InterruptedException {
-		skipDocumentVerification();
+	public void publishSaleWithoutAnyDetails(String isVerified) throws InterruptedException {
+		if(!Boolean.parseBoolean(isVerified)) {
+			skipDocumentVerification();
+		}
 		driver.findElement(AppiumBy
 				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Next\"));"));
-		nextButtonClick();
-		Thread.sleep(2000);
 		nextButtonClick();
 		driver.findElement(AppiumBy
 				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Send for Approval\"));"));
@@ -55,7 +55,6 @@ public class PublishProperty extends AndroidActions {
 		clickGoToMyProperties.click();
 		Thread.sleep(2000);
 		myPropertiesTab.click();
-		
 	}
 
 }

@@ -1,16 +1,17 @@
 [
 	{
-		"emailId": "shalima123@gmail.com",
-		"countryCode":"India",
-		"phoneNumber": "9903005224",
-		"userName": "Shalima",
+		"emailId":"shajahan123@gmail.com",
+		"countryCode":"Albania",
+		"phoneNumber": "9944066114",
+		"userName": "Shajahan",
 		"password": "Qapixbit@14",
-		"prefred_language": "English"
+		"prefred_language": "Urdu"
 	},
 	{
-		"emailId": "anurag123@gmail.com",
-		"phoneNumber": "9933119922",
-		"userName": "Anurag",
+		"emailId": "benjamin@gmail.com",
+		"countryCode":"India",
+		"phoneNumber": "9003119922",
+		"userName": "Benjamin",
 		"password": "Qapixbit@14",
 		"prefred_language": "Arabic"
 	},

@@ -50,5 +50,10 @@ public class SignUpUser extends AndroidGlobalData {
 				+ "/src/test/java/com/pixbit/appium/test/usercreation/actions/UserDetails.json");
 		return new Object[][] { { value.get(4) } };
 	}
+	
+	@Test
+	public void verifyRmDetails() {
+		
+	}
 
 }

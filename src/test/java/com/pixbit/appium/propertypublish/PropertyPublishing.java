@@ -36,7 +36,7 @@ public class PropertyPublishing extends AndroidGlobalData {
 		MyProperties myproperties =ProfilePage.openMyPropertiesPage();
 		PropertyDetails PropertyDetails=myproperties.selectProperty(input.get("property_name"));
 		PublishProperty PublishProperty=PropertyDetails.clickPublish();
-		PublishProperty.publishSaleWithoutAnyDetails();	
+		PublishProperty.publishSaleWithoutAnyDetails(input.get("isVerified"));	
 	}
 	
 	

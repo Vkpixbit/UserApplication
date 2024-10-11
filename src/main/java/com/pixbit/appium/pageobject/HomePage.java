@@ -52,9 +52,10 @@ public class HomePage extends AndroidActions {
 	private WebElement SaleMarketplaceButton;
 	
 	public void userSaleEnqueryMade(String propertyName) throws InterruptedException {
-		approvePermission();
-		saleMarketplaceBtn.click();
 		Thread.sleep(2000);
+		notificationAllow();
+		saleMarketplaceBtn.click();
+		Thread.sleep(4000);
 		scrollToElementByText(propertyName);
 		driver.findElement(By.xpath("//android.widget.TextView[@text='"+propertyName+"']")).click();
 		intrestBtn.click();

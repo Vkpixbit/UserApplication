@@ -81,7 +81,7 @@ public class NewUserPropertyAdd extends AndroidGlobalData {
 	public Object[][] singlePropertyData() throws IOException {
 		List<HashMap<String, String>> value = getjsondata(System.getProperty("user.dir")
 				+ "/src/test/java/com/pixbit/appium/property/SinglePropertyCreationData.json");
-		return new Object[][] { { value.get(2) } };
+		return new Object[][] { { value.get(1) } };
 	}
 
 	/*

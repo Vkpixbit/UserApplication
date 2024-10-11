@@ -29,16 +29,16 @@ public class AddProperty extends AndroidActions {
 	}
 
 	@AndroidFindBy(accessibility = "Add")
-	public WebElement addPaymentPlan;
+	public WebElement addSchedule;
 
 	@AndroidFindBy(id = "in.pixbit.proptech:id/month_navigation_fragment_toggle")
 	private WebElement yearPicker;
 
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='3']")
+	@AndroidFindBy(xpath = "//android.widget.EditText[@index='1']")
 	private WebElement sheduleParticulars;
 
-	@AndroidFindBy(xpath = "//android.widget.EditText[@index='5']")
-	private WebElement shedulePeriods;
+	@AndroidFindBy(accessibility = "Dropdown")
+	private WebElement shedulePeriodDropDown;
 
 	@AndroidFindBy(xpath = "//android.widget.EditText[@index='7']")
 	private WebElement sheduleBookingAmount;
@@ -108,14 +108,25 @@ public class AddProperty extends AndroidActions {
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Add Mortgage Details (optional)']")
 	private WebElement addMortgageButton;
-	
-	public void selectPropertyStatus(String propertyStatus,String presentUse) {
-		driver.findElement(By.xpath("//android.widget.TextView[@text='"+propertyStatus+"']")).click();
-		if(propertyStatus.equals("Ready") || propertyStatus.equals("Shell&Core")) {
+
+	@AndroidFindBy(xpath = "(//android.widget.ImageView[@content-desc=\"Calender\"])[1]")
+	private WebElement bookingDateField;
+
+	@AndroidFindBy(xpath = "(//android.widget.ImageView[@content-desc=\"Calender\"])[2]")
+	private WebElement completionDateField;
+
+	@AndroidFindBy(xpath = "//android.widget.Button[@text='Add Payment Schedule']")
+	private WebElement addPaymentPlanButton;
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Save']")
+	private WebElement saveButton;
+
+	public void selectPropertyStatus(String propertyStatus, String presentUse) {
+		driver.findElement(By.xpath("//android.widget.TextView[@text='" + propertyStatus + "']")).click();
+		if (propertyStatus.equals("Ready") || propertyStatus.equals("Shell & Core")) {
 			driver.findElement(By.xpath("//android.widget.TextView[@text='" + presentUse + "']")).click();
 		}
-		
-		
+
 	}
 
 	/*
@@ -145,133 +156,137 @@ public class AddProperty extends AndroidActions {
 		driver.findElement(By.xpath("//android.widget.TextView[@text='Under construction']")).click();
 	}
 
-	public void addPaymentPlan(String schedule_count, String schedule_particulars, String schedule_period) throws InterruptedException {
-		if (schedule_count == null || schedule_count.isEmpty()) {
-			throw new IllegalArgumentException("Schedule count must not be null or empty");
-		}
-
-		int count;
-		try {
-			count = Integer.parseInt(schedule_count);
-		} catch (NumberFormatException e) {
-			throw new IllegalArgumentException("Invalid schedule count: " + schedule_count, e);
-		}
-
-		int[] percentages = generateRandomPercentages(count);
-		addPaymentPlan.click();
-		for (int i = 0; i < count; i++) {
-			LocalDate randomDate = getRandomDateWithinRange(LocalDate.now(), LocalDate.now().plusYears(1));
-			String randomYear = String.valueOf(randomDate.getYear());
-			String randomMonth = randomDate.getMonth().name();
-			String randomDay = String.valueOf(randomDate.getDayOfMonth());
-
-			selectDate(randomYear, randomMonth, randomDay);
-
-			sheduleParticulars.sendKeys(schedule_particulars + "_" + (i + 1));
-			shedulePeriods.sendKeys(schedule_period + (i + 1));
-
-			int schedule_booking_amount = percentages[i];
-			sheduleBookingAmount.sendKeys(String.valueOf(schedule_booking_amount));
-			driver.findElement(By.xpath("//android.widget.TextView[@text='Add Schedule']")).click();
-			if (i + 1 < count) {
-				driver.findElement(AppiumBy.androidUIAutomator(
-						"new UiScrollable(new UiSelector()).scrollIntoView(text(\"Add Payment Schedule\"));"));
-				driver.findElement(By.xpath("//android.widget.TextView[@text='Add Payment Schedule']")).click();
-			} 
-		}
-		//driver.findElement(AppiumBy
-				//.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text('Save'));"));
-		driver.findElement(By.xpath("//android.widget.TextView[@text='Save']")).click();
-	}
-
-	private int[] generateRandomPercentages(int count) {
-		Random random = new Random();
-		int[] points = new int[count + 1];
-		points[0] = 0;
-		points[count] = 100;
-
-		for (int i = 1; i < count; i++) {
-			points[i] = random.nextInt(101);
-		}
-
-		Arrays.sort(points);
-
-		int[] percentages = new int[count];
-		for (int i = 0; i < count; i++) {
-			percentages[i] = points[i + 1] - points[i];
-		}
-
-		return percentages;
-	}
-
-	private LocalDate getRandomDateWithinRange(LocalDate startInclusive, LocalDate endExclusive) {
-		LocalDate maxDate = LocalDate.of(2024, 12, 31); // Set the max date to the end of 2024
-		if (endExclusive.isAfter(maxDate)) {
-			endExclusive = maxDate;
-		}
-		long days = ChronoUnit.DAYS.between(startInclusive, endExclusive);
-		Random random = new Random();
-		long randomDays = random.nextInt((int) days + 1);
-		return startInclusive.plusDays(randomDays);
-	}
-
 	public void selectDate(String desiredYear, String desiredMonth, String desiredDate) throws InterruptedException {
-		int year = Integer.parseInt(desiredYear);
-		if (year > 2024) {
-			throw new IllegalArgumentException("Year must not be greater than 2024");
-		}
-		//System.out.println("calender select");
-		WebElement calender_element =driver.findElement(AppiumBy.accessibilityId("Calender"));
-		Thread.sleep(2000);
-		//highlightWebelement(calender_element);
-		calender_element.click();
+		Thread.sleep(2000); // Wait for the calendar to load
+		boolean answer = false;
+		WebElement yearPicker = driver.findElement(By.id("in.pixbit.proptech:id/month_navigation_fragment_toggle"));
+																																				// structure
 		yearPicker.click();
+		driver.findElement(AppiumBy.androidUIAutomator(
+				"new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\""
+						+ desiredYear + "\"))"));
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//android.widget.TextView[@text='" + desiredYear + "']")).click();
 
-		String desiredMonthTitleCase = desiredMonth.charAt(0) + desiredMonth.substring(1).toLowerCase();
+		// Format the month input to Title Case, e.g., "January", "February"
+		//String desiredMonthTitleCase = desiredMonth.substring(0, 1).toUpperCase()
+				//+ desiredMonth.substring(1).toLowerCase();
 
-		while (!yearPicker.getAttribute("text").contains(desiredMonthTitleCase)) {
-			driver.findElement(By.xpath("//android.widget.Button[@content-desc=\"Change to next month\"]")).click();
+		// Select the correct month by navigating through the calendar
+		
+		while(driver.findElement(By.id("in.pixbit.proptech:id/month_navigation_fragment_toggle")).getText().contains(desiredMonth) && 
+					driver.findElement(By.id("in.pixbit.proptech:id/month_navigation_fragment_toggle")).getText().contains(desiredYear)) {
+			driver.findElement(AppiumBy.accessibilityId("Change to next month")).click();
+			int nextYear = Integer.parseInt(desiredDate)+1;
+			String newYear = String.valueOf(nextYear);
+			
+			if(driver.findElement(By.id("in.pixbit.proptech:id/month_navigation_fragment_toggle")).getText().contains(newYear)){
+				while(driver.findElement(By.id("in.pixbit.proptech:id/month_navigation_fragment_toggle")).getText().contains(desiredMonth)) {
+					driver.findElement(AppiumBy.accessibilityId("Change to previous month")).click();
+				}
+			}
 		}
 		driver.findElement(By.xpath("//android.widget.TextView[@text='" + desiredDate + "']")).click();
 		driver.findElement(By.xpath("//android.widget.Button[@text='OK']")).click();
+	}
+	
+	
+	
+	public WebElement addPaymentSchedule(String scheduleCount, String scheduleParticulars, String periodList, String monthList,
+			String shareList) throws InterruptedException {
+		int monthIndex = 0;
+		for(int i = 0; i < Integer.parseInt(scheduleCount); i++) {
+			driver.findElement(AppiumBy.androidUIAutomator(
+				    "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"Add Payment Schedule\"));"
+				));
+			addSchedule.click();
+			String[] periodValue = periodList.split(",");
+			String[] monthValue = monthList.split(",");
+			String[] shareValue = shareList.split(",");
+
+			sheduleParticulars.sendKeys(scheduleParticulars + "_" + i + 1);
+			shedulePeriodDropDown.click();
+			driver.findElement(By.xpath("//android.widget.TextView[@text='" + periodValue[i] + "']")).click();
+			if (periodValue[i].equals("After Booking") || periodValue[i].equals("After Completion")) {
+				driver.findElement(By.xpath("//android.widget.EditText[@index='5']")).sendKeys(monthValue[monthIndex]);
+				monthIndex++;
+				driver.findElement(By.xpath("//android.widget.EditText[@index='9']")).sendKeys(shareValue[i]);
+			} else {
+				driver.findElement(By.xpath("//android.widget.EditText[@index='7']")).sendKeys(shareValue[i]);
+			}
+			driver.findElement(By.xpath("//android.widget.TextView[@text='Add Schedule']")).click();
+		}
+		driver.findElement(AppiumBy.androidUIAutomator(
+			    "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"Save\"));"
+			));
+		return saveButton;
+	}
+
+	public void selectBookingCompletionDate(String bookingDateString, String completionDateString)
+			throws InterruptedException {
+		String[] bookingDateParts = bookingDateString.split("-"); // Split date string (e.g. "2024-07-12")
+		String bookingYear = bookingDateParts[0];
+		String bookingMonth = bookingDateParts[1];
+		String bookingDate = bookingDateParts[2];
+
+		bookingDateField.click();
+		selectDate(bookingYear, bookingMonth, bookingDate);
+
+		// Handle completion date
+		String[] completionDateParts = completionDateString.split("-");
+		String completionYear = completionDateParts[0];
+		String completionMonth = completionDateParts[1];
+		String completionDate = completionDateParts[2];
+
+		completionDateField.click();
+		selectDate(completionYear, completionMonth, completionDate);
+	}
+
+	public void addPaymentPlan(String scheduleCount, String bookingDateString, String completionDateString,
+			String scheduleParticular, String periodList, String monthList, String shareList)
+			throws InterruptedException {
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Add Payment Plan (optional)']")).click();
+		selectBookingCompletionDate(bookingDateString, completionDateString);
+		//addPaymentSchedule(scheduleCount, scheduleParticular, periodList, monthList, shareList);
+		WebElement saveButton = addPaymentSchedule(scheduleCount, scheduleParticular, periodList, monthList, shareList);
+		saveButton.click();
 	}
 
 	/*
 	 * Select Mortgage as Yes and Skip The Fields
 	 */
 	public void selectMortgagedSkip() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
-	    try {
-	    	//Thread.sleep(2000);
-	        if (wait.until(ExpectedConditions.visibilityOf(addMortgageButton)) != null) {
-	            //System.out.println("Text");
-	            addMortgageButton.click();
-	            driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Save Details\"));"));
-	            driver.findElement(By.xpath("//android.widget.Button[@index='1']")).click();
-	        } else {
-	        	System.out.println("Next Opened");
-	            driver.findElement(By.xpath("//android.widget.TextView[@text='Next']")).click();
-	        }
-	    } catch (NoSuchElementException e) {
-	        // If addMortgageButton is not found, proceed to click Next
-	    	//System.out.println("next click");
-	        driver.findElement(By.xpath("//android.widget.TextView[@text='Next']")).click();
-	    }
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		try {
+			// Thread.sleep(2000);
+			if (wait.until(ExpectedConditions.visibilityOf(addMortgageButton)) != null) {
+				// System.out.println("Text");
+				addMortgageButton.click();
+				driver.findElement(AppiumBy.androidUIAutomator(
+						"new UiScrollable(new UiSelector()).scrollIntoView(text(\"Save Details\"));"));
+				driver.findElement(By.xpath("//android.widget.Button[@index='1']")).click();
+			} else {
+				System.out.println("Next Opened");
+				driver.findElement(By.xpath("//android.widget.TextView[@text='Next']")).click();
+			}
+		} catch (NoSuchElementException e) {
+			// If addMortgageButton is not found, proceed to click Next
+			// System.out.println("next click");
+			driver.findElement(By.xpath("//android.widget.TextView[@text='Next']")).click();
+		}
 	}
 
-	
 	/*
 	 * Select Mortgage And Tenure Is Only with Year Value
 	 */
-	public void selectMortgagedTenureYear(String mortgage_amount, String tenure_year, String mortgage_start_date,
-			String finance_rate) throws InterruptedException {
+	public void selectMortgagedTenureYear(String mortgageAmount, String tenureYear, String mortgageStartDate,
+			String financeRate) throws InterruptedException {
 		if (addMortgageButton.isDisplayed()) {
 			addMortgageButton.click();
-			mortgageAmountField.sendKeys(mortgage_amount);
-			tenureYearField.sendKeys(tenure_year);
-			mortgageStartDateField.sendKeys(mortgage_start_date);
-			finaceRateField.sendKeys(finance_rate);
+			mortgageAmountField.sendKeys(financeRate);
+			tenureYearField.sendKeys(tenureYear);
+			mortgageStartDateField.sendKeys(mortgageStartDate);
+			finaceRateField.sendKeys(financeRate);
 			AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Save Details\"));");
 			driver.findElement(By.xpath("//android.widget.Button[@index='1']")).click();
 		}
@@ -311,22 +326,23 @@ public class AddProperty extends AndroidActions {
 
 	}
 
-	/* 
+	/*
 	 * Select Bedroom/Cabin Count
 	 */
 	public void selectBedroomCabinCount(String bedroom_cabin_count) throws InterruptedException {
-	    try {
-	        // Correct the XPath to match the element correctly
-	        if (driver.findElement(By.xpath("//android.widget.TextView[@text='Number of Bedrooms (Required)']")).isDisplayed()) {
-	            driver.findElement(By.xpath("(//android.widget.TextView[@text='4+'])[1]")).click();
-	            driver.findElement(By.className("android.widget.EditText")).sendKeys(bedroom_cabin_count);
-	            click_done();
-	        } else {
-	            System.out.println("Bedroom field not entered!");
-	        }
-	    } catch (NoSuchElementException e) {
-	        System.out.println("Bedroom field not found!");
-	    }
+		try {
+			// Correct the XPath to match the element correctly
+			if (driver.findElement(By.xpath("//android.widget.TextView[@text='Number of Bedrooms (Required)']"))
+					.isDisplayed()) {
+				driver.findElement(By.xpath("(//android.widget.TextView[@text='4+'])[1]")).click();
+				driver.findElement(By.className("android.widget.EditText")).sendKeys(bedroom_cabin_count);
+				click_done();
+			} else {
+				System.out.println("Bedroom field not entered!");
+			}
+		} catch (NoSuchElementException e) {
+			System.out.println("Bedroom field not found!");
+		}
 	}
 
 	/*
@@ -386,24 +402,21 @@ public class AddProperty extends AndroidActions {
 
 		}
 	}
-	
-	
-	public void propertySaveAction(String propertyStatus,String presentUse) throws InterruptedException {
-		if(propertyStatus.equals("Ready") && presentUse.equals("Rented")) {
+
+	public void propertySaveAction(String propertyStatus, String presentUse) throws InterruptedException {
+		if (propertyStatus.equals("Ready") && presentUse.equals("Rented")) {
 			driver.findElement(AppiumBy
 					.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Save Property\"));"));
 			savePropertyButton.click();
 			skipRentButton.click();
 			Thread.sleep(2000);
-		}
-		else if(propertyStatus.equals("") && presentUse.equals("")){ 
+		} else if (propertyStatus.equals("") && presentUse.equals("")) {
 			driver.findElement(AppiumBy
 					.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Save Property\"));"));
 			savePropertyButton.click();
 			Thread.sleep(2000);
 			goToPropertiesButton.click();
-		}
-		else {
+		} else {
 			driver.findElement(AppiumBy
 					.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Save Property\"));"));
 			savePropertyButton.click();

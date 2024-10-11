@@ -24,7 +24,7 @@ public class MarketplaceEnqueryMade extends AndroidGlobalData {
 	@DataProvider
 	public Object[][] userSaleEnqueryMadeData1() throws IOException {
 		List<HashMap<String, String>> value = getjsondata(System.getProperty("user.dir")
-				+ "/src/test/java/com/pixbit/userapp/test/marketplace/EnqueryMadeLoginedUser.json");
+				+ "/src/test/java/com/pixbit/appium/marketplace/EnqueryMadeLoginedUser.json");
 		return new Object[][] { { value.get(0) } };
 	}
 }

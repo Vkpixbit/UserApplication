@@ -50,6 +50,10 @@ public class AndroidActions {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.attributeContains(element, "text", "value"));
 	}
+	
+	public void notificationAllow() {
+		driver.findElement(By.id("com.android.permissioncontroller:id/permission_allow_button")).click();
+	}
 
 	public void approvePermission() {
 		driver.findElement(By.id("com.android.permissioncontroller:id/permission_allow_all_button")).click();

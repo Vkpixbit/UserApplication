@@ -5,7 +5,7 @@
 		<classes>
             <class name="com.pixbit.appium.property.SinglePropertyAdd">
                 <methods>
-                    <include name="underConstructionPaymentPlanMortgagedProperty" />
+                    <include name="singlePropertyProcess" />
                 </methods>
             </class>
         </classes>

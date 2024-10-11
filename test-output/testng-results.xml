@@ -2,34 +2,34 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-05T17:11:17 IST" name="Default suite" finished-at="2024-10-05T17:12:23 IST" duration-ms="66653">
+  <suite started-at="2024-10-11T14:44:50 IST" name="Default suite" finished-at="2024-10-11T14:46:21 IST" duration-ms="90507">
     <groups>
-      <group name="Sign Up">
-        <method signature="SignUpUser.createUser(java.util.HashMap)[pri:0, instance:com.pixbit.appium.usercreation.SignUpUser@298a5e20]" name="createUser" class="com.pixbit.appium.usercreation.SignUpUser"/>
-      </group> <!-- Sign Up -->
+      <group name="Property Rental">
+        <method signature="OwnerRentalAddInList.addRentalWithChequeDetails(java.util.HashMap)[pri:0, instance:com.pixbit.appium.rental.OwnerRentalAddInList@298a5e20]" name="addRentalWithChequeDetails" class="com.pixbit.appium.rental.OwnerRentalAddInList"/>
+      </group> <!-- Property Rental -->
     </groups>
-    <test started-at="2024-10-05T17:11:17 IST" name="Default test" finished-at="2024-10-05T17:12:23 IST" duration-ms="66653">
-      <class name="com.pixbit.appium.usercreation.SignUpUser">
-        <test-method is-config="true" signature="configuration()[pri:0, instance:com.pixbit.appium.usercreation.SignUpUser@298a5e20]" started-at="2024-10-05T17:11:17 IST" name="configuration" finished-at="2024-10-05T17:11:37 IST" duration-ms="20405" status="PASS">
+    <test started-at="2024-10-11T14:44:50 IST" name="Default test" finished-at="2024-10-11T14:46:21 IST" duration-ms="90507">
+      <class name="com.pixbit.appium.rental.OwnerRentalAddInList">
+        <test-method is-config="true" signature="configuration()[pri:0, instance:com.pixbit.appium.rental.OwnerRentalAddInList@298a5e20]" started-at="2024-10-11T14:44:50 IST" name="configuration" finished-at="2024-10-11T14:45:04 IST" duration-ms="13320" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configuration -->
-        <test-method signature="createUser(java.util.HashMap)[pri:0, instance:com.pixbit.appium.usercreation.SignUpUser@298a5e20]" started-at="2024-10-05T17:11:37 IST" name="createUser" data-provider="userCreationData" finished-at="2024-10-05T17:12:22 IST" duration-ms="44916" status="PASS">
+        <test-method signature="addRentalWithChequeDetails(java.util.HashMap)[pri:0, instance:com.pixbit.appium.rental.OwnerRentalAddInList@298a5e20]" started-at="2024-10-11T14:45:04 IST" name="addRentalWithChequeDetails" data-provider="addRentalWithChequeDetailsData" finished-at="2024-10-11T14:46:20 IST" duration-ms="76070" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{prefred_language=English, password=Qapixbit@14, phoneNumber=9903005224, countryCode=India, emailId=shalima123@gmail.com, userName=Shalima}]]>
+                <![CDATA[{tenancy_document=tenancy_test_1.pdf, password=Qapixbit@14, rent_property=ARIA/G11, bank_name=HDFC Bank, cheque_document=Listing Form.pdf, cheque_count=2, email=usmankoya@gmail.com, ejari_document=ejari_test_4.pdf}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createUser -->
-        <test-method is-config="true" signature="close()[pri:0, instance:com.pixbit.appium.usercreation.SignUpUser@298a5e20]" started-at="2024-10-05T17:12:22 IST" name="close" finished-at="2024-10-05T17:12:23 IST" duration-ms="880" status="PASS">
+        </test-method> <!-- addRentalWithChequeDetails -->
+        <test-method is-config="true" signature="close()[pri:0, instance:com.pixbit.appium.rental.OwnerRentalAddInList@298a5e20]" started-at="2024-10-11T14:46:20 IST" name="close" finished-at="2024-10-11T14:46:21 IST" duration-ms="715" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
-      </class> <!-- com.pixbit.appium.usercreation.SignUpUser -->
+      </class> <!-- com.pixbit.appium.rental.OwnerRentalAddInList -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
