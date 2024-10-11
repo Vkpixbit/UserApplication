@@ -30,10 +30,35 @@ public class JointPropertyAdd extends AndroidGlobalData {
 		HomePage HomePage = LoginPage.loginToApp(input.get("email"), input.get("password"));
 		approvePermission();
 		ProfilePage ProfilePage = HomePage.openProfile();
-		MyProperties MyProperties = ProfilePage.openMyPropertiesPage();
-		AddOwnerShipDetails AddOwnerShipDetails = MyProperties.openPropertyAdd();
-		AddOwnerShipDetails.titleDeedVerification(input.get("titledeedDocument"));
-		AddOwnerShipDetails.selectJointOwnership();
+		if(Boolean.parseBoolean(input.get("isFirstProperty"))) {
+			System.out.println("It Is The First Property Of This User Added!");
+			AddOwnerShipDetails AddOwnerShipDetails = ProfilePage.openPropertyAddPage();
+			AddOwnerShipDetails.deedSelection(input.get("isTitleDeed"),input.get("titledeedDocument"));
+			if(input.get("isTitleDeed")=="true") {
+				System.out.println("The Property Is Added Using Title Deed and Name is "
+						+ "'"+input.get("titledeedDocument")+"'");
+			}
+			else {
+				System.out.println("The Property Is Added Using Pre Title Deed/Inital Contract  Name is \"\n"
+						+ "						'"+input.get("titledeedDocument")+"'");
+			}
+			AddOwnerShipDetails.selectJointOwnership();
+			System.out.println("The Property Is Added as Single Property");
+		}else {
+			MyProperties MyProperties = ProfilePage.openMyPropertiesPage();
+			AddOwnerShipDetails AddOwnerShipDetails = MyProperties.openPropertyAdd();
+			AddOwnerShipDetails.deedSelection(input.get("isTitleDeed"),input.get("titledeedDocument"));
+			if(input.get("isTitleDeed")=="true") {
+				System.out.println("The Property Is Added Using Title Deed and Name is "
+						+ "'"+input.get("titledeedDocument")+"'");
+			}
+			else {
+				System.out.println("The Property Is Added Using Pre Title Deed/Inital Contract  Name is"
+						+ "						'"+input.get("titledeedDocument")+"'");
+			}
+			AddOwnerShipDetails.selectJointOwnership();
+		}
+		
 		AddProperty AddProperty = AddOwnerShipDetails.twoOwnersSkipAll();
 		AddProperty.selectReadyStatus(input.get("presentUse"));
 		AddProperty.scrollToNext();

@@ -140,7 +140,7 @@ public class AddOwnerShipDetails extends AndroidActions {
 		}
 	}
 	
-	public void open_title_deed_section(String titledeedDocument) throws InterruptedException {
+	/*public void open_title_deed_section(String titledeedDocument) throws InterruptedException {
 		titleDeedUpload.click();
 		if (!permissionApproved) {
 			approvePermission();
@@ -180,6 +180,7 @@ public class AddOwnerShipDetails extends AndroidActions {
 		open_initial_contract_section(titledeedDocument);
 		verifyButton.click();		
 	}
+	*/
 
 	public void selectJointOwnership() {
 		driver.findElement(By.xpath("//android.widget.TextView[@text='Joint ownership']")).click();
@@ -192,14 +193,21 @@ public class AddOwnerShipDetails extends AndroidActions {
 		return new AddProperty(driver);
 	}
 	
-	public void ownnershipAdd(String ownersCount,String ownerName,String ownerNercentage) throws InterruptedException {
+	public void ownnershipAdd(String ownersCount,String skipAll,String ownerName,String ownerNercentage) throws InterruptedException {
 		driver.findElement(By.xpath("//android.widget.TextView[@text='"+ownersCount+"']")).click();
-		for(int i=0; i<Integer.parseInt(ownersCount);i++) {
-			driver.findElement(AppiumBy
-					.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Add Owner\"));"));
-			ownerAdd(ownerName,ownerNercentage);
+		if(Boolean.parseBoolean("skipAll")) {
+			skipAndContinue.click();
 		}
+		else {
+			for(int i=0; i<Integer.parseInt(ownersCount);i++) {
+				driver.findElement(AppiumBy
+						.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Add Owner\"));"));
+				ownerAdd(ownerName,ownerNercentage);
+			}
+		}
+		
 	}
+	
 	
 	/*
 	 * skip all owners adding
@@ -215,7 +223,8 @@ public class AddOwnerShipDetails extends AndroidActions {
 	/*
 	 * Ownership add
 	 */
-	public void ownerAdd(String ownerName,String ownerNercentage) throws InterruptedException {
+	public void ownerAdd(String ownerNames,String ownerNercentage) throws InterruptedException {
+		if()
 		addOwner.click();
 		Thread.sleep(2000);
 		ownerNameField.sendKeys(ownerName);
